@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.hero {
+    height: 200vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-image: url(images/pexels-quang-nguyen-vinh-222549-6877707.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero h1 h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+button {
+ cursor: pointer;
+}
+
+
+.about {
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-image: url(images/pexels-mauroignaciotorres-14111847.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+.tasks {
+     height: 200vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-image: url(images/pexels-quang-nguyen-vinh-222549-6870970.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+ .weather {
+    height: 200vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-image: url(images/pexels-annaelle-quionquion-2652658-17703493.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+ }
+
+ .notes {
+    height: 200vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-image: url(images/pexels-tsvetoslav-hristov-1306654-2499862.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+ }
+
+ #weather,
+ #notes,
+ #tasks {
+    background: none;
+    color: white;
+    border-radius: 5px;
+ }
+
+nav ul {
+    list-style: none;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: flex;
+}
+ nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: darkgreen;
+}
+
+/* to do list */
+#taskList {
+    list-style: none;
+    padding: 0px;
+}
+
+.list {
+    color: burlywood;
+    cursor: pointer; 
+    padding: 2px;
+    background: lightgoldenrodyellow;
+    margin: 5px 0;
+    border-radius: 5px;
+    
+}
+
+.list:hover {
+     background: darkolivegreen;
+}
+
+.notesList {
+    background: darkolivegreen;
+    display: flex;
+    margin: auto;
+    padding: 10px;
+
+}
