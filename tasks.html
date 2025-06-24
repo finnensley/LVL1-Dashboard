@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="styles.css" />
+
+</head>
+<body>
+<section class="tasks">
+     <h1>My Dashboard</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Greeting</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="weather.html">Weather</a></li>
+            <li><a href="tasks.html">Tasks</a></li>
+            <li><a href="notes.html">Notes</a></li>
+        </ul>
+    </nav>
+    <div class="tasklist">
+        <h1>Todo List</h1>
+        <input task="text" id="taskInput" placeholder="Enter a task" />
+        <button id="task-btn" onclick="addTask()">add Task</button>
+        <ul id="taskList"></ul> 
+         <script src="script.js"></script>
+    </div>
+</section>
+</body>
+</html>
