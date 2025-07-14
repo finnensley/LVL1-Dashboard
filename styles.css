@@ -30,7 +30,9 @@ body {
 
 
 button {
- cursor: pointer;
+    cursor: pointer;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
 }
 
 
@@ -91,7 +93,8 @@ button {
     background-attachment: fixed;
  }
 
-
+ #enterDashboard,
+ #greeting,
  #weather,
  #notes,
  #tasks {
