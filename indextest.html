@@ -13,12 +13,33 @@
             min-height: 100vh;
             padding: 1rem;
         }
+
+        #sticky-note {
+            border: darkolivegreen solid;
+            background-color: darkkhaki;
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            color: darkolivegreen;
+            font-size: medium;
+            font-family: Arial, sans-serif;
+        }
+
+        #sticky-note:hover {
+
+        }
     </style>
 </head>
 <body>
     <div id="greetings">
         <p id="current-hour"></p>
         <p>the text should go above this</p>
+    </div>
+
+    <div id="notes-container" class="notes-container">
+        <div id="sticky-note"></div>
+        <button id="note-btn">Create Note</button>
+        <textarea id="sticky-note" class="sticky-note">Notes:</textarea>
     </div>
 <script src="scripttest.js"></script>
 
