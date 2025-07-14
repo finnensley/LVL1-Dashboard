@@ -8,15 +8,17 @@
 </head>
 <style>
     textarea {
+        height: 20vh;
+        width: 50vh;
         border-radius: 10px;
-        width: 100%;
         background-color: lightgoldenrodyellow;
         padding: 20px;
-        color: darkolivegreen;        
-    }
+        color: darkolivegreen;
+        background-blend-mode: luminosity; 
+
+    }   
 
     textarea:hover {
-        
         
     }
 </style>
@@ -31,11 +33,11 @@
         <a href="notes.html">Notes</a>
     </nav>
     <div class="noteslist">
-    <p>Notes</p>
+    <p></p>
      <!-- <input type="" id="notesInput" placeholder="thoughts?"/> -->
     
     <div class="textbox">
-        <textarea></textarea>
+        <textarea id="myTextArea">Notes:</textarea>
     </div>
     <br>
     <!-- <button id="notes-btn" onclick="addNotes()">add Notes</button>

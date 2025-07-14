@@ -4,8 +4,8 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.hero {
-    height: 200vh;
+.greeting {
+    height: 150vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,11 +18,16 @@ body {
     background-attachment: fixed;
 }
 
-.hero h1 h2 {
-    font-size: 40px;
-    text-transform: uppercase;
+.greeting h2 {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+} 
+
+#current-hour {
+    margin-top: 0;
+    font-size: larger;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
+
 
 button {
  cursor: pointer;
@@ -45,7 +50,7 @@ button {
 
 
 .tasks {
-     height: 200vh;
+    height: 150vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -59,7 +64,7 @@ button {
 }
 
  .weather {
-    height: 200vh;
+    height: 150vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -73,7 +78,7 @@ button {
  }
 
  .notes {
-    height: 200vh;
+    height: 150vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -85,6 +90,7 @@ button {
     background-position: center;
     background-attachment: fixed;
  }
+
 
  #weather,
  #notes,
@@ -143,4 +149,8 @@ nav a:hover {
     margin: auto;
     padding: 10px;
 
+}
+
+@media (){
+ /* add font-size */
 }
