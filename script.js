@@ -25,8 +25,8 @@ function greeting() {
     }
 }
 
- greeting();
- console.log(new Date);
+//  Call greeting(); at the end
+//  console.log(new Date);
 
 
 
@@ -54,12 +54,12 @@ function addTask() {
 //remove task
     taskItem.addEventListener("click", function() {
     taskList.removeChild(taskItem);
-})
+});
 
 //add items to list
     taskList.appendChild(taskItem);
     taskInput.value = "";
-}
+};
   // displaying local storage: not working
 //    function displayTasks() {
 //     //display new array tasks converted to strings, setItem created this now how do I view it
@@ -68,7 +68,7 @@ function addTask() {
 //     }
     
 // }
-  //  document.addEventListener('DOMContentLoaded', displayTasks);
+// document.addEventListener('DOMContentLoaded', displayTasks);
 
 //Notes
 const notesInput = document.getElementById("notesInput");
@@ -103,3 +103,5 @@ function addNotes() {
 //         myTextArea.value = savedContent;
 //     }
 // })
+
+greeting();

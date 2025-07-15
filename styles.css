@@ -94,6 +94,7 @@ button {
     background-attachment: fixed;
  }
 
+ #task-btn,
  #note-btn,
  #enterDashboard,
  #greeting,
@@ -125,7 +126,7 @@ nav ul li {
 }
 
 nav a:hover {
-    color: darkgreen;
+    color: olivedrab;
 }
 
 /* to do list */
