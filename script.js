@@ -84,7 +84,7 @@ function renderTasks() {
 
 //Notes
 //Create Note Button
-const addNoteBtn = document.getElementById("note-btn");
+const addNoteBtn = document.getElementById("noteBtn");
 
 // Add a div with a textarea for stickyNote
 let textarea = document.createElement("textarea");

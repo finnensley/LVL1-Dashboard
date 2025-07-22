@@ -1,32 +1,51 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tasks</title>
+    <title>Notes</title>
     <link rel="stylesheet" href="styles.css" />
-
 </head>
+<style>
+    textarea {
+        /* height: 20vh;
+        width: 50vh; */
+        height: auto;
+        width: auto;
+        border-radius: 10px;
+        background-color: lightgoldenrodyellow;
+        padding: 20px;
+        color: darkolivegreen;
+        background-blend-mode: luminosity; 
+
+    }   
+
+    textarea:hover {
+        
+    }
+</style>
 <body>
-<section class="tasksTest">
-     <h1>My Dashboard</h1>
+<section class="notes">
+    <div id="notesContainer">
+    <h1>My Dashboard</h1>
     <nav>
-        <ul>
-            <li><a href="index.html">Greeting</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="weather.html">Weather</a></li>
-            <li><a href="tasks.html">Tasks</a></li>
-            <li><a href="notes.html">Notes</a></li>
-        </ul>
+        <a href="index.html">Greeting</a>
+        <a href="about.html">About</a>
+        <a href="weather.html">Weather</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="notes.html">Notes</a>
     </nav>
-    <div class="tasklist">
-        <h1>Todo List</h1>
-        <input type="text" id="taskInput" placeholder="Enter a task" />
-        <button id="task-btn">add Task</button>
-        <ul id="taskList"></ul> 
-         <script src="scripttest.js"></script>
+    <br> 
+    <div id="addNote" >
+    <button id="noteBtn" class="addNote">Create Note</button>
+    </div>
+    <br>
+    <div id="textarea"></div>
     </div>
 </section>
+  <script src="script.js"></script>
 </body>
 </html>
+
+
+<!-- "https://api.open-meteo.com/v1/forecast?latitude=39.7392&longitude=-104.9847&hourly=temperature_2m&current=temperature_2m,rain,snowfall&timezone=America%2FDenver&temperature_unit=fahrenheit -->
