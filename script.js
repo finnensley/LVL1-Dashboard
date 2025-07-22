@@ -31,46 +31,56 @@ greeting(hour);
 
 //Tasks - Todo List
 const taskInput = document.getElementById("taskInput");
+const taskBtn = document.getElementById("taskBtn"); 
 const taskList = document.getElementById("taskList");
 
+// Load tasks from localStorage or start with empty array
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-function addTask() {
+// Render tasks on page load
+renderTasks();
+
+ taskBtn.addEventListener("click", () => {
    const taskText = taskInput.value.trim();
+   //if the input is empty, do nothing. This prevents adding blank tasks
    if (taskText === "") return;
 
-   const taskItem = document.createElement("li");
-   taskItem.textContent = taskText;
-   taskItem.classList.add("list");
-
-   //local storage - not working
-  //  function saveTasks() {
-  //  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  //  tasks.push(tasks.value);
-   
-  //  localStorage.setItem("tasks", JSON.stringify(tasks));
-  //  loadTasks();
-  //  taskList.value = "";
-  //  }
-
-//remove task
-    taskItem.addEventListener("click", function() {
-    taskList.removeChild(taskItem);
+  //adds the new task to tasks array
+   tasks.push(taskText);
+  //saves the updated tasks array to localStorage
+   localStorage.setItem("tasks", JSON.stringify(tasks));
+  // calling updates teh displayed list of tasks
+   renderTasks();
+  //clears the input box for the next task
+   taskInput.value = "";
 });
 
-//add items to list
+//Render tasks function, defines the function that displays all tasks in the list
+function renderTasks() {
+  //clears any existing tasks from the list in the DOM
+  taskList.innerHTML = "";
+  //loops through each task in the tasks array, providing both task and it's index
+  tasks.forEach((task, index) => {
+    //skips rendering if empty string, keeps blank tasks from showing
+    if (task.trim() === "") return; 
+    const taskItem = document.createElement("li");
+    taskItem.textContent = task;
+    taskItem.classList.add("list");
+
+
+//Remove task on click from array and updates localStorage with new array, calls renderTasks() again to update the displayed list
+    taskItem.addEventListener("click", function() {
+      tasks.splice(index, 1);
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+      renderTasks();
+  });
+
+//adds the list item to the task list in the DOM
     taskList.appendChild(taskItem);
-    taskInput.value = "";
-};
-
- // displaying local storage: not working
-//  function loadTasks() {
-//     const saved = JSON.parse(localStorage.getItem("taskItem") || "[]"); // Parse saved JSON string
-//     saved.forEach((task) => {
-//         createNote(task.id, task.content, task.x, task.y);
-//     });
-// }
-
-//document.addEventListener('DOMContentLoaded', loadTasks);
+//ends the loop through all tasks
+ });
+// ends the function
+}
 
 //Notes
 //Create Note Button
