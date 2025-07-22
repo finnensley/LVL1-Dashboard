@@ -3,26 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notes</title>
+    <title>NotesTest</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
 <style>
     textarea {
-        /* height: 20vh;
-        width: 50vh; */
         height: auto;
         width: auto;
         border-radius: 10px;
-        background-color: lightgoldenrodyellow;
+        background-color: darkolivegreen;
         padding: 20px;
-        color: darkolivegreen;
+        color: lightgoldenrodyellow;
         background-blend-mode: luminosity; 
-
+        /* margin: 10px; */
+        font-size: medium;
     }   
 
-    textarea:hover {
-        
-    }
+
+   .noteDiv {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    border-radius: 10px;
+    background: transparent;
+    color: whitesmoke;
+ }  
+
+
+ .noteDiv.light {
+  background: lightgoldenrodyellow;
+  color: darkolivegreen;
+ }
+
+.noteDiv .note {
+  width: 200px;
+  height: 100px;
+  background: inherit;
+  color: inherit;
+  border-radius: 10px;
+  padding: 10px;
+  
+}
+
+
+ .delete-note {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 2;
+  background-color: inherit;
+  border-radius: 10px;
+  border: none;
+}
+
+.toggle-note {
+  position: absolute;
+  top: 40px;
+  right: 15px;
+  z-index: 2;
+  background-color: inherit;
+  border-radius: 10px;
+  border: none;
+}
+
+.delete-note:hover {
+  font-size: 100%;
+}
+.toggle-note:hover {
+  font-size: 100%;
+}
+
 </style>
 <body>
 <section class="notes">
@@ -36,14 +86,17 @@
         <a href="notes.html">Notes</a>
     </nav>
     <br> 
+        <button id="noteBtn" class="addNote">Create Note</button>
+    <br>
     <div id="addNote" >
-    <button id="noteBtn" class="addNote">Create Note</button>
     </div>
     <br>
-    <div id="textarea"></div>
+    <div id="textarea">
+    <!-- add textarea on click here -->
+     <!-- <textarea id="note" class="note" placeholder="Notes: "></textarea> -->
     </div>
 </section>
-  <script src="script.js"></script>
+  <script src="scripttest.js"></script>
 </body>
 </html>
 
