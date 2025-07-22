@@ -8,8 +8,10 @@
 </head>
 <style>
     textarea {
-        height: 20vh;
-        width: 50vh;
+        /* height: 20vh;
+        width: 50vh; */
+        height: auto;
+        width: auto;
         border-radius: 10px;
         background-color: lightgoldenrodyellow;
         padding: 20px;
@@ -24,6 +26,7 @@
 </style>
 <body>
 <section class="notes">
+    <div id="notesContainer">
     <h1>My Dashboard</h1>
     <nav>
         <a href="index.html">Greeting</a>
@@ -32,20 +35,14 @@
         <a href="tasks.html">Tasks</a>
         <a href="notes.html">Notes</a>
     </nav>
-    <div class="noteslist">
-    <p></p>
-     <!-- <input type="" id="notesInput" placeholder="thoughts?"/> -->
-     <button id="note-btn">Create Note</button>
-    <div class="textbox">
-        <!-- <textarea id="myTextArea">Notes:</textarea> -->
+    <br> 
+    <div id="addNote" >
+    <button id="note-btn" class="addNote">Create Note</button>
     </div>
     <br>
-    <!-- <button id="notes-btn" onclick="addNotes()">add Notes</button>
-    <div class="notesList">
-    <ul id="notesList"></ul>
-    </div> -->
-     <script src="script.js"></script>
+    <div id="textarea"></div>
     </div>
 </section>
+  <script src="script.js"></script>
 </body>
 </html>

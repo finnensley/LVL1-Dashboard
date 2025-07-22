@@ -5,6 +5,7 @@ let hour = currentDate.getHours();
 const currentHour = document.getElementById("current-hour");
 
 function greeting() {
+    if (!currentHour) return; // only runs if element exists
     const morningGreeting = document.createElement("p");
     const afternoonGreeting = document.createElement("p");
     const eveningGreeting = document.createElement("p");
@@ -25,9 +26,7 @@ function greeting() {
     }
 }
 
-//  Call greeting(); at the end
-//  console.log(new Date);
-
+greeting(hour);
 
 
 //Tasks - Todo List
@@ -43,13 +42,15 @@ function addTask() {
    taskItem.textContent = taskText;
    taskItem.classList.add("list");
 
-//    //local storage - not working
-//    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-//    tasks.push(tasks.value);
-//    localStorage.setItem("tasks", JSON.stringify(tasks));
-//    displayTasks();
-//    taskList.value = "";
-
+   //local storage - not working
+  //  function saveTasks() {
+  //  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  //  tasks.push(tasks.value);
+   
+  //  localStorage.setItem("tasks", JSON.stringify(tasks));
+  //  loadTasks();
+  //  taskList.value = "";
+  //  }
 
 //remove task
     taskItem.addEventListener("click", function() {
@@ -60,48 +61,51 @@ function addTask() {
     taskList.appendChild(taskItem);
     taskInput.value = "";
 };
-  // displaying local storage: not working
-//    function displayTasks() {
-//     //display new array tasks converted to strings, setItem created this now how do I view it
-//     if (savedTasks != "") {
-        
-//     }
-    
+
+ // displaying local storage: not working
+//  function loadTasks() {
+//     const saved = JSON.parse(localStorage.getItem("taskItem") || "[]"); // Parse saved JSON string
+//     saved.forEach((task) => {
+//         createNote(task.id, task.content, task.x, task.y);
+//     });
 // }
-// document.addEventListener('DOMContentLoaded', displayTasks);
+
+//document.addEventListener('DOMContentLoaded', loadTasks);
 
 //Notes
-const notesInput = document.getElementById("notesInput");
-const notesList = document.getElementById("notesList");
+//Create Note Button
+const addNoteBtn = document.getElementById("note-btn");
 
-function addNotes() {
-   const notesText = notesInput.value.trim();
-   if (notesText === "") return;
+// Add a div with a textarea for stickyNote
+let textarea = document.createElement("textarea");
+textarea.className = "textarea";
 
-   const notesItem = document.createElement("li");
-   notesItem.textContent = notesText;
-   notesItem.classList.add("notesList");
+function createNote() {
 
-   notesItem.addEventListener("click", function() {
-    notesList.removeChild(notesItem);
-})
-
-    notesList.appendChild(notesItem);
-
-    notesInput.value = "";
+  saveNotes();
 }
-//example of saving text in notes on refresh
-// const myTextArea = document.querySelector('#myTextArea');
+ 
+    function saveNotes() {
+    const notes = Array.from(document.querySelectorAll(".note")).map(note => ({
+        content: note.value,
+        x: parseInt(note.style.left),
+        y: parseInt(note.style.top),
+    }));
+    localStorage.setItem("notes", JSON.stringify(notes)); // Store as a JSON string
+}
 
-// myTextArea.addEventListener("keyup", function() {
-//     localStorage.setItem('myTextAreaContent', myTextArea.value);
-// });
 
-// window.addEventListener('DOMContentLoaded', fuction() {
-//     const savedContent = localStorage.getItem('myTextAreaContent');
-//     if (saveContent){
-//         myTextArea.value = savedContent;
-//     }
-// })
+function loadNotes() {
+    const saved = JSON.parse(localStorage.getItem("notes") || "[]"); // Parse saved JSON string
+    saved.forEach((note) => {
+        createNote(note.id, note.content, note.x, note.y);
+    });
+}
 
-greeting();
+// Add a new note when the "Add Note" button is clicked
+addNoteBtn.addEventListener("click", () => 
+createNote());
+
+
+// Load notes when the page loads
+window.onload = () => loadNotes();
