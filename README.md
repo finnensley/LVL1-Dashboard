@@ -8,3 +8,7 @@
 ### Notes section (Local Storage); localStorage.setItems("key", "value")  console.log(localStorage.getItem("key"))
 ### Navigation between sections (home, weather, tasks, notes)
 ### Responsive design
+
+# Challenge:
+## Add username input for greeting page
+## Add @media for different devices

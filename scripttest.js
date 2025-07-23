@@ -1,72 +1,61 @@
-const noteBtn = document.getElementById("noteBtn");
-const addNote = document.getElementById("addNote");
 
-let noteCards = JSON.parse(localStorage.getItem("noteCards")) || [];
-
-//Renders notes on page load
-renderNoteCards();
-
-noteBtn.addEventListener("click", () => {
-  noteCards.push({ text: "", theme: "light" });//Adds a blank note
-  localStorage.setItem("noteCards", JSON.stringify(noteCards));
-
-  renderNoteCards();
+const api = "9818f918e9d02e8a934463e2e7602786";
+     
+const btn = document.getElementById("btn");
+  btn.addEventListener("click", () => {
+    const city = document.getElementById("city").value;
+    if (city) {
+      fetchWeather(city);
+    } else {
+      displayError("Please enter a city name.");
+    }
 });
 
-function renderNoteCards() {
-  addNote.innerHTML = "";//clear the previous notes
-  noteCards.forEach((noteObj, index) => {
-    const noteDiv = document.createElement("div");
-    noteDiv.classList.add("noteDiv")
-    if (noteObj.theme === "light") {
-      noteDiv.classList.add("light");
-    } else {
-      noteDiv.classList.remove("light");
-    }
+ function fetchWeather(city) {
+    const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city},us&appid=${api}&units=metric`;
 
-    const textarea = document.createElement("textarea");
-    textarea.classList.add("note");
-    textarea.value = noteObj.text;
-    textarea.placeholder = "Notes: ";
-
-
-    //Save changes to localStorage when user edits notes
-    textarea.addEventListener("input", () => {
-      noteCards[index].text = textarea.value;
-      localStorage.setItem("noteCards", JSON.stringify(noteCards));
-    });
-
-    //Delete button for each note
-    const deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "🗑️";
-    deleteBtn.classList.add("delete-note");
-    deleteBtn.addEventListener("click", () => {
-      noteCards.splice(index, 1);
-      localStorage.setItem("noteCards", JSON.stringify(noteCards));
-      renderNoteCards();
-    });
-  
-    const toggleBtn = document.createElement("button");
-    toggleBtn.textContent = "💡";
-    toggleBtn.classList.add("toggle-note");
-
-    toggleBtn.addEventListener("click", () => {
-      //toggle theme in object and DOM
-      noteCards[index].theme = noteObj.theme === "dark" ? "light": "dark";
-      localStorage.setItem("noteCards", JSON.stringify(noteCards));
-      renderNoteCards();
+    fetch(apiURL)
+      .then(response => {
+        if(!response.ok) {
+          throw new Error ("City not found");
+       }
+      //console.log(response.json());
+      return response.json();
+    })
+      .then(data => displayWeather(data))
+      .catch(error => displayError(error.message));
       
-  });
-  
-    noteDiv.appendChild(textarea);
-    noteDiv.appendChild(deleteBtn);
-    noteDiv.appendChild(toggleBtn);
-    addNote.appendChild(noteDiv);
-  });
-}
- 
+  }
 
-//add ability to remove note on click
-//add nice hover interaction
-//keep note in localStorage
-//style note a bit more old school
+  function displayWeather(data) {
+    document.getElementById("error-message").textContent = "";
+    document.getElementById("city-name").textContent = `Weather in ${data.name}`;
+    document.getElementById("temperature").textContent = `Current Temperature: ${data.main.temp} C`;
+    document.getElementById("feels-like").textContent = `Feels like: ${data.main.feels_like} C`;
+    document.getElementById("description").textContent = `Condition: ${data.weather[0].description}`;
+    document.getElementById("humidity").textContent = `Humidity: ${data.main.humidity}%`;
+  }
+
+  function displayError(message) {
+    document.getElementById("error-message").textContent = message;
+    document.getElementById("city-name").textContent = "";
+    document.getElementById("temperature").textContent = "";
+    document.getElementById("description").textContent = "";
+    document.getElementById("humidity").textContent = "";
+  }
+
+
+
+    //  async function fetchUser() {
+    //     try {
+    //         const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=Colorado,us&APPID=9818f918e9d02e8a934463e2e7602786");
+    //         const weather = await response.json();
+    //         console.log("weather = ", weather);
+    //     } catch (error) {
+    //         console.error("Error fetching user:", error);// error message didn't display ?
+    //     };
+    // }
+
+    // fetchUser();
+
+ 

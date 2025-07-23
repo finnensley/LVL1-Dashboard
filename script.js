@@ -153,3 +153,5 @@ function renderNoteCards() {
     addNote.appendChild(noteDiv);
   });
 };
+
+//Weather
