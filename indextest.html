@@ -15,8 +15,8 @@
         padding: 20px;
         color: lightgoldenrodyellow;
         background-blend-mode: luminosity; 
-        /* margin: 10px; */
         font-size: medium;
+        
     }   
 
 
@@ -27,12 +27,13 @@
     border-radius: 10px;
     background: transparent;
     color: whitesmoke;
+    text-shadow: 10px;
  }  
 
 
  .noteDiv.light {
-  background: lightgoldenrodyellow;
-  color: darkolivegreen;
+  background: darkolivegreen;
+  color: lightgoldenrodyellow;
  }
 
 .noteDiv .note {
@@ -45,6 +46,11 @@
   
 }
 
+.note:hover {
+  font-size: large;
+  box-shadow: 2px 2px 20px rgba( 0, 0, 0, 0.8);
+
+}
 
  .delete-note {
   position: absolute;
@@ -91,10 +97,6 @@
     <div id="addNote" >
     </div>
     <br>
-    <div id="textarea">
-    <!-- add textarea on click here -->
-     <!-- <textarea id="note" class="note" placeholder="Notes: "></textarea> -->
-    </div>
 </section>
   <script src="scripttest.js"></script>
 </body>

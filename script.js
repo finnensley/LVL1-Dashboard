@@ -38,9 +38,9 @@ const taskList = document.getElementById("taskList");
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 // Render tasks on page load
-renderTasks();
-
- taskBtn.addEventListener("click", () => {
+if (taskBtn && taskInput && taskList) { // add this to avoid loading error on other pages
+  renderTasks();
+  taskBtn.addEventListener("click", () => {
    const taskText = taskInput.value.trim();
    //if the input is empty, do nothing. This prevents adding blank tasks
    if (taskText === "") return;
@@ -54,9 +54,10 @@ renderTasks();
   //clears the input box for the next task
    taskInput.value = "";
 });
-
+}
 //Render tasks function, defines the function that displays all tasks in the list
 function renderTasks() {
+  if (!taskList) return // Prevents error if taskList doesn't exist
   //clears any existing tasks from the list in the DOM
   taskList.innerHTML = "";
   //loops through each task in the tasks array, providing both task and it's index
@@ -80,42 +81,75 @@ function renderTasks() {
 //ends the loop through all tasks
  });
 // ends the function
-}
+};
 
 //Notes
-//Create Note Button
-// const addNoteBtn = document.getElementById("noteBtn");
+const noteBtn = document.getElementById("noteBtn");
+const addNote = document.getElementById("addNote");
 
-// // Add a div with a textarea for stickyNote
-// let textarea = document.createElement("textarea");
-// textarea.className = "textarea";
+let noteCards = JSON.parse(localStorage.getItem("noteCards")) || [];
 
-// function createNote() {
+//Renders notes on page load
+if (addNote && noteBtn) { // add this to keep from getting an error when loading 
+renderNoteCards();
 
-//   saveNotes();
-// }
- 
-//     function saveNotes() {
-//     const notes = Array.from(document.querySelectorAll(".note")).map(note => ({
-//         content: note.value,
-//         x: parseInt(note.style.left),
-//         y: parseInt(note.style.top),
-//     }));
-//     localStorage.setItem("notes", JSON.stringify(notes)); // Store as a JSON string
-// }
+noteBtn.addEventListener("click", () => {
+  // console.log("Button clicked!");
+  noteCards.push({ text: "", theme: "light" });//Adds a blank note
+  localStorage.setItem("noteCards", JSON.stringify(noteCards));
+
+  renderNoteCards();
+});
+}
+
+function renderNoteCards() {
+  addNote.innerHTML = "";//clear the previous notes
+  noteCards.forEach((noteObj, index) => {
+    const noteDiv = document.createElement("div");
+    noteDiv.classList.add("noteDiv")
+    if (noteObj.theme === "light") {
+      noteDiv.classList.add("light");
+    } else {
+      noteDiv.classList.remove("light");
+    };
+
+    const textarea = document.createElement("textarea");
+    textarea.classList.add("note");
+    textarea.value = noteObj.text;
+    textarea.placeholder = "Notes: ";
 
 
-// function loadNotes() {
-//     const saved = JSON.parse(localStorage.getItem("notes") || "[]"); // Parse saved JSON string
-//     saved.forEach((note) => {
-//         createNote(note.id, note.content, note.x, note.y);
-//     });
-// }
+    //Save changes to localStorage when user edits notes
+    textarea.addEventListener("input", () => {
+      noteCards[index].text = textarea.value;
+      localStorage.setItem("noteCards", JSON.stringify(noteCards));
+    });
 
-// // Add a new note when the "Add Note" button is clicked
-// addNoteBtn.addEventListener("click", () => 
-// createNote());
+    //Delete button for each note
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "🗑️";
+    deleteBtn.classList.add("delete-note");
+    deleteBtn.addEventListener("click", () => {
+      noteCards.splice(index, 1);
+      localStorage.setItem("noteCards", JSON.stringify(noteCards));
+      renderNoteCards();
+    });
+  
+    const toggleBtn = document.createElement("button");
+    toggleBtn.textContent = "💡";
+    toggleBtn.classList.add("toggle-note");
 
-
-// // Load notes when the page loads
-// window.onload = () => loadNotes();
+    toggleBtn.addEventListener("click", () => {
+      //toggle theme in object and DOM
+      noteCards[index].theme = noteObj.theme === "dark" ? "light": "dark";
+      localStorage.setItem("noteCards", JSON.stringify(noteCards));
+      renderNoteCards();
+      
+  });
+  
+    noteDiv.appendChild(textarea);
+    noteDiv.appendChild(deleteBtn);
+    noteDiv.appendChild(toggleBtn);
+    addNote.appendChild(noteDiv);
+  });
+};

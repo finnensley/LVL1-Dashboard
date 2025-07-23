@@ -8,21 +8,74 @@
 </head>
 <style>
     textarea {
-        /* height: 20vh;
-        width: 50vh; */
         height: auto;
         width: auto;
         border-radius: 10px;
-        background-color: lightgoldenrodyellow;
+        background-color: darkolivegreen;
         padding: 20px;
-        color: darkolivegreen;
+        color: lightgoldenrodyellow;
         background-blend-mode: luminosity; 
-
+        font-size: medium;
     }   
+   .noteDiv {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    border-radius: 10px;
+    background: transparent;
+    color: whitesmoke;
+    text-shadow: 10px;
+ }  
 
-    textarea:hover {
-        
-    }
+
+ .noteDiv.light {
+  background: darkolivegreen;
+  color: lightgoldenrodyellow;
+ }
+
+.noteDiv .note {
+  width: 200px;
+  height: 100px;
+  background: inherit;
+  color: inherit;
+  border-radius: 10px;
+  padding: 10px;
+  
+}
+
+.note:hover {
+  font-size: large;
+  box-shadow: 2px 2px 20px rgba( 0, 0, 0, 0.8);
+
+}
+
+ .delete-note {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 2;
+  background-color: inherit;
+  border-radius: 10px;
+  border: none;
+}
+
+.toggle-note {
+  position: absolute;
+  top: 40px;
+  right: 15px;
+  z-index: 2;
+  background-color: inherit;
+  border-radius: 10px;
+  border: none;
+}
+
+.delete-note:hover {
+  font-size: 100%;
+}
+.toggle-note:hover {
+  font-size: 100%;
+}
+
 </style>
 <body>
 <section class="notes">
@@ -36,12 +89,11 @@
         <a href="notes.html">Notes</a>
     </nav>
     <br> 
-    <div id="addNote" >
-    <button id="noteBtn" class="addNote">Create Note</button>
+        <button id="noteBtn" class="addNote">Create Note</button>
+    <br>
+    <div id="addNote">
     </div>
     <br>
-    <div id="textarea"></div>
-    </div>
 </section>
   <script src="script.js"></script>
 </body>
