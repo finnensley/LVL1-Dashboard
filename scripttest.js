@@ -1,4 +1,5 @@
 
+const localApiURL = "https://api.openweathermap.org/data/2.5/weather?q=Colorado,us&APPID=9818f918e9d02e8a934463e2e7602786"
 const api = "9818f918e9d02e8a934463e2e7602786";
      
 const btn = document.getElementById("btn");
@@ -12,7 +13,7 @@ const btn = document.getElementById("btn");
 });
 
  function fetchWeather(city) {
-    const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city},us&appid=${api}&units=metric`;
+    const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}&units=metric`;
 
     fetch(apiURL)
       .then(response => {
@@ -40,22 +41,62 @@ const btn = document.getElementById("btn");
     document.getElementById("error-message").textContent = message;
     document.getElementById("city-name").textContent = "";
     document.getElementById("temperature").textContent = "";
+    document.getElementById("feels-like").textContent = "";
     document.getElementById("description").textContent = "";
     document.getElementById("humidity").textContent = "";
   }
+//Challenges
+//add Weather Icons: Use weather icons from the API response.
+//add Styling
+//add forecast: show a 5-day weather forecast
+
+//add Geolocation: Automatically detect the user's location and display the weather.
+//  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+
+ function successCallback(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    //use these coordinates to fetch weather data
+    fetchWeatherByCoordinates(latitude, longitude);
+ }
+
+    function errorCallback(error) {
+        switch(error.code) {
+            case error.PERMISSION_DENIED:
+                console.error("User denied the request for Geolocation.");
+                // Optionally, prompt the user to manually enter a location
+                break;
+            case error.POSITION_UNAVAILABLE:
+                console.error("Location information is unavailable.");
+                break;
+            case error.TIMEOUT:
+                console.error("The request to get user location timed out.");
+                break;
+            case error.UNKNOWN_ERROR:
+                console.error("An unknown error occurred.");
+                break;
+        }
+    }
 
 
+  async function fetchWeatherByCoordinates(latitude, longitude) {
+    try {
+         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&APPID=${api}`);
+         const weather = await response.json();
+         displayWeather(weather);
+         //console.log("weather = ", weather);
+    } catch (error) {
+         console.error("Error fetching weather data:", error);
+         displayError("Could not fetch local weather");
+    };
+  }
 
-    //  async function fetchUser() {
-    //     try {
-    //         const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=Colorado,us&APPID=9818f918e9d02e8a934463e2e7602786");
-    //         const weather = await response.json();
-    //         console.log("weather = ", weather);
-    //     } catch (error) {
-    //         console.error("Error fetching user:", error);// error message didn't display ?
-    //     };
-    // }
-
-    // fetchUser();
+    
+   const localBtn = document.getElementById("localBtn");
+   if (localBtn) {
+    localBtn.addEventListener("click", () => {
+        navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+   });
+  }
 
  
