@@ -12,3 +12,4 @@
 # Challenge:
 ## Add username input for greeting page
 ## Add @media for different devices
+## Fix Notecards: trashcan/light is infront of text. Use CSS positioning? 

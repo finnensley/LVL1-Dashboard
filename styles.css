@@ -101,7 +101,9 @@ button {
  #weather,
  #notes,
  #tasks,
- #saveBtn {
+ #saveBtn,
+ #weatherBtn,
+ #localBtn {
     background: none;
     color: white;
     border-radius: 5px;
@@ -114,6 +116,10 @@ button {
     right: 20px;
     margin: 30px;
  }
+ 
+ #localBtn {
+    margin: 20px;
+ }
 
  #nameInput {
     position: fixed;
@@ -124,7 +130,8 @@ button {
     border-radius: 6px;
  }
 
- #taskInput {
+ #taskInput,
+ #cityInput {
     border-radius: 6px;
     padding: 5px;
     font-size: medium;
