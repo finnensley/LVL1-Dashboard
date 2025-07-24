@@ -13,12 +13,29 @@
     text-align: center;
     margin: 50px;
     padding: 20px;
-    font-size: smaller;
+    font-size: medium;
 }
 
 .widget:hover {
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    box-shadow: 2px 2px 10px rgba(2, 2, 2, 0.8);
+    font-size: larger;
 }
+
+/* button {
+  background-color: lightgoldenrodyellow;
+  border-radius: 6px;
+  border: none;
+} */
+
+/* #temperature,
+#feels-like, 
+#description, 
+#humidity {
+  border: 2px 2px 2px 2px;
+  border-radius: 6px;
+  box-shadow: 2px 2px 2px 2px;
+  padding: 10px;
+} */
 
 
 </style>
@@ -37,6 +54,7 @@
       <div>
         <input type="text" id="city" placeholder="Enter city">
         <button id="btn">Get Weather</button>
+        <br>
         <button id="localBtn">Your local weather</button>
         <p id="error-message"></p>
         <h2 id="city-name"></h2>

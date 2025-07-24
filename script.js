@@ -28,6 +28,22 @@ function greeting() {
 
 greeting(hour);
 
+const input = document.getElementById("nameInput");
+const saveBtn = document.getElementById("saveBtn");
+const usersname = document.getElementById("userDisplay");
+
+const savedName = localStorage.getItem("username");
+if (savedName && usersname) { // added && username to ensure code only runs if elements exist, prevent errors on other pages
+  usersname.textContent = `Greetings ${savedName}`;
+}
+
+if (saveBtn && input && usersname) {
+saveBtn.addEventListener("click", () => {
+  const getValue = input.value;
+  localStorage.setItem("username", getValue);
+  usersname.textContent = `Greetings ${getValue}`;
+});
+}
 
 //Tasks - Todo List
 const taskInput = document.getElementById("taskInput");

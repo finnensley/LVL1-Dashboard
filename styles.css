@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    font-size: larger;
 }
 
 .greeting {
@@ -28,7 +29,6 @@ body {
     font-size: larger;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
-
 
 button {
     cursor: pointer;
@@ -94,16 +94,40 @@ button {
     background-attachment: fixed;
  }
 
- #task-btn,
- #note-btn,
+ #taskBtn,
+ #noteBtn,
  #enterDashboard,
  #greeting,
  #weather,
  #notes,
- #tasks {
+ #tasks,
+ #saveBtn {
     background: none;
     color: white;
     border-radius: 5px;
+    font-size: large;
+ }
+
+ #saveBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    margin: 30px;
+ }
+
+ #nameInput {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    margin: 10px;
+    font-size: large;
+    border-radius: 6px;
+ }
+
+ #taskInput {
+    border-radius: 6px;
+    padding: 5px;
+    font-size: medium;
  }
 
 nav ul {
@@ -136,7 +160,7 @@ nav a:hover {
 }
 
 .list {
-    color: burlywood;
+    color: darkolivegreen;
     cursor: pointer; 
     padding: 2px;
     background: lightgoldenrodyellow;
@@ -147,6 +171,7 @@ nav a:hover {
 
 .list:hover {
      background: darkolivegreen;
+     color: burlywood;
 }
 
 .notesList {

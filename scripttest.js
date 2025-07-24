@@ -46,12 +46,12 @@ const btn = document.getElementById("btn");
     document.getElementById("humidity").textContent = "";
   }
 //Challenges
+// F as well as C
 //add Weather Icons: Use weather icons from the API response.
 //add Styling
 //add forecast: show a 5-day weather forecast
 
 //add Geolocation: Automatically detect the user's location and display the weather.
-//  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
  function successCallback(position) {
     const latitude = position.coords.latitude;
@@ -60,23 +60,23 @@ const btn = document.getElementById("btn");
     fetchWeatherByCoordinates(latitude, longitude);
  }
 
-    function errorCallback(error) {
-        switch(error.code) {
-            case error.PERMISSION_DENIED:
-                console.error("User denied the request for Geolocation.");
-                // Optionally, prompt the user to manually enter a location
-                break;
-            case error.POSITION_UNAVAILABLE:
-                console.error("Location information is unavailable.");
-                break;
-            case error.TIMEOUT:
-                console.error("The request to get user location timed out.");
-                break;
-            case error.UNKNOWN_ERROR:
-                console.error("An unknown error occurred.");
-                break;
-        }
-    }
+  function errorCallback(error) {
+      switch(error.code) {
+         case error.PERMISSION_DENIED:
+             console.error("User denied the request for Geolocation.");
+            // Optionally, prompt the user to manually enter a location
+              break;
+         case error.POSITION_UNAVAILABLE:
+             console.error("Location information is unavailable.");
+              break;
+          case error.TIMEOUT:
+              console.error("The request to get user location timed out.");
+              break;
+          case error.UNKNOWN_ERROR:
+              console.error("An unknown error occurred.");
+              break;
+      }
+  }
 
 
   async function fetchWeatherByCoordinates(latitude, longitude) {
