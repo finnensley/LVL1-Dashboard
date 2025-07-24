@@ -33,8 +33,8 @@ body {
 button {
     cursor: pointer;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-
 }
+
 
 
 .about {
@@ -121,6 +121,7 @@ button {
     margin: 20px;
  }
 
+
  #nameInput {
     position: fixed;
     top: 10px;
@@ -148,7 +149,8 @@ nav ul {
 nav ul li {
     display: flex;
 }
- nav a {
+ 
+nav a {
     color: white;
     text-decoration: none;
     padding: 10px;
