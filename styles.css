@@ -158,6 +158,7 @@ nav ul li {
 
 nav a:hover {
     color: olivedrab;
+    font-size: larger;
 }
 
 /* to do list */
