@@ -10,6 +10,6 @@
 ### Responsive design
 
 # Challenge:
-## Add username input for greeting page
+## Add light/dark theme to the top of each page to take the background out to white with black text ??
 ## Add @media for different devices
 ## Fix Notecards: trashcan/light is infront of text. Use CSS positioning? 

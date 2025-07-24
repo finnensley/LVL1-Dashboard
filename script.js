@@ -217,11 +217,8 @@ const btn = document.getElementById("weatherBtn");
     document.getElementById("description").textContent = "";
     document.getElementById("humidity").textContent = "";
   };
-//Challenges
-//add Weather Icons: Use weather icons from the API response.
-//add forecast: show a 5-day weather forecast
 
-//add Geolocation: Automatically detect the user's location and display the weather.
+//Display weather for the user's location
 
  function successCallback(position) {
     const latitude = position.coords.latitude;
