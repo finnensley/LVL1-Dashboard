@@ -19,6 +19,7 @@ body {
     background-attachment: fixed;
 }
 
+
 .greeting h2 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 } 
@@ -103,7 +104,8 @@ button {
  #tasks,
  #saveBtn,
  #weatherBtn,
- #localBtn {
+ #localBtn,
+ #toggleModeBtn {
     background: none;
     color: white;
     border-radius: 5px;
@@ -113,6 +115,13 @@ button {
  #saveBtn {
     position: fixed;
     top: 20px;
+    right: 20px;
+    margin: 30px;
+ }
+
+ #toggleModeBtn {
+    position: fixed;
+    top: 50px;
     right: 20px;
     margin: 30px;
  }
@@ -195,3 +204,44 @@ nav a:hover {
 @media (){
  /* add font-size */
 }
+
+/*  Light MODE: Styles applied when body has class "light" */
+body.light .greeting, 
+body.light #enterDashboard, 
+body.light #toggleModeBtn,
+body.light #saveBtn,
+body.light .about,
+body.light #greeting,
+body.light #weather,
+body.light #tasks,
+body.light #notes,
+body.light .weather,
+body.light #weatherBtn,
+body.light #localBtn
+body.light nav a,
+body.light nav a:hover
+{
+  background-color: lightgray; 
+  color: black;
+  background-image: none;
+}
+
+body.light .widget {
+    background-color: rgb(168, 168, 168);
+}
+
+/* Toggle Button (Light Mode) */
+/* body.light #toggleModeBtn {
+  background-color: black; 
+  color: whitesmoke;  
+  
+} */
+
+/* .light  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+} */

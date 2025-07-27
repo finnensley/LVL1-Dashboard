@@ -9,11 +9,7 @@ function greeting() {
     const morningGreeting = document.createElement("p");
     const afternoonGreeting = document.createElement("p");
     const eveningGreeting = document.createElement("p");
-    //not sure if I need these classes for styling 
-    morningGreeting.className = "morning";
-    afternoonGreeting.className = "afternoon";
-    eveningGreeting.className = "evening";
-
+   
     if (hour < 12){
       currentHour.textContent = "Good Morning!";
       document.body.appendChild(morningGreeting);
@@ -28,6 +24,7 @@ function greeting() {
 
 greeting(hour);
 
+//Get name input to display a different user's name
 const input = document.getElementById("nameInput");
 const saveBtn = document.getElementById("saveBtn");
 const usersname = document.getElementById("userDisplay");
@@ -65,7 +62,7 @@ if (taskBtn && taskInput && taskList) { // add this to avoid loading error on ot
    tasks.push(taskText);
   //saves the updated tasks array to localStorage
    localStorage.setItem("tasks", JSON.stringify(tasks));
-  // calling updates teh displayed list of tasks
+  // calling updates the displayed list of tasks
    renderTasks();
   //clears the input box for the next task
    taskInput.value = "";
@@ -173,16 +170,19 @@ function renderNoteCards() {
 //Weather
 // const localApiURL = "https://api.openweathermap.org/data/2.5/weather?q=Colorado,us&APPID=9818f918e9d02e8a934463e2e7602786"
 const apiKey = "9818f918e9d02e8a934463e2e7602786";
-     
 const btn = document.getElementById("weatherBtn");
-  btn.addEventListener("click", () => {
-    const city = document.getElementById("cityInput").value;
-    if (city) {
+
+   
+if (btn) {
+    btn.addEventListener("click", () => {
+     const city = document.getElementById("cityInput").value;
+     if (city) {
       fetchWeather(city);
-    } else {
+      } else {
       displayError("Please enter a city name.");
-    }
-});
+      }
+})
+};
 
  function fetchWeather(city) {
     const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
@@ -251,3 +251,25 @@ const btn = document.getElementById("weatherBtn");
         navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
    });
   };
+
+  //Light Mode Toggle
+  const body = document.body;
+  const lightModeBtn = document.getElementById("toggleModeBtn");
+
+  function toggleLightMode() {
+  body.classList.toggle("light");
+  const theme = body.classList.contains("light") ? "light" : "dark";
+  lightModeBtn.innerText = theme === "light" ? "Image Mode" : "Grey Mode";
+  localStorage.setItem("theme", theme);
+  };
+
+    function loadTheme() {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") {
+        body.classList.add("light");
+        lightModeBtn.innerText = "Grey Mode";
+      }
+    };
+    loadTheme();
+    lightModeBtn.addEventListener("click", toggleLightMode);
+    
