@@ -270,6 +270,6 @@ body.light .noteDiv  {
 
 
  body.light .noteDiv.light {
-  background: black;
-  color: darkgrey;
+  background: rgb(67, 65, 65);
+  color: whitesmoke;
  }
