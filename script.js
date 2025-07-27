@@ -257,17 +257,17 @@ if (btn) {
   const lightModeBtn = document.getElementById("toggleModeBtn");
 
   function toggleLightMode() {
-  body.classList.toggle("light");
-  const theme = body.classList.contains("light") ? "light" : "dark";
-  lightModeBtn.innerText = theme === "light" ? "Image Mode" : "Grey Mode";
-  localStorage.setItem("theme", theme);
+    body.classList.toggle("light");
+    const theme = body.classList.contains("light") ? "light" : "dark";
+    lightModeBtn.innerText = theme === "light" ? "Image Mode" : "Grey Mode";
+    localStorage.setItem("theme", theme);
   };
 
     function loadTheme() {
       const savedTheme = localStorage.getItem("theme");
       if (savedTheme === "light") {
         body.classList.add("light");
-        lightModeBtn.innerText = "Grey Mode";
+        lightModeBtn.innerText = "Image Mode";
       }
     };
     loadTheme();

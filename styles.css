@@ -217,9 +217,11 @@ body.light #tasks,
 body.light #notes,
 body.light .weather,
 body.light #weatherBtn,
-body.light #localBtn
-body.light nav a,
-body.light nav a:hover
+body.light #localBtn,
+body.light .tasks,
+body.light #taskBtn,
+body.light .notes,
+body.light #noteBtn
 {
   background-color: lightgray; 
   color: black;
@@ -230,18 +232,44 @@ body.light .widget {
     background-color: rgb(168, 168, 168);
 }
 
-/* Toggle Button (Light Mode) */
-/* body.light #toggleModeBtn {
-  background-color: black; 
-  color: whitesmoke;  
-  
+body.light nav a {
+    color: black;
+    background-image: none;
+}
+
+body.light .list {
+    color: black;
+    cursor: pointer; 
+    padding: 2px;
+    background-color: rgb(168, 168, 168);
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+body.light .list:hover {
+     background: black;
+     color: lightgrey;
+}
+
+/* body.light .notesList {
+    background: darkgrey;
+    display: flex;
+    margin: auto;
+    padding: 10px;
 } */
 
-/* .light  {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+body.light .noteDiv  {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    border-radius: 10px;
+    background: darkgrey;
     color: black;
-} */
+    text-shadow: 10px;
+ }  
+
+
+ body.light .noteDiv.light {
+  background: black;
+  color: darkgrey;
+ }
