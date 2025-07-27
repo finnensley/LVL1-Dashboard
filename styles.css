@@ -5,7 +5,11 @@ body {
     font-size: larger;
 }
 
-.greeting {
+.greeting,
+.about,
+.weather,
+.tasks,
+.notes {
     height: 150vh;
     display: flex;
     flex-direction: column;
@@ -13,13 +17,15 @@ body {
     align-items: center;
     text-align: center;
     color: white;
-    background-image: url(images/pexels-quang-nguyen-vinh-222549-6877707.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
+.greeting {
+    background-image: url(images/pexels-quang-nguyen-vinh-222549-6877707.jpg);
 
+}
 .greeting h2 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 } 
@@ -37,62 +43,23 @@ button {
 }
 
 
-
 .about {
-    height: 150vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    background-image: url(images/pexels-mauroignaciotorres-14111847.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-image: url(images/pexels-mauroignaciotorres-14111847.jpg); 
 }
 
 
 .tasks {
-    height: 150vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
     background-image: url(images/pexels-quang-nguyen-vinh-222549-6870970.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
 }
 
+
  .weather {
-    height: 150vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
     background-image: url(images/pexels-annaelle-quionquion-2652658-17703493.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
  }
 
+
  .notes {
-    height: 150vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
     background-image: url(images/pexels-tsvetoslav-hristov-1306654-2499862.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
  }
 
  #taskBtn,
@@ -168,7 +135,6 @@ nav a {
 }
 
 nav a:hover {
-    color: olivedrab;
     font-size: larger;
 }
 
@@ -230,6 +196,12 @@ body.light #noteBtn
 
 body.light .widget {
     background-color: rgb(168, 168, 168);
+}
+
+body.light #aboutContainer {
+    background-color: rgb(168, 168, 168);
+    padding: 20px;
+    border-radius: 20px;
 }
 
 body.light nav a {

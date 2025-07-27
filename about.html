@@ -5,35 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+        #aboutContainer button,
+        #aboutContainer p {
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
 <section class="about">
-    <!-- <h1>My Dashboard</h1> -->
-    <!-- <nav>
+    <h1>My Dashboard</h1> 
+    <nav>
         <a href="index.html">Greeting</a>
         <a href="about.html">About</a>
         <a href="weather.html">Weather</a>
         <a href="tasks.html">Tasks</a>
         <a href="notes.html">Notes</a>
-    </nav> -->
-    <section class="about">
-    <div>
-        <h2>My Dashboard</h2>
-        <h1>Features:</h1>
+    </nav>
+           <p>Features:</p>
+    <div id="aboutContainer">
+        <!-- <h2>My Dashboard</h2> -->
             <button id="greeting" onclick="window.location.href='index.html'">Greeting</button>
+            <!-- <p>Interactive greeting, including username and time of day salutation.</p> -->
             <br>
             <button id="weather" onclick="window.location.href='weather.html'">Check The Weather</button>
+            <!-- <p>Weather widget, including local and user city input option.</p>  -->
             <br>
             <button id="tasks" onclick="window.location.href='tasks.html'">Interactive Todo List</button>
+            <!-- <p>To-do list, with interactive coloring and delete options.</p> -->
             <br>
             <button id="notes" onclick="window.location.href='notes.html'">Take Notes</button>
-            <!-- <p>Check The Weather</p>
-            <p>Interactive Todo List</p>
-            <p>Take Notes</p> -->
+            <!-- <p>Keep notes, toggle the theme of each notecard. </p> -->
 
     </div>
     <button id="toggleModeBtn">Grey Mode</button>
-
 </section>
     <script src="script.js"></script>
 </body>
