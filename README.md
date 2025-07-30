@@ -17,3 +17,4 @@
 ## Play with adjusting the My Dashboard heading and nav bar to be at the top but sticky and the content in the center to scroll up/down. 
 ## Work on making grey Mode look better for the About page, tie in features to about, add more content to buttons ?? spacing ?
 ## Add a contact me form on greetings page ? 
+## Add an ease to the font being larger as scroll over nav buttons

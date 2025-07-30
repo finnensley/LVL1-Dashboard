@@ -3,28 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeatherTest</title>
+    <title>HomepageTest</title>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+        .nav {
+            position: fixed;
+            top: 20px;
+            right: 150px;
+            margin: 30px;
+        }
+    </style>
 </head>
-<style>
-.widget {
-    background-color: hwb(97 34% 28% / 0.8);
-    border-radius: 20px;
-    text-align: center;
-    margin: 50px;
-    padding: 20px;
-    font-size: medium;
-}
-
-.widget:hover {
-    box-shadow: 2px 2px 10px rgba(2, 2, 2, 0.8);
-    font-size: larger;
-}
-
-</style>
 <body>
-   <section class="weather">
-     <h1>My Dashboard</h1>
+<section class="about">
+    <div class="nav">
+    <!-- <h1>My Dashboard</h1>  -->
     <nav>
         <a href="index.html">Greeting</a>
         <a href="about.html">About</a>
@@ -32,25 +25,25 @@
         <a href="tasks.html">Tasks</a>
         <a href="notes.html">Notes</a>
     </nav>
-    <div class="widget">
-      <h1>Weather Widget</h1>
-      <div>
-        <input type="text" id="city" placeholder="Enter city">
-        <button id="btn">Get Weather</button>
-        <br>
-        <button id="localBtn">Your local weather</button>
-        <p id="error-message"></p>
-        <h2 id="city-name"></h2>
-        <p id="temperature"></p>
-        <p id="feels-like"></p>
-        <p id="description"></p>
-        <p id="humidity"></p>
     </div>
-  </div>
-  </section> 
-      <script src="scripttest.js"></script>
+           <p>Dashboard Features:</p>
+    <div id="aboutContainer">
+        <!-- <h2>My Dashboard</h2> -->
+            <button id="greeting" onclick="window.location.href='index.html'">Greeting</button>
+            <!-- <p>Interactive greeting, including username and time of day salutation.</p> -->
+            <br>
+            <button id="weather" onclick="window.location.href='weather.html'">Check The Weather</button>
+            <!-- <p>Weather widget, including local and user city input option.</p>  -->
+            <br>
+            <button id="tasks" onclick="window.location.href='tasks.html'">Interactive Todo List</button>
+            <!-- <p>To-do list, with interactive coloring and delete options.</p> -->
+            <br>
+            <button id="notes" onclick="window.location.href='notes.html'">Take Notes</button>
+            <!-- <p>Keep notes, toggle the theme of each notecard. </p> -->
+
+    </div>
+    <button id="toggleModeBtn">Grey Mode</button>
+</section>
+    <script src="script.js"></script>
 </body>
 </html>
-
-
-<!-- "https://api.open-meteo.com/v1/forecast?latitude=39.7392&longitude=-104.9847&hourly=temperature_2m&current=temperature_2m,rain,snowfall&timezone=America%2FDenver&temperature_unit=fahrenheit -->

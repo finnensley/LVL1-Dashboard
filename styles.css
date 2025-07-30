@@ -62,6 +62,13 @@ button {
     background-image: url(images/pexels-tsvetoslav-hristov-1306654-2499862.jpg);
  }
 
+.nav {
+    position: fixed;
+    top: 50px;
+    right: 150px;
+    margin: 30px;
+}
+
  #taskBtn,
  #noteBtn,
  #enterDashboard,
