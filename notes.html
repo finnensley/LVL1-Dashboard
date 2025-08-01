@@ -53,8 +53,6 @@
 
  .delete-note {
   position: absolute;
-  /* top: 15px;
-  right: 15px; */
   bottom: 15px;
   right: 15px;
   z-index: 2;
@@ -65,12 +63,10 @@
 
 .toggle-note {
   position: absolute; 
-  /* top: 40px;
-  right: 15px;  */
   bottom: 15px;
   right: 40px;
   z-index: 2;  
-  background-color: inherit; 
+  background-color: transparent;
   border-radius: 10px;
   border: none;
 }
@@ -84,26 +80,30 @@
 
 </style>
 <body>
-<section class="notes">
-    <div id="notesContainer">
-    <h1>Take Notes</h1>
+<!-- <section class="notes"> -->
+    <!-- <div id="notesContainer">
+    <h1>Take Notes</h1> -->
+    <header>
      <div class="nav">
-    <nav>
+      <nav>
         <a href="index.html">Greeting</a>
         <a href="about.html">About</a>
         <a href="weather.html">Weather</a>
         <a href="tasks.html">Tasks</a>
         <a href="notes.html">Notes</a>
-    </nav>
-    </div>
-    <br> 
-        <button id="noteBtn">Create Note</button>
-    <br>
-    <div id="addNote">
-    </div>
-    <br>
-</section>
-  <button id="toggleModeBtn">Grey Mode</button>
+      </nav>
+     </div>
+    </header>
+    <section class="notes">
+      <div id="notesContainer">
+       <h1>Take Notes</h1>
+       <button id="noteBtn">Create Note</button>
+       <br>
+       <div id="addNote">
+       </div>
+       <br>
+    </section>
+  <button id="toggleModeBtn">Light Mode</button>
   <script src="script.js"></script>
 </body>
 </html>

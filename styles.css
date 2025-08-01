@@ -97,9 +97,7 @@ button {
  #weatherBtn:hover,
  #localBtn:hover,
  #toggleModeBtn:hover {
-    
     background-color: hwb(0 91% 9% / 0.446);
-
 }
 
  #saveBtn {
@@ -153,7 +151,7 @@ nav a {
     color: white;
     text-decoration: none;
     padding: 10px;
-    font-weight: bold;
+    /* font-weight: bold; */
     transition: color 0.3s ease;
 }
 
@@ -218,6 +216,32 @@ body.light #noteBtn
   background-image: none;
 }
 
+/* move content closer to center vertically*/
+body.light .greeting,
+body.light .about,
+body.light .weather,
+body.light .tasks,
+body.light .notes {
+    height: 100vh;
+    padding: 20px;
+}
+
+body.light #enterDashboardDiv {
+    border: solid lightgrey;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 30px;
+    /* box-shadow: 2px 2px 10px rgba(2, 2, 2, 0.8); */
+}
+
+
+body.light #enterDashboardDiv:hover {
+    box-shadow: 2px 2px 10px rgba(2, 2, 2, 0.8);
+
+}
+
+
+
  body.light #taskBtn:hover,
  body.light #noteBtn:hover,
  body.light #enterDashboard:hover,
@@ -240,7 +264,8 @@ body.light .widget {
 }
 
 body.light #aboutContainer {
-    background-color: rgb(168, 168, 168);
+    /* background-color: rgb(168, 168, 168); */
+    background-color: lightgrey;
     padding: 20px;
     border-radius: 20px;
     text-align: center;
@@ -267,13 +292,27 @@ body.light #aboutContainer:hover {
    box-shadow: 2px 2px 10px rgba(2, 2, 2, 0.8);
 } 
 
+body.light header {
+    background-color: lightgrey;
+    min-height: 150px;
+    width: 100%;
+    display: block;
+    position: fixed;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+
 body.light nav a {
     color: black;
     background-image: none;
+    font-weight: bold;
 }
 
 body.light nav a:hover {
-    color: hsl(0, 1%, 52%);
+    /* color: hsl(0, 1%, 52%); */
+    color: rgba(40, 40, 40, 0.823);
+    transition: color 0.3s ease;
 }
 
 body.light .list {

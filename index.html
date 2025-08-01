@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<header>
  <div class="nav">
     <nav>
         <a href="index.html">Greeting</a>
@@ -16,7 +17,8 @@
         <a href="notes.html">Notes</a>
     </nav>
 </div>
-    
+</header>
+   <main>
     <section class="greeting">
         <div id="enterDashboardDiv">
         <h2 id="userDisplay"></h2>
@@ -24,13 +26,12 @@
         <button id="enterDashboard" onclick="window.location.href='about.html'">Enter Dashboard</button>
         <br>
         </div>
-            
+
         <input type="text" id="nameInput" placeholder="Type your name" />
         <button id="saveBtn">Save Name</button>
-        <button id="toggleModeBtn">Grey Mode</button>
-
-    
+        <button id="toggleModeBtn">Light Mode</button>
     </section>
+   </main>
 <script src="script.js"></script>
 </body>
 </html>
