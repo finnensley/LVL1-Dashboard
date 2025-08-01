@@ -86,6 +86,22 @@ button {
     font-size: large;
  }
 
+ #taskBtn:hover,
+ #noteBtn:hover,
+ #enterDashboard:hover,
+ #greeting:hover,
+ #weather:hover,
+ #notes:hover,
+ #tasks:hover,
+ #saveBtn:hover,
+ #weatherBtn:hover,
+ #localBtn:hover,
+ #toggleModeBtn:hover {
+    
+    background-color: hwb(0 91% 9% / 0.446);
+
+}
+
  #saveBtn {
     position: fixed;
     top: 20px;
@@ -142,7 +158,8 @@ nav a {
 }
 
 nav a:hover {
-    font-size: larger;
+    font-size:large;
+    color: lightgrey;
 }
 
 /* to do list */
@@ -196,10 +213,27 @@ body.light #taskBtn,
 body.light .notes,
 body.light #noteBtn
 {
-  background-color: lightgray; 
+  background-color: white; 
   color: black;
   background-image: none;
 }
+
+ body.light #taskBtn:hover,
+ body.light #noteBtn:hover,
+ body.light #enterDashboard:hover,
+ body.light #greeting:hover,
+ body.light #weather:hover,
+ body.light #notes:hover,
+ body.light #tasks:hover,
+ body.light #saveBtn:hover,
+ body.light #weatherBtn:hover,
+ body.light #localBtn:hover,
+ body.light #toggleModeBtn:hover {
+
+    background-color: hwb(0 91% 9% / 0.8);
+    border-radius: 7px;
+}
+
 
 body.light .widget {
     background-color: rgb(168, 168, 168);
@@ -209,11 +243,37 @@ body.light #aboutContainer {
     background-color: rgb(168, 168, 168);
     padding: 20px;
     border-radius: 20px;
+    text-align: center;
+    margin: 10px;
+    font-size: medium;
 }
+
+
+body.light #greetFeature,
+body.light #weatherFeature,
+body.light #tasksFeature,
+body.light #notesFeature {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+body.light #greetFeature:hover,
+body.light #weatherFeature:hover,
+body.light #tasksFeature:hover,
+body.light #notesFeature:hover,
+body.light #aboutContainer:hover {
+   box-shadow: 2px 2px 10px rgba(2, 2, 2, 0.8);
+} 
 
 body.light nav a {
     color: black;
     background-image: none;
+}
+
+body.light nav a:hover {
+    color: hsl(0, 1%, 52%);
 }
 
 body.light .list {

@@ -11,8 +11,8 @@
     background-color: hwb(97 34% 28% / 0.8);
     border-radius: 20px;
     text-align: center;
-    margin: 50px;
-    padding: 20px;
+    margin: 10px;
+    padding: 30px;
     font-size: medium;
 }
 
@@ -33,19 +33,22 @@
         <a href="notes.html">Notes</a>
     </nav>
     </div> 
-    <div class="widget">
+    <!-- <div class="widget"> -->
       <h1>Weather Widget</h1>
+    <div class="widget">
       <div>
         <input type="text" id="cityInput" placeholder="Enter city">
         <button id="weatherBtn">Get Weather</button>
         <br>
         <button id="localBtn">Your local weather</button>
+        <div id="weatherResults">
         <p id="error-message"></p>
         <h2 id="city-name"></h2>
         <p id="temperature"></p>
         <p id="feels-like"></p>
         <p id="description"></p>
         <p id="humidity"></p>
+        </div>
     </div>
   </div>
   </section> 
