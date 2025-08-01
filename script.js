@@ -39,6 +39,7 @@ saveBtn.addEventListener("click", () => {
   const getValue = input.value;
   localStorage.setItem("username", getValue);
   usersname.textContent = `Greetings ${getValue}`;
+  input.value = "";
 });
 }
 
