@@ -10,7 +10,7 @@ body {
 .weather,
 .tasks,
 .notes {
-    height: 150vh;
+    /* height: 150vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,7 +24,7 @@ body {
 
 .greeting {
     background-image: url(images/pexels-quang-nguyen-vinh-222549-6877707.jpg);
-
+    height: 150vh;
 }
 .greeting h2 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
@@ -45,22 +45,26 @@ button {
 
 .about {
     background-image: url(images/pexels-mauroignaciotorres-14111847.jpg); 
+    height: 125vh;
 }
 
 
 .tasks {
     background-image: url(images/pexels-quang-nguyen-vinh-222549-6870970.jpg);
+    height: 150vh;
 }
 
 
  .weather {
     background-image: url(images/pexels-annaelle-quionquion-2652658-17703493.jpg);
+    height: 140vh;
  }
 
 
  .notes {
     background-image: url(images/pexels-tsvetoslav-hristov-1306654-2499862.jpg);
- }
+    height: 150vh;
+}
 
 .nav {
     position: fixed;
@@ -211,7 +215,7 @@ body.light #taskBtn,
 body.light .notes,
 body.light #noteBtn
 {
-  background-color: white; 
+  background-color: whitesmoke; 
   color: black;
   background-image: none;
 }
@@ -228,10 +232,10 @@ body.light .notes {
 
 body.light #enterDashboardDiv {
     border: solid lightgrey;
-    border-radius: 20px;
+    background-color: white;
+    border-radius: 30px;
     margin: 10px;
-    padding: 30px;
-    /* box-shadow: 2px 2px 10px rgba(2, 2, 2, 0.8); */
+    padding: 20px;
 }
 
 
