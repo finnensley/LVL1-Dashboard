@@ -68,7 +68,7 @@ button {
 
 .nav {
     position: fixed;
-    top: 50px;
+    top: 55px;
     right: 150px;
     margin: 30px;
 }
@@ -160,7 +160,7 @@ nav a {
 }
 
 nav a:hover {
-    font-size:large;
+    /* font-size:large; */
     color: lightgrey;
 }
 
@@ -264,7 +264,8 @@ body.light #enterDashboardDiv:hover {
 
 
 body.light .widget {
-    background-color: rgb(168, 168, 168);
+    /* background-color: rgb(168, 168, 168); */
+    background-color: lightgrey;
 }
 
 body.light #aboutContainer {

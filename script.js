@@ -172,18 +172,23 @@ function renderNoteCards() {
 // const localApiURL = "https://api.openweathermap.org/data/2.5/weather?q=Colorado,us&APPID=9818f918e9d02e8a934463e2e7602786"
 const apiKey = "9818f918e9d02e8a934463e2e7602786";
 const btn = document.getElementById("weatherBtn");
+const cityInput = document.getElementById("cityInput");
 
    
 if (btn) {
     btn.addEventListener("click", () => {
-     const city = document.getElementById("cityInput").value;
+    //  const city = document.getElementById("cityInput").value;
+    const city = cityInput.value;
      if (city) {
       fetchWeather(city);
       } else {
       displayError("Please enter a city name.");
       }
+      cityInput.value = "";
 })
+      
 };
+
 
  function fetchWeather(city) {
     const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;

@@ -18,6 +18,8 @@
 ## nav bar doesn't align perfectly with the image mode, change "image" to "dark" 
 ## Add a footer with a link to a contact form? 
 ## Create a contact form, is this just a link to email in the footer or a full form? Look at doing both
+## Make greetings page look better in light mode, add footer or aside ??
+
 
 
 
