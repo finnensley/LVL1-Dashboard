@@ -73,6 +73,16 @@ button {
     margin: 30px;
 }
 
+#myDash {
+    text-align: left;
+    padding: 20px;
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    margin-top: 60px;
+    position: fixed;
+    }
+
  #taskBtn,
  #noteBtn,
  #enterDashboard,
@@ -324,6 +334,15 @@ body.light nav a:hover {
     color: whitesmoke;
     transition: color 0.3s ease;
 }
+
+body.light #myDash {
+    text-align: left;
+    padding: 20px;
+    color: rgb(69, 69, 69);
+    font-size: larger;
+    font-weight: bold;
+    margin-top: 60px;
+    }
 
 body.light .list {
     color: rgb(59, 59, 59);
