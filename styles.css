@@ -9,7 +9,8 @@ body {
 .about,
 .weather,
 .tasks,
-.notes {
+.notes,
+.feedback {
     height: 150vh;
     display: flex;
     flex-direction: column;
@@ -66,6 +67,9 @@ button {
     /* height: 150vh; */
 }
 
+.feedback {
+    background-image: url(images/pexels-walter-alejandro-228509595-16653748.jpg);
+}
 .nav {
     position: fixed;
     top: 55px;
@@ -223,7 +227,8 @@ body.light #localBtn,
 body.light .tasks,
 body.light #taskBtn,
 body.light .notes,
-body.light #noteBtn
+body.light #noteBtn,
+body.light .feedback
 {
   /* background-color: rgba(211, 211, 211, 0.664);  */
   background-color: whitesmoke;

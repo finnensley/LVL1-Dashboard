@@ -20,6 +20,8 @@
 ## Create a contact form, is this just a link to email in the footer or a full form? Look at doing both
 ## Make greetings page look better in light mode, add footer or aside ??
 ## Put a catch and alert for an empty string in nameInput: "Please enter a name, if you would like"
+## Feedback form instead of a contact form
+## Work on button shapes in the header? in light mode
 
 
 
