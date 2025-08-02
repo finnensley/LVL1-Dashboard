@@ -265,7 +265,7 @@ if (btn) {
   function toggleLightMode() {
     body.classList.toggle("light");
     const theme = body.classList.contains("light") ? "light" : "dark";
-    lightModeBtn.innerText = theme === "light" ? "Image Mode" : "Grey Mode";
+    lightModeBtn.innerText = theme === "light" ? "Image Mode" : "Light Mode";
     localStorage.setItem("theme", theme);
   };
 
