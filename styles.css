@@ -352,7 +352,7 @@ body.light #footer a:hover {
  body.light #weatherBtn:hover,
  body.light #localBtn:hover,
  body.light #toggleModeBtn:hover,
- body.light #formBtn:hover
+ body.light #formBtn:hover,
  body.light #feedback:hover {
     background-color: hwb(0 91% 9% / 0.8);
     border-radius: 7px;
