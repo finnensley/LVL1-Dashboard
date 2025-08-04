@@ -122,6 +122,7 @@ button {
  #saveBtn,
  #weatherBtn,
  #localBtn,
+ #formBtn,
  #toggleModeBtn {
     background: none;
     color: white;
@@ -139,6 +140,7 @@ button {
  #saveBtn:hover,
  #weatherBtn:hover,
  #localBtn:hover,
+ #formBtn:hover,
  #toggleModeBtn:hover {
     background-color: hwb(0 91% 9% / 0.446);
 }
@@ -172,10 +174,22 @@ button {
  }
 
  #taskInput,
- #cityInput {
+ #cityInput,
+ #contactEmail,
+ #contactName,
+ #userFeedback {
     border-radius: 6px;
     padding: 5px;
     font-size: medium;
+ }
+
+ #taskInput,
+ #contactEmail,
+ #contactName,
+ #userFeedback {
+    background: inherit;
+    border: solid whitesmoke;
+    color: whitesmoke;
  }
 
 nav ul {
@@ -253,7 +267,8 @@ body.light .tasks,
 body.light #taskBtn,
 body.light .notes,
 body.light #noteBtn,
-body.light .feedback
+body.light .feedback,
+body.light #formBtn
 {
   /* background-color: rgba(211, 211, 211, 0.664);  */
   background-color: whitesmoke;
@@ -272,8 +287,13 @@ body.light .notes {
     padding: 20px;
 }
 
-body.light #enterDashboardDiv {
-    border: solid lightgrey;
+body.light #enterDashboardDiv,
+body.light .formDiv,
+body.light .notesDiv,
+body.light .taskDiv {
+    /* border: solid lightgrey; */
+    border-bottom: solid lightgrey;
+    border-top: solid lightgrey;
     background-color: white;
     border-radius: 30px;
     margin: 10px;
@@ -282,7 +302,9 @@ body.light #enterDashboardDiv {
 }
 
 
-body.light #enterDashboardDiv:hover {
+body.light #enterDashboardDiv:hover,
+body.light .formDiv:hover,
+body.light .notesDiv:hover {
     box-shadow: 2px 2px 10px rgba(2, 2, 2, 0.8);
 
 }
@@ -326,8 +348,8 @@ body.light #footer a:hover {
  body.light #saveBtn:hover,
  body.light #weatherBtn:hover,
  body.light #localBtn:hover,
- body.light #toggleModeBtn:hover {
-
+ body.light #toggleModeBtn:hover,
+ body.light #formBtn:hover {
     background-color: hwb(0 91% 9% / 0.8);
     border-radius: 7px;
 }
@@ -336,10 +358,12 @@ body.light #footer a:hover {
 body.light .widget {
     /* background-color: rgb(168, 168, 168); */
     background-color: white;
-    border: solid lightgrey;
+    /* border: solid lightgrey; */
+    border-bottom: solid lightgrey;
+    border-top: solid lightgrey;
 }
 
-body.light #aboutContainer {
+body.light #aboutContainer { 
     /* background-color: rgb(168, 168, 168); */
     border: solid lightgrey;
     background-color: whitesmoke;
@@ -438,4 +462,11 @@ body.light .noteDiv  {
   /* background: rgb(67, 65, 65); */
   background: rgb(59, 59, 59);
   color: whitesmoke;
+ }
+
+ body.light #taskInput,
+ body.light #contactName,
+ body.light #contactEmail,
+ body.light #userFeedback {
+    color: black;
  }

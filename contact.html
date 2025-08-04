@@ -22,17 +22,17 @@
 <body>
     <section class="feedback">
       <h1>Feedback Form</h1>
-    <form>
-    <div class="form">
+    <form class="feedbackForm" action="https://script.google.com/macros/s/AKfycby8TvqERQpcClI5CnfxM9RyF1Z2E7yflSYL-C94ewatQQR3-532PKnv8r2EtYQbhLx80A/exec" method="POST">
+    <div class="formDiv">
       <div>
         <label>Contact Name:</label>
-        <input type="text" id="contactName" placeholder="Please enter your name">
+        <input type="text" id="contactName" name="contactName" placeholder="Please enter your name">
         <br>
         <label>Contact Email:</label>
-        <input type="text" id="contactEmail" placeholder="Please enter your email">
+        <input type="text" id="contactEmail" name="contactEmail" placeholder="Please enter your email">
         <br>
         <label>Feedback Category</label>
-        <select id="categoryDropdown">  
+        <select id="categoryDropdown" name="categoryDropdown">  
             <option value="">Select One:</option>
             <option value="featureRequest">Feature Request</option>
             <option value="generalIssue">Loading Issue</option>
@@ -43,7 +43,7 @@
         <br>
         <label>Feedback</label>
         <br>
-        <textarea id="userFeedback" rows="5" cols="50" placeholder="Please enter feedback here"></textarea>
+        <textarea id="userFeedback" name="userFeedback" rows="5" cols="35" placeholder="Please enter feedback here"></textarea>
         <br>
         <button type="submit" id="formBtn" value="submitFeedback">Submit</button>
     </form>   
