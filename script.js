@@ -177,8 +177,7 @@ const cityInput = document.getElementById("cityInput");
    
 if (btn && cityInput) {
     btn.addEventListener("click", () => {
-    //  const city = document.getElementById("cityInput").value;
-    const city = cityInput.value;
+     const city = cityInput.value;
      if (city) {
       fetchWeather(city);
       } else {
@@ -271,7 +270,7 @@ if (btn && cityInput) {
     if (lastWeather) {
         try {
             const data = JSON.parse(lastWeather);
-            console.log("Loaded from localStorage", data);
+            // console.log("Loaded from localStorage", data);
             displayWeather(data);
         } catch (e) {
             localStorage.removeItem("lastWeatherData");
@@ -289,7 +288,7 @@ if (btn && cityInput) {
   function toggleLightMode() {
     body.classList.toggle("light");
     const theme = body.classList.contains("light") ? "light" : "dark";
-    lightModeBtn.innerText = theme === "light" ? "Image Mode" : "Light Mode";
+    lightModeBtn.innerText = theme === "light" ? "Dark Mode" : "Light Mode";
     localStorage.setItem("theme", theme);
   };
 
@@ -297,30 +296,30 @@ if (btn && cityInput) {
       const savedTheme = localStorage.getItem("theme");
       if (savedTheme === "light") {
         body.classList.add("light");
-        lightModeBtn.innerText = "Image Mode";
+        lightModeBtn.innerText = "Dark Mode";
       }
     };
     loadTheme();
     lightModeBtn.addEventListener("click", toggleLightMode);
 
-    //Submit Feedback Form - url submits without the need of anything here
-    // const formBtn = document.getElementById("formBtn");
-    // const contactName = document.getElementById("contactName").value;
-    // const contactEmail = document.getElementById("contactEmail").value;
-    // const userFeedback = document.getElementById("userFeedback").value;
-    // const category = document.getElementById("categoryDropdown").value;
+    //Submit Feedback Form - url submits without the need of anything here, but glitching, some tie in with the dark mode button
+    const formBtn = document.getElementById("formBtn");
+    const contactName = document.getElementById("contactName").value;
+    const contactEmail = document.getElementById("contactEmail").value;
+    const userFeedback = document.getElementById("userFeedback").value;
+    const category = document.getElementById("categoryDropdown").value;
 
-    // document.addEventListener('DOMContentLoaded', function() {
-    //   const feedbackForm = document.getElementById("feedbackForm");
+    document.addEventListener('DOMContentLoaded', function() {
+      const feedbackForm = document.getElementById("feedbackForm");
 
-    //   if (feedbackForm) {
-    //      feedbackForm.addEventListener("submit", (event) => {
-    //       event.preventDefault(); //Prevent default form submission on page reload
+      if (feedbackForm) {
+         feedbackForm.addEventListener("submit", (event) => {
+          event.preventDefault(); //Prevent default form submission on page reload
           
-    //      })
+         })
          
-    //     };
-    //   });
+        };
+      });
 
   
     
