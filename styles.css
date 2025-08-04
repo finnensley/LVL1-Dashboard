@@ -123,6 +123,7 @@ button {
  #weatherBtn,
  #localBtn,
  #formBtn,
+ #feedback,
  #toggleModeBtn {
     background: none;
     color: white;
@@ -141,7 +142,8 @@ button {
  #weatherBtn:hover,
  #localBtn:hover,
  #formBtn:hover,
- #toggleModeBtn:hover {
+ #toggleModeBtn:hover
+ #feedback:hover {
     background-color: hwb(0 91% 9% / 0.446);
 }
 
@@ -268,7 +270,8 @@ body.light #taskBtn,
 body.light .notes,
 body.light #noteBtn,
 body.light .feedback,
-body.light #formBtn
+body.light #formBtn,
+body.light #feedback
 {
   /* background-color: rgba(211, 211, 211, 0.664);  */
   background-color: whitesmoke;
@@ -349,7 +352,8 @@ body.light #footer a:hover {
  body.light #weatherBtn:hover,
  body.light #localBtn:hover,
  body.light #toggleModeBtn:hover,
- body.light #formBtn:hover {
+ body.light #formBtn:hover
+ body.light #feedback:hover {
     background-color: hwb(0 91% 9% / 0.8);
     border-radius: 7px;
 }
@@ -378,7 +382,8 @@ body.light #aboutContainer {
 body.light #greetFeature,
 body.light #weatherFeature,
 body.light #tasksFeature,
-body.light #notesFeature {
+body.light #notesFeature,
+body.light #feedbackFeature {
     background-color: white;
     padding: 20px;
     border-radius: 20px;
@@ -389,7 +394,8 @@ body.light #greetFeature:hover,
 body.light #weatherFeature:hover,
 body.light #tasksFeature:hover,
 body.light #notesFeature:hover,
-body.light #aboutContainer:hover {
+body.light #aboutContainer:hover,
+body.light #feedbackFeature:hover {
    box-shadow: 2px 2px 10px rgba(2, 2, 2, 0.8);
 } 
 

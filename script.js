@@ -279,39 +279,29 @@ if (btn) {
     loadTheme();
     lightModeBtn.addEventListener("click", toggleLightMode);
 
-    //Submit Feedback Form
-    
-    const contactName = document.getElementById("contactName").value;
-    const contactEmail = document.getElementById("contactEmail").value;
-    const userFeedback = document.getElementById("userFeedback").value;
-    const category = document.getElementById("categoryDropdown").value;
+    //Submit Feedback Form - url submits without the need of anything here
+    // const formBtn = document.getElementById("formBtn");
+    // const contactName = document.getElementById("contactName").value;
+    // const contactEmail = document.getElementById("contactEmail").value;
+    // const userFeedback = document.getElementById("userFeedback").value;
+    // const category = document.getElementById("categoryDropdown").value;
 
-    document.addEventListener('DOMContentLoaded', function() {
-      const feedbackForm = document.getElementById("feedbackForm");
-       
-      if (feedbackForm) {
-         feedbackForm.addEventListener("submit", (event) => {
-          event.preventDefault(); //Prevent default form submission on page reload
-          fetch("/send-email", {
-            method: 'POST',
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({contactName, contactEmail, category, userFeedback })
-          })
-          .then(response => response.json())
-          .then(data => {
-            console.log("Feedback submission status:", data);
-            alert("Your feedback has been submitted!");
-            feedbackForm.reset();
-          })
-          .catch(error => {
-            console.log("Error submitting: ", error);
-            alert("Error sumbitting. Please try again.");
-          });
-    });
-    };
-   });
+    // document.addEventListener('DOMContentLoaded', function() {
+    //   const feedbackForm = document.getElementById("feedbackForm");
+
+    //   if (feedbackForm) {
+    //      feedbackForm.addEventListener("submit", (event) => {
+    //       event.preventDefault(); //Prevent default form submission on page reload
+          
+    //      })
+         
+    //     };
+    //   });
+
+  
+    
+    
+
   
 
    
