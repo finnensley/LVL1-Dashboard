@@ -21,7 +21,6 @@
 
 ## Put a catch and alert for an empty string in nameInput: "Please enter a name, if you would like"
 
-## Work on button shapes in the header? in light mode
 
 ## link appscript to html, where a url link back to the dashboard can be added in the success statement
 
@@ -54,6 +53,9 @@
 ## Make greetings page look better in light mode, add footer or aside - done 
 
 ## Created a feedback form
+
+## Work on button shapes in the header? in light mode - done
+
 
 
 

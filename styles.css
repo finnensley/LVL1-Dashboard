@@ -5,6 +5,18 @@ body {
     font-size: larger;
 }
 
+body header {
+    /* background-color: rgb(228, 227, 227); */
+    margin-bottom: 20px;
+    min-height: 120px;
+    width: 100%;
+    display: block;
+    position: fixed;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    /* box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12); */
+    z-index: 1000;
+}
 
 .greeting,
 .about,
@@ -12,7 +24,7 @@ body {
 .tasks,
 .notes,
 .feedback {
-    height: 150vh;
+    height: 200vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -110,6 +122,7 @@ button {
     font-weight: bold;
     margin-top: 60px;
     position: fixed;
+    z-index: 1000;
     }
 
  #taskBtn,
@@ -152,6 +165,8 @@ button {
     top: 20px;
     right: 20px;
     margin: 30px;
+    z-index: 1000;
+
  }
 
  #toggleModeBtn {
@@ -159,6 +174,7 @@ button {
     top: 50px;
     right: 20px;
     margin: 30px;
+    z-index: 1000;
  }
  
  #localBtn {
@@ -173,6 +189,7 @@ button {
     margin: 10px;
     font-size: large;
     border-radius: 6px;
+    z-index: 1000;
  }
 
  #taskInput,
@@ -286,7 +303,7 @@ body.light .about,
 body.light .weather,
 body.light .tasks,
 body.light .notes {
-    height: 150vh;
+    height: 200vh;
     padding: 20px;
 }
 
@@ -327,6 +344,7 @@ body.light #footer {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     padding-top: 5px;
     margin-top: 20px;
+    z-index: 1000;
 }
 
 body.light #footer a {
@@ -362,6 +380,8 @@ body.light #toggleModeBtn,
 body.light #saveBtn {
     color: rgb(59, 59, 59);
     border-radius: 7px;
+    z-index: 1000;
+
 }
 
 body.light #toggleModeBtn:hover,
@@ -423,6 +443,7 @@ body.light header {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    z-index: 1000;
 }
 
 
@@ -446,6 +467,7 @@ body.light #myDash {
     font-size: larger;
     font-weight: bold;
     margin-top: 60px;
+    z-index: 1000;
     }
 
 body.light .list {
