@@ -213,8 +213,8 @@ if (btn && cityInput) {
     document.getElementById("feels-like").textContent = `Feels like: ${Math.floor(data.main.feels_like)}°F`;
     document.getElementById("description").textContent = `Condition: ${data.weather[0].description}`;
     document.getElementById("humidity").textContent = `Humidity: ${data.main.humidity}%`;
-    // Save to localStorage
-    localStorage.setItem("lastWeatherData", JSON.stringify(data));
+    // Save to localStorage, opting to not use
+    // localStorage.setItem("lastWeatherData", JSON.stringify(data));
   };
 
   function displayError(message) {
@@ -264,21 +264,22 @@ if (btn && cityInput) {
    });
   };
 
-  window.addEventListener("DOMContentLoaded", () => {
-    if (document.getElementById("city-name")) {
-    const lastWeather = localStorage.getItem("lastWeatherData");
-    if (lastWeather) {
-        try {
-            const data = JSON.parse(lastWeather);
-            // console.log("Loaded from localStorage", data);
-            displayWeather(data);
-        } catch (e) {
-            localStorage.removeItem("lastWeatherData");
-        }
+//Save to localStorage, opting to not use
+//   window.addEventListener("DOMContentLoaded", () => {
+//     if (document.getElementById("city-name")) {
+//     const lastWeather = localStorage.getItem("lastWeatherData");
+//     if (lastWeather) {
+//         try {
+//             const data = JSON.parse(lastWeather);
+//             // console.log("Loaded from localStorage", data);
+//             displayWeather(data);
+//         } catch (e) {
+//             localStorage.removeItem("lastWeatherData");
+//         }
     
-      }  
-    }
-});
+//       }  
+//     }
+// });
 
 
   //Light Mode Toggle
