@@ -75,6 +75,8 @@ button {
     font-size: smaller;
     text-shadow: 4px 4px 7px rgba(0, 0, 0, 0.5);
     z-index: 1000;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+
 }
 
 #footer a {
@@ -118,7 +120,7 @@ button {
 .nav {
     position: fixed;
     top: 55px;
-    right: 150px;
+    right: 100px;
     margin: 30px;
 }
 
@@ -170,19 +172,17 @@ button {
 
  #saveBtn {
     position: fixed;
-    top: 20px;
-    right: 0px;
-    margin: 30px;
+    top: 35px;
+    right: 10px;
+    margin: 10px;
     z-index: 1000;
-    
-
  }
 
  #toggleModeBtn {
     position: fixed;
-    top: 50px;
-    right: 35px;
-    margin: 30px;
+    top: 70px;
+    right: 10px;
+    margin: 10px;
     z-index: 1000;
  }
  
@@ -193,8 +193,8 @@ button {
 
  #nameInput {
     position: fixed;
-    top: 10px;
-    right: 20px;
+    top: 0px;
+    right: 10px;
     margin: 10px;
     font-size: large;
     border-radius: 6px;
