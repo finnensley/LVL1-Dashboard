@@ -107,7 +107,7 @@ if (addNote && noteBtn) {
 }
 
 function renderNoteCards() {
-  addNote.innerHTML = ""; //clear the previous notes
+  addNote.innerHTML = ""; 
   noteCards.forEach((noteObj, index) => {
     const noteDiv = document.createElement("div");
     noteDiv.classList.add("noteDiv");
@@ -310,5 +310,5 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 formBtn.addEventListener("click", () => {
-  alert("Please refresh page to clear form");
+  alert("Another tab will open automatically to show the submission was successful. Please return to this tab and reload the page to clear the form. Thank you!");
 });
