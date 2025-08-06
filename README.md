@@ -13,18 +13,18 @@
 
 
 # Challenges:
-## Add @media for different devices
-
-## Fix Notecards: trashcan/light is infront of text. Use CSS positioning? 
 
 ## Explore using flex or grid for header
 
 ## Put a catch and alert for an empty string in nameInput: "Please enter a name, if you would like"
 
-
 ## link appscript to html, where a url link back to the dashboard can be added in the success statement
 
 ## Add dynamic time/date to greetings screen
+
+## For Weather it allows you to add Countries, not just city. Could change Enter city or make an if to only allow cities 
+
+## Don't like Dark Mode button shape/shadow something? 
 
 
 
@@ -55,6 +55,12 @@
 ## Created a feedback form
 
 ## Work on button shapes in the header? in light mode - done
+
+## Add @media for different devices
+
+## Fix Notecards: trashcan/light is infront of text. Use CSS positioning? 
+
+
 
 
 

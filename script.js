@@ -1,37 +1,34 @@
 //Greeting based on time of day
 
 const currentDate = new Date();
-let hour = currentDate.getHours();
+const hour = currentDate.getHours();
 const currentHour = document.getElementById("current-hour");
+const currentDay = document.getElementById("current-date");
+const currentTime = document.getElementById("current-time");
 
 function greeting() {
   if (!currentHour) return; // only runs if element exists
-  const morningGreeting = document.createElement("p");
-  const afternoonGreeting = document.createElement("p");
-  const eveningGreeting = document.createElement("p");
-
   if (hour < 12) {
     currentHour.textContent = "Good Morning!";
-    document.body.appendChild(morningGreeting);
   } else if (hour >= 12 && hour <= 18) {
-    currentHour.textContent = "Good Afternoon";
-    document.body.appendChild(afternoonGreeting);
+    currentHour.textContent = "Good Afternoon!";
   } else if (hour > 18) {
-    currentHour.textContent = "Good Evening";
-    document.body.appendChild(eveningGreeting);
+    currentHour.textContent = "Good Evening!";
   }
+  currentDay.textContent = currentDate.toDateString();
+  // currentTime.textContent = currentDate.toTimeString();
 }
 
 greeting(hour);
 
-//Get name input to display a different user's name
+//User name displayed after inputting
 const input = document.getElementById("nameInput");
 const saveBtn = document.getElementById("saveBtn");
 const usersname = document.getElementById("userDisplay");
 
 const savedName = localStorage.getItem("username");
+// added to ensure code only runs if elements exist, prevents errors on other pages
 if (savedName && usersname) {
-  // added && username to ensure code only runs if elements exist, prevent errors on other pages
   usersname.textContent = `Greetings ${savedName}`;
 }
 
@@ -49,53 +46,44 @@ const taskInput = document.getElementById("taskInput");
 const taskBtn = document.getElementById("taskBtn");
 const taskList = document.getElementById("taskList");
 
-// Load tasks from localStorage or start with empty array
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 // Render tasks on page load
 if (taskBtn && taskInput && taskList) {
-  // add this to avoid loading error on other pages
   renderTasks();
+
   taskBtn.addEventListener("click", () => {
     const taskText = taskInput.value.trim();
-    //if the input is empty, do nothing. This prevents adding blank tasks
+    // Prevent adding blank tasks
     if (taskText === "") return;
-
-    //adds the new task to tasks array
     tasks.push(taskText);
-    //saves the updated tasks array to localStorage
     localStorage.setItem("tasks", JSON.stringify(tasks));
-    // calling updates the displayed list of tasks
+    //rendering saves tasks to localStorage
     renderTasks();
-    //clears the input box for the next task
     taskInput.value = "";
   });
 }
-//Render tasks function, defines the function that displays all tasks in the list
+
 function renderTasks() {
-  if (!taskList) return; // Prevents error if taskList doesn't exist
-  //clears any existing tasks from the list in the DOM
+  if (!taskList) return; 
   taskList.innerHTML = "";
-  //loops through each task in the tasks array, providing both task and it's index
+  //loops through each task in the tasks array, providing both task and index
   tasks.forEach((task, index) => {
-    //skips rendering if empty string, keeps blank tasks from showing
+    //Prevents adding blank tasks
     if (task.trim() === "") return;
     const taskItem = document.createElement("li");
     taskItem.textContent = task;
     taskItem.classList.add("list");
 
-    //Remove task on click from array and updates localStorage with new array, calls renderTasks() again to update the displayed list
+    //Remove task on click from array and updates localStorage with new array, calling renderTasks() updates the displayed list
     taskItem.addEventListener("click", function () {
       tasks.splice(index, 1);
       localStorage.setItem("tasks", JSON.stringify(tasks));
       renderTasks();
     });
-
     //adds the list item to the task list in the DOM
     taskList.appendChild(taskItem);
-    //ends the loop through all tasks
   });
-  // ends the function
 }
 
 //Notes
@@ -150,6 +138,7 @@ function renderNoteCards() {
       renderNoteCards();
     });
 
+    //Toggle theme button for each note
     const toggleBtn = document.createElement("button");
     toggleBtn.textContent = "💡";
     toggleBtn.classList.add("toggle-note");
@@ -303,7 +292,7 @@ function loadTheme() {
 loadTheme();
 lightModeBtn.addEventListener("click", toggleLightMode);
 
-//Submit Feedback Form - url submits without the need of anything here, but glitching, some tie in with the dark mode button
+//Submit Feedback Form - url submits without the need of anything here, but glitching, some tie in with the dark mode button or needs the eventListener
 const formBtn = document.getElementById("formBtn");
 const contactName = document.getElementById("contactName").value;
 const contactEmail = document.getElementById("contactEmail").value;
@@ -318,4 +307,8 @@ document.addEventListener("DOMContentLoaded", function () {
       event.preventDefault(); //Prevent default form submission on page reload
     });
   }
+});
+
+formBtn.addEventListener("click", () => {
+  alert("Please refresh page to clear form");
 });

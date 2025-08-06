@@ -80,7 +80,9 @@ nav a:hover {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-#current-hour {
+#current-hour,
+#current-date,
+#current-time {
   margin-top: 0;
   font-size: larger;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
