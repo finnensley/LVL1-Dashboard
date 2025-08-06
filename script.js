@@ -65,7 +65,7 @@ if (taskBtn && taskInput && taskList) {
 }
 
 function renderTasks() {
-  if (!taskList) return; 
+  if (!taskList) return;
   taskList.innerHTML = "";
   //loops through each task in the tasks array, providing both task and index
   tasks.forEach((task, index) => {
@@ -107,7 +107,7 @@ if (addNote && noteBtn) {
 }
 
 function renderNoteCards() {
-  addNote.innerHTML = ""; 
+  addNote.innerHTML = "";
   noteCards.forEach((noteObj, index) => {
     const noteDiv = document.createElement("div");
     noteDiv.classList.add("noteDiv");
@@ -305,10 +305,12 @@ document.addEventListener("DOMContentLoaded", function () {
   if (feedbackForm) {
     feedbackForm.addEventListener("submit", (event) => {
       event.preventDefault(); //Prevent default form submission on page reload
+
+      formBtn.addEventListener("click", () => {
+        alert(
+          "Another tab will open automatically to show the submission was successful. Please return to this tab and reload the page to clear the form. Thank you!"
+        );
+      });
     });
   }
-});
-
-formBtn.addEventListener("click", () => {
-  alert("Another tab will open automatically to show the submission was successful. Please return to this tab and reload the page to clear the form. Thank you!");
 });
