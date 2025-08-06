@@ -1,71 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather</title>
     <link rel="stylesheet" href="styles.css" />
-</head>
-<style>
-.widget {
-    /* background-color: hwb(97 34% 28% / 0.5); */
-    border-radius: 20px;
-    text-align: center;
-    margin: 10px;
-    padding: 30px;
-    font-size: medium;
-}
-
-.widget:hover {
-    box-shadow: 2px 2px 10px rgba(2, 2, 2, 0.8);
-}
-
-</style>
-<body>
-   <!-- <section class="weather"> -->
-     <!-- <h1>My Dashboard</h1> -->
+  </head>
+  <body>
     <header>
-     <div class="nav"> 
-    <nav>
-        <a href="index.html">Greeting</a>
-        <a href="about.html">About</a>
-        <a href="weather.html">Weather</a>
-        <a href="tasks.html">Tasks</a>
-        <a href="notes.html">Notes</a>
-        <a href="feedback.html">Feedback</a>
-    </nav>
-    </div>
-   </header> 
+      <div class="nav">
+        <nav>
+          <a href="index.html">Greeting</a>
+          <a href="about.html">About</a>
+          <a href="weather.html">Weather</a>
+          <a href="tasks.html">Tasks</a>
+          <a href="notes.html">Notes</a>
+          <a href="feedback.html">Feedback</a>
+        </nav>
+      </div>
+    </header>
     <div id="myDash">My Dashboard</div>
-
-    <!-- <div class="widget"> -->
     <section class="weather">
-
       <h1>Weather Widget</h1>
-    <div class="widget">
-      <div>
-        <input type="text" id="cityInput" placeholder="Enter city">
-        <button id="weatherBtn">Get Weather</button>
-        <br>
-        <button id="localBtn">Your local weather</button>
-        <div id="weatherResults">
-        <p id="error-message"></p>
-        <h2 id="city-name"></h2>
-        <p id="temperature"></p>
-        <p id="feels-like"></p>
-        <p id="description"></p>
-        <p id="humidity"></p>
+      <div class="widget">
+        <div>
+          <input type="text" id="cityInput" placeholder="Enter city" />
+          <button id="weatherBtn">Get Weather</button>
+          <br />
+          <button id="localBtn">Your local weather</button>
+          <div id="weatherResults">
+            <p id="error-message"></p>
+            <h2 id="city-name"></h2>
+            <p id="temperature"></p>
+            <p id="feels-like"></p>
+            <p id="description"></p>
+            <p id="humidity"></p>
+          </div>
         </div>
-    </div>
-  </div>
-  </section> 
+      </div>
+    </section>
     <button id="toggleModeBtn">Light Mode</button>
     <footer id="footer">
-         <p>Contact Info:
-            <a href="mailto:finniganensley@gmail.com">finniganensley@gmail.com</a>
-         </p>
-         <p>&copy; Created by Finnigan Ensley - 2025</p>
+      <p>
+        Contact Info:
+        <a href="mailto:finniganensley@gmail.com">finniganensley@gmail.com</a>
+      </p>
+      <p>&copy; Created by Finnigan Ensley - 2025</p>
     </footer>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

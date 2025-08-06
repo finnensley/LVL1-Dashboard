@@ -1,120 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notes</title>
     <link rel="stylesheet" href="styles.css" />
-</head>
-<style>
-    textarea {
-        height: auto;
-        width: auto;
-        border-radius: 10px;
-        background-color: darkolivegreen;
-        padding: 60px;
-        color: lightgoldenrodyellow;
-        background-blend-mode: luminosity; 
-        font-size: medium;
-        
-    } 
-
-   .noteDiv {
-    position: relative;
-    display: inline-block;
-    margin: 10px;
-    border-radius: 10px;
-    background: transparent;
-    color: whitesmoke;
-    text-shadow: 10px;
- }  
-
-
- .noteDiv.light {
-  background: darkolivegreen;
-  color: lightgoldenrodyellow;
-
- }
-
-.note {
-  width: 200px;
-  height: 100px;
-  background: inherit;
-  color: inherit;
-  border-radius: 10px;
-  padding: 10px;
-  
-}
-
-.note:hover {
-  font-size: large;
-  box-shadow: 2px 2px 20px rgba( 0, 0, 0, 0.8);
-
-}
-
- .delete-note {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  z-index: 2;
-  background-color: transparent; 
-  /* border-radius: 10px; */
-  border: none;
-}
-
-.toggle-note {
-  position: absolute; 
-  bottom: 15px;
-  right: 40px;
-  z-index: 2;  
-  background-color: transparent;
-  /* border-radius: 10px; */
-  border: none;
-}
-
-.delete-note:hover {
-  font-size: 100%;
-}
-.toggle-note:hover {
-  font-size: 100%;
-}
-
-</style>
-<body>
-<!-- <section class="notes"> -->
-    <!-- <div id="notesContainer">
-    <h1>Take Notes</h1> -->
+  </head>
+  <body>
     <header>
-     <div class="nav">
-      <nav>
-        <a href="index.html">Greeting</a>
-        <a href="about.html">About</a>
-        <a href="weather.html">Weather</a>
-        <a href="tasks.html">Tasks</a>
-        <a href="notes.html">Notes</a>
-        <a href="feedback.html">Feedback</a>
-      </nav>
-     </div>
+      <div class="nav">
+        <nav>
+          <a href="index.html">Greeting</a>
+          <a href="about.html">About</a>
+          <a href="weather.html">Weather</a>
+          <a href="tasks.html">Tasks</a>
+          <a href="notes.html">Notes</a>
+          <a href="feedback.html">Feedback</a>
+        </nav>
+      </div>
     </header>
     <div id="myDash">My Dashboard</div>
     <section class="notes">
       <div id="notesContainer">
-       <h1>Take Notes</h1>
-       <div class="notesDiv">
-       <button id="noteBtn">Create Note</button>
-       <br>
-       <div id="addNote">
-       </div>
-       <br>
+        <h1>Take Notes</h1>
+        <div class="notesDiv">
+          <button id="noteBtn">Create Note</button>
+          <br />
+          <div id="addNote"></div>
+          <br />
+        </div>
       </div>
     </section>
-  <button id="toggleModeBtn">Light Mode</button>
-   <footer id="footer">
-      <p>Contact Info:
+    <button id="toggleModeBtn">Light Mode</button>
+    <footer id="footer">
+      <p>
+        Contact Info:
         <a href="mailto:finniganensley@gmail.com">finniganensley@gmail.com</a>
       </p>
       <p>&copy; Created by Finnigan Ensley - 2025</p>
     </footer>
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

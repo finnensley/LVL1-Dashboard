@@ -1,60 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Form</title>
     <link rel="stylesheet" href="styles.css" />
-</head>
-<header>
- <div id="myDash">My Dashboard</div>
- <div class="nav">
-    <nav>
+  </head>
+  <header>
+    <div id="myDash">My Dashboard</div>
+    <div class="nav">
+      <nav>
         <a href="index.html">Greeting</a>
         <a href="about.html">About</a>
         <a href="weather.html">Weather</a>
         <a href="tasks.html">Tasks</a>
         <a href="notes.html">Notes</a>
         <a href="feedback.html">Feedback</a>
-    </nav>
-</div>
-</header>
-<body>
+      </nav>
+    </div>
+  </header>
+  <body>
     <section class="feedback">
       <h1>Feedback Form</h1>
-    <form class="feedbackForm" action="https://script.google.com/macros/s/AKfycbx7fILE5Yl5HCMITC5_HhUOrSH42xlX5MwsVYFPNMyon1GgHz6wcH63Rdeu_Hv4D-9idw/exec" method="POST">
-    <div class="formDiv">
-        <label>Contact Name:</label>
-        <input type="text" id="contactName" name="contactName" placeholder="Please enter your name">
-        <br>
-        <label>Contact Email:</label>
-        <input type="text" id="contactEmail" name="contactEmail" placeholder="Please enter your email">
-        <br>
-        <label>Feedback Category</label>
-        <select id="categoryDropdown" name="categoryDropdown">  
+      <form
+        class="feedbackForm"
+        action="https://script.google.com/macros/s/AKfycbx7fILE5Yl5HCMITC5_HhUOrSH42xlX5MwsVYFPNMyon1GgHz6wcH63Rdeu_Hv4D-9idw/exec"
+        method="POST"
+      >
+        <div class="formDiv">
+          <label>Contact Name:</label>
+          <input
+            type="text"
+            id="contactName"
+            name="contactName"
+            placeholder="Please enter your name"
+          />
+          <br />
+          <label>Contact Email:</label>
+          <input
+            type="text"
+            id="contactEmail"
+            name="contactEmail"
+            placeholder="Please enter your email"
+          />
+          <br />
+          <label>Feedback Category</label>
+          <select id="categoryDropdown" name="categoryDropdown">
             <option value="">Select One:</option>
             <option value="featureRequest">Feature Request</option>
             <option value="generalIssue">Loading Issue</option>
             <option value="bugReporting">Bug Sighting</option>
             <option value="other">Other</option>
-        </select>
-        <br>
-        <br>
-        <label>Feedback</label>
-        <br>
-        <textarea id="userFeedback" name="userFeedback" rows="5" cols="35" placeholder="Please enter feedback here"></textarea>
-        <br>
-        <button type="submit" id="formBtn" value="submitFeedback">Submit</button>
-    </div>
-    </form>   
-    <button id="toggleModeBtn">Light Mode</button>
-    <footer id="footer">
-        <p>Contact Info:
-            <a href="mailto:finniganensley@gmail.com">finniganensley@gmail.com</a>
+          </select>
+          <br />
+          <br />
+          <label>Feedback</label>
+          <br />
+          <textarea
+            id="userFeedback"
+            name="userFeedback"
+            rows="5"
+            cols="35"
+            placeholder="Please enter feedback here"
+          ></textarea>
+          <br />
+          <button type="submit" id="formBtn" value="submitFeedback">
+            Submit
+          </button>
+        </div>
+      </form>
+      <button id="toggleModeBtn">Light Mode</button>
+      <footer id="footer">
+        <p>
+          Contact Info:
+          <a href="mailto:finniganensley@gmail.com">finniganensley@gmail.com</a>
         </p>
         <p>&copy; Created by Finnigan Ensley - 2025</p>
-    </footer>
-    </section> 
-<script src="script.js"></script>
-</body>
+      </footer>
+    </section>
+    <script src="script.js"></script>
+  </body>
 </html>

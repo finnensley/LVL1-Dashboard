@@ -1,49 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HomepageTest</title>
     <link rel="stylesheet" href="styles.css" />
     <style>
-        .nav {
-            position: fixed;
-            top: 20px;
-            right: 150px;
-            margin: 30px;
-        }
+      .nav {
+        position: fixed;
+        top: 20px;
+        right: 150px;
+        margin: 30px;
+      }
     </style>
-</head>
-<body>
-<section class="about">
-    <div class="nav">
-    <!-- <h1>My Dashboard</h1>  -->
-    <nav>
-        <a href="index.html">Greeting</a>
-        <a href="about.html">About</a>
-        <a href="weather.html">Weather</a>
-        <a href="tasks.html">Tasks</a>
-        <a href="notes.html">Notes</a>
-    </nav>
-    </div>
-           <p>Dashboard Features:</p>
-    <div id="aboutContainer">
+  </head>
+  <body>
+    <section class="about">
+      <div class="nav">
+        <!-- <h1>My Dashboard</h1>  -->
+        <nav>
+          <a href="index.html">Greeting</a>
+          <a href="about.html">About</a>
+          <a href="weather.html">Weather</a>
+          <a href="tasks.html">Tasks</a>
+          <a href="notes.html">Notes</a>
+        </nav>
+      </div>
+      <p>Dashboard Features:</p>
+      <div id="aboutContainer">
         <!-- <h2>My Dashboard</h2> -->
-            <button id="greeting" onclick="window.location.href='index.html'">Greeting</button>
-            <!-- <p>Interactive greeting, including username and time of day salutation.</p> -->
-            <br>
-            <button id="weather" onclick="window.location.href='weather.html'">Check The Weather</button>
-            <!-- <p>Weather widget, including local and user city input option.</p>  -->
-            <br>
-            <button id="tasks" onclick="window.location.href='tasks.html'">Interactive Todo List</button>
-            <!-- <p>To-do list, with interactive coloring and delete options.</p> -->
-            <br>
-            <button id="notes" onclick="window.location.href='notes.html'">Take Notes</button>
-            <!-- <p>Keep notes, toggle the theme of each notecard. </p> -->
-
-    </div>
-    <button id="toggleModeBtn">Grey Mode</button>
-</section>
+        <button id="greeting" onclick="window.location.href='index.html'">
+          Greeting
+        </button>
+        <!-- <p>Interactive greeting, including username and time of day salutation.</p> -->
+        <br />
+        <button id="weather" onclick="window.location.href='weather.html'">
+          Check The Weather
+        </button>
+        <!-- <p>Weather widget, including local and user city input option.</p>  -->
+        <br />
+        <button id="tasks" onclick="window.location.href='tasks.html'">
+          Interactive Todo List
+        </button>
+        <!-- <p>To-do list, with interactive coloring and delete options.</p> -->
+        <br />
+        <button id="notes" onclick="window.location.href='notes.html'">
+          Take Notes
+        </button>
+        <!-- <p>Keep notes, toggle the theme of each notecard. </p> -->
+      </div>
+      <button id="toggleModeBtn">Grey Mode</button>
+    </section>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

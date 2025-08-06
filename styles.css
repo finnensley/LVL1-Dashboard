@@ -1,285 +1,434 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    font-size: larger;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-size: larger;
 }
 
 header {
-    background-color: rgba(59, 59, 59, 0.694);
-    margin-bottom: 20px;
-    min-height: 120px;
-    width: 100%;
-    display: block;
-    position: fixed;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    z-index: 1000;
+  background-color: rgba(59, 59, 59, 0.694);
+  margin-bottom: 20px;
+  min-height: 120px;
+  width: 100%;
+  display: block;
+  position: fixed;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  z-index: 1000;
 }
 
-.greeting,
-.about,
-.weather,
-.tasks,
-.notes,
-.feedback {
-    height: 150vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    max-width: 100%;
-
-}
-
-.greeting {
-    background-image: url(images/pexels-quang-nguyen-vinh-222549-6877707.jpg);
-    /* height: 150vh; */
-
-}
-.greeting h2 {
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-} 
-
-
-#current-hour {
-    margin-top: 0;
-    font-size: larger;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-button {
-    cursor: pointer;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.421);
-}
-
-#footer {
-    background-color: rgba(59, 59, 59, 0.694);
-    max-height: 60px;
-    width: 100%;
-    color: white;
-    display: block;
-    position: fixed;
-    text-align: left;
-    padding: 20px;
-    bottom: 0px;
-    left: 0px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    font-size: smaller;
-    text-shadow: 4px 4px 7px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-
-}
-
-#footer a {
-    text-decoration: none;
-    color: white;    
-    /* background-color: darkgrey; */
-    /* border-radius: 5px; */
-}
-
-#footer a:hover {
-    color: blue;
-}
-
-.about {
-    background-image: url(images/pexels-mauroignaciotorres-14111847.jpg); 
-    /* height: 125vh; */
-}
-
-
-.tasks {
-    background-image: url(images/pexels-quang-nguyen-vinh-222549-6870970.jpg);
-    /* height: 150vh; */
-}
-
-
- .weather {
-    background-image: url(images/pexels-annaelle-quionquion-2652658-17703493.jpg);
-    /* height: 140vh; */
- }
-
-
- .notes {
-    background-image: url(images/pexels-tsvetoslav-hristov-1306654-2499862.jpg);
-    /* height: 150vh; */
-}
-
-.feedback {
-    background-image: url(images/pexels-walter-alejandro-228509595-16653748.jpg);
-}
-
-.nav {
-    position: fixed;
-    top: 55px;
-    right: 100px;
-    margin: 30px;
-}
-
+/* "My Dashboard" text inside header */
 #myDash {
-    text-align: left;
-    padding: 20px;
-    color: white;
-    font-size: larger;
-    font-weight: bold;
-    margin-top: 60px;
-    position: fixed;
-    z-index: 1000;
-    }
-
- #taskBtn,
- #noteBtn,
- #enterDashboard,
- #greeting,
- #weather,
- #notes,
- #tasks,
- #saveBtn,
- #weatherBtn,
- #localBtn,
- #formBtn,
- #feedback,
- #toggleModeBtn {
-    background: none;
-    color: white;
-    border-radius: 5px;
-    font-size: large;
- }
-
- #taskBtn:hover,
- #noteBtn:hover,
- #enterDashboard:hover,
- #greeting:hover,
- #weather:hover,
- #notes:hover,
- #tasks:hover,
- #saveBtn:hover,
- #weatherBtn:hover,
- #localBtn:hover,
- #formBtn:hover,
- #toggleModeBtn:hover,
- #feedback:hover {
-    background-color: hwb(0 91% 9% / 0.446);
+  text-align: left;
+  padding: 20px;
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+  margin-top: 60px;
+  position: fixed;
+  z-index: 1000;
 }
-
- #saveBtn {
-    position: fixed;
-    top: 35px;
-    right: 10px;
-    margin: 10px;
-    z-index: 1000;
- }
-
- #toggleModeBtn {
-    position: fixed;
-    top: 70px;
-    right: 10px;
-    margin: 10px;
-    z-index: 1000;
- }
- 
- #localBtn {
-    margin: 20px;
- }
-
-
- #nameInput {
-    position: fixed;
-    top: 0px;
-    right: 10px;
-    margin: 10px;
-    font-size: large;
-    border-radius: 6px;
-    z-index: 1000;
- }
-
- #taskInput,
- #cityInput,
- #contactEmail,
- #contactName,
- #userFeedback {
-    border-radius: 6px;
-    padding: 5px;
-    font-size: medium;
- }
-
- /* #taskInput, */
- #contactEmail,
- #contactName,
- #userFeedback {
-    background: inherit;
-    border: solid whitesmoke;
-    color: whitesmoke;
- }
 
 nav ul {
-    list-style: none;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+  list-style: none;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 nav ul li {
-    display: flex;
+  display: flex;
 }
- 
+
 nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    /* font-weight: bold; */
-    transition: color 0.3s ease;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
-    /* font-size:large; */
-    color: lightgrey;
+  color: lightgrey;
 }
 
-/* to do list */
+.nav {
+  position: fixed;
+  top: 55px;
+  right: 100px;
+  margin: 30px;
+}
+
+/* Greeting Page */
+.greeting {
+  height: 150vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-image: url(images/pexels-quang-nguyen-vinh-222549-6877707.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  max-width: 100%;
+}
+
+.greeting h2 {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#current-hour {
+  margin-top: 0;
+  font-size: larger;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* About Page */
+.about {
+  height: 150vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-image: url(images/pexels-mauroignaciotorres-14111847.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  max-width: 100%;
+}
+
+#aboutContainer {
+  box-shadow: 5px 5px 10px 10px rgba(2, 2, 2, 0.8);
+  padding: 30px;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+/* Weather Page */
+.weather {
+  height: 150vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-image: url(images/pexels-annaelle-quionquion-2652658-17703493.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  max-width: 100%;
+}
+
+.widget {
+  /* background-color: hwb(97 34% 28% / 0.5); */
+  border-radius: 20px;
+  text-align: center;
+  margin: 10px;
+  padding: 30px;
+  font-size: medium;
+}
+
+.widget:hover {
+  box-shadow: 2px 2px 10px rgba(2, 2, 2, 0.8);
+}
+
+/* Tasks(Todo List) Page */
+.tasks {
+  height: 150vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-image: url(images/pexels-quang-nguyen-vinh-222549-6870970.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  max-width: 100%;
+}
+
 #taskList {
-    list-style: none;
-    padding: 0px;
+  list-style: none;
+  padding: 0px;
 }
 
 .list {
-    color: darkolivegreen;
-    cursor: pointer; 
-    padding: 2px;
-    background: lightgoldenrodyellow;
-    margin: 5px 0;
-    border-radius: 5px;
-    
+  color: darkolivegreen;
+  cursor: pointer;
+  padding: 2px;
+  background: lightgoldenrodyellow;
+  margin: 5px 0;
+  border-radius: 5px;
 }
 
 .list:hover {
-     background: darkolivegreen;
-     color: burlywood;
+  background: darkolivegreen;
+  color: burlywood;
 }
 
-.notesList {
-    background: darkolivegreen;
-    display: flex;
-    margin: auto;
-    padding: 10px;
-
+/* Notes Page */
+.notes {
+  height: 150vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-image: url(images/pexels-tsvetoslav-hristov-1306654-2499862.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  max-width: 100%;
 }
 
+textarea {
+  height: auto;
+  width: auto;
+  border-radius: 10px;
+  background-color: darkolivegreen;
+  padding: 60px;
+  color: lightgoldenrodyellow;
+  background-blend-mode: luminosity;
+  font-size: medium;
+}
+
+/* Transparent note in page dark mode */
+.noteDiv {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  border-radius: 10px;
+  background: transparent;
+  color: whitesmoke;
+  text-shadow: 10px;
+}
+
+/* Darker background note in page dark mode, script uses "light" for turning notecard darkolive and transparent for "dark"  */
+.noteDiv.light {
+  background: darkolivegreen;
+  color: lightgoldenrodyellow;
+}
+
+.note {
+  width: 200px;
+  height: 100px;
+  background: inherit;
+  color: inherit;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.note:hover {
+  font-size: large;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
+}
+
+.delete-note {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  z-index: 2;
+  background-color: transparent;
+  border: none;
+}
+
+.toggle-note {
+  position: absolute;
+  bottom: 15px;
+  right: 40px;
+  z-index: 2;
+  background-color: transparent;
+  border: none;
+}
+
+.delete-note:hover {
+  font-size: 100%;
+}
+.toggle-note:hover {
+  font-size: 100%;
+}
+
+/* Feedback Page */
+.feedback {
+  height: 150vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-image: url(images/pexels-walter-alejandro-228509595-16653748.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  max-width: 100%;
+}
+
+/* Footer */
+#footer {
+  background-color: rgba(59, 59, 59, 0.694);
+  max-height: 60px;
+  width: 100%;
+  color: white;
+  display: block;
+  position: fixed;
+  text-align: left;
+  padding: 20px;
+  bottom: 0px;
+  left: 0px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  font-size: smaller;
+  text-shadow: 4px 4px 7px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+#footer a {
+  text-decoration: none;
+  color: white;
+}
+
+#footer a:hover {
+  color: blue;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.421);
+}
+
+#taskBtn,
+#noteBtn,
+#enterDashboard,
+#greeting,
+#weather,
+#notes,
+#tasks,
+#saveBtn,
+#weatherBtn,
+#localBtn,
+#formBtn,
+#feedback,
+#toggleModeBtn {
+  background: none;
+  color: white;
+  border-radius: 5px;
+  font-size: large;
+}
+
+#taskBtn:hover,
+#noteBtn:hover,
+#enterDashboard:hover,
+#greeting:hover,
+#weather:hover,
+#notes:hover,
+#tasks:hover,
+#saveBtn:hover,
+#weatherBtn:hover,
+#localBtn:hover,
+#formBtn:hover,
+#toggleModeBtn:hover,
+#feedback:hover {
+  background-color: hwb(0 91% 9% / 0.446);
+}
+
+#saveBtn {
+  position: fixed;
+  top: 35px;
+  right: 10px;
+  margin: 10px;
+  z-index: 1000;
+}
+
+#toggleModeBtn {
+  position: fixed;
+  top: 70px;
+  right: 10px;
+  margin: 10px;
+  z-index: 1000;
+}
+
+#localBtn {
+  margin: 20px;
+}
+
+/* Input fields */
+#nameInput {
+  position: fixed;
+  top: 0px;
+  right: 10px;
+  margin: 10px;
+  font-size: large;
+  border-radius: 6px;
+  z-index: 1000;
+}
+
+#taskInput,
+#cityInput,
+#contactEmail,
+#contactName,
+#userFeedback {
+  border-radius: 6px;
+  padding: 5px;
+  font-size: medium;
+}
+
+#contactEmail,
+#contactName,
+#userFeedback {
+  background: inherit;
+  border: solid whitesmoke;
+  color: whitesmoke;
+}
 
 /*  Light MODE: Styles applied when body has class "light" */
-body.light .greeting, 
-body.light #enterDashboard, 
-/* body.light #toggleModeBtn, */
-/* body.light #saveBtn, */
+body.light header {
+  background-color: rgb(228, 227, 227);
+  margin-bottom: 20px;
+  min-height: 120px;
+  width: 100%;
+  display: block;
+  position: fixed;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  z-index: 1000;
+}
+
+body.light #myDash {
+  text-align: left;
+  padding: 20px;
+  color: rgb(69, 69, 69);
+  font-size: larger;
+  font-weight: bold;
+  margin-top: 60px;
+  z-index: 1000;
+}
+
+body.light nav a {
+  color: rgb(59, 59, 59);
+  background-image: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+body.light nav a:hover {
+  color: whitesmoke;
+}
+
+/* Setting background and color */
+body.light .greeting,
+body.light #enterDashboard,
 body.light .about,
 body.light #greeting,
 body.light #weather,
@@ -294,144 +443,54 @@ body.light .notes,
 body.light #noteBtn,
 body.light .feedback,
 body.light #formBtn,
-body.light #feedback
-{
-  /* background-color: rgba(211, 211, 211, 0.664);  */
+body.light #feedback {
   background-color: whitesmoke;
   color: rgb(59, 59, 59);
   background-image: none;
   background: none;
 }
 
-/* move content closer to center vertically*/
-body.light .greeting,
-body.light .weather,
-body.light .tasks,
-body.light .notes {
-    height: 150vh;
-    padding: 20px;
-}
-
-body.light .about {
-    height: 190vh;
-    padding: 20px;
-}
-
-
-
+/* Borders, background, and shadow around divs that contain content for each page */
 body.light #enterDashboardDiv,
 body.light .formDiv,
 body.light .notesDiv,
-body.light .taskDiv {
-    /* border: solid lightgrey; */
-    border-bottom: solid lightgrey;
-    border-top: solid lightgrey;
-    background-color: white;
-    border-radius: 30px;
-    margin: 10px;
-    padding: 20px;
-    margin-top: 20px;
+body.light .taskDiv,
+body.light .widget {
+  border-bottom: solid lightgrey;
+  border-top: solid lightgrey;
+  background-color: white;
+  border-radius: 30px;
+  margin: 10px;
+  padding: 20px;
+  margin-top: 20px;
 }
-
 
 body.light #enterDashboardDiv:hover,
 body.light .formDiv:hover,
 body.light .notesDiv:hover {
-    box-shadow: 2px 2px 10px rgba(2, 2, 2, 0.8);
-
+  box-shadow: 2px 2px 10px rgba(2, 2, 2, 0.8);
 }
 
-body.light #footer {
-    background-color: rgb(228, 227, 227);
-    color: rgb(59, 59, 59);
-    max-height: 60px;
-    width: 100%;
-    display: block;
-    position: fixed;
-    text-align: left;
-    padding: 20px;
-    bottom: 0px;
-    left: 0px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    z-index: 1000;
+/* About Page */
+body.light #aboutContainer {
+  border: solid lightgrey;
+  background-color: whitesmoke;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  margin: 10px;
+  font-size: medium;
 }
-
-body.light #footer a {
-    color: rgb(59, 59, 59);
-    transition: color 0.3 ease;
-
-}
-
-body.light #footer a:hover {
-    color: whitesmoke;
-
-}
-
- body.light #taskBtn:hover,
- body.light #noteBtn:hover,
- body.light #enterDashboard:hover,
- body.light #greeting:hover,
- body.light #weather:hover,
- body.light #notes:hover,
- body.light #tasks:hover,
- /* body.light #saveBtn:hover, */
- body.light #weatherBtn:hover,
- body.light #localBtn:hover,
- /* body.light #toggleModeBtn:hover, */
- body.light #formBtn:hover,
- body.light #feedback:hover {
-    background-color: hwb(0 91% 9% / 0.8);
-    border-radius: 7px;
-}
-
-body.light #toggleModeBtn,
-body.light #saveBtn {
-    color: rgb(59, 59, 59);
-    border-radius: 7px;
-    z-index: 1000;
-    background-color: white;
-    transition: color 0.3 ease;
-
-}
-
-body.light #toggleModeBtn:hover,
-body.light #saveBtn:hover {
-    background-color: hwb(0 91% 9% / 0.8);
-    border-radius: 7px;
-    color: white;
-}
-
-body.light .widget {
-    /* background-color: rgb(168, 168, 168); */
-    background-color: white;
-    /* border: solid lightgrey; */
-    border-bottom: solid lightgrey;
-    border-top: solid lightgrey;
-}
-
-body.light #aboutContainer { 
-    /* background-color: rgb(168, 168, 168); */
-    border: solid lightgrey;
-    background-color: whitesmoke;
-    padding: 20px;
-    border-radius: 20px;
-    text-align: center;
-    margin: 10px;
-    font-size: medium;
-}
-
 
 body.light #greetFeature,
 body.light #weatherFeature,
 body.light #tasksFeature,
 body.light #notesFeature,
 body.light #feedbackFeature {
-    background-color: white;
-    padding: 20px;
-    border-radius: 20px;
-    margin: 10px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 10px;
 }
 
 body.light #greetFeature:hover,
@@ -440,94 +499,110 @@ body.light #tasksFeature:hover,
 body.light #notesFeature:hover,
 body.light #aboutContainer:hover,
 body.light #feedbackFeature:hover {
-   box-shadow: 2px 2px 10px rgba(2, 2, 2, 0.8);
-} 
-
-body.light header {
-    /* background-color: rgba(185, 184, 184, 0.725); */
-    /* background-color: rgb(185, 184, 184); */
-    background-color: rgb(228, 227, 227);
-    margin-bottom: 20px;
-    min-height: 120px;
-    width: 100%;
-    display: block;
-    position: fixed;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    z-index: 1000;
+  box-shadow: 2px 2px 10px rgba(2, 2, 2, 0.8);
 }
 
-
-body.light nav a {
-    color: rgb(59, 59, 59);
-    background-image: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-
-}
-
-body.light nav a:hover {
-    /* color: hsl(0, 1%, 52%); */
-    /* color: rgba(7, 7, 7, 0.823); */
-    color: whitesmoke;
-}
-
-body.light #myDash {
-    text-align: left;
-    padding: 20px;
-    color: rgb(69, 69, 69);
-    font-size: larger;
-    font-weight: bold;
-    margin-top: 60px;
-    z-index: 1000;
-    }
-
+/* Tasks (Todo List) Page */
 body.light .list {
-    color: rgb(59, 59, 59);
-    cursor: pointer; 
-    padding: 2px;
-    /* background-color: rgb(168, 168, 168); */
-    background-color: lightgrey;
-    margin: 5px 0;
-    border-radius: 5px;
+  color: rgb(59, 59, 59);
+  cursor: pointer;
+  padding: 2px;
+  background-color: lightgrey;
+  margin: 5px 0;
+  border-radius: 5px;
 }
 
 body.light .list:hover {
-     background: rgb(59, 59, 59);
-     color: lightgrey;
+  background: rgb(59, 59, 59);
+  color: lightgrey;
 }
 
+/* Notes Page */
+body.light .noteDiv {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  border-radius: 10px;
+  background: white;
+  color: rgb(59, 59, 59);
+  text-shadow: 10px;
+}
 
-body.light .noteDiv  {
-    position: relative;
-    display: inline-block;
-    margin: 10px;
-    border-radius: 10px;
-    /* background: darkgrey; */
-    background: white;
-    color: rgb(59, 59, 59);
-    text-shadow: 10px;
- }  
-
-
- body.light .noteDiv.light {
-  /* background: rgb(67, 65, 65); */
+body.light .noteDiv.light {
   background: rgb(59, 59, 59);
   color: whitesmoke;
- }
+}
 
- body.light #taskInput,
- body.light #contactName,
- body.light #contactEmail,
- body.light #userFeedback {
-    color: black;
- }
+body.light #footer {
+  background-color: rgb(228, 227, 227);
+  color: rgb(59, 59, 59);
+  max-height: 60px;
+  width: 100%;
+  display: block;
+  position: fixed;
+  text-align: left;
+  padding: 20px;
+  bottom: 0px;
+  left: 0px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  z-index: 1000;
+}
 
- /* Tablet */
- @media (max-width: 880px){
- /* add font-size (max-width: 768px)*/
-  body, 
+body.light #footer a {
+  color: rgb(59, 59, 59);
+  transition: color 0.3 ease;
+}
+
+body.light #footer a:hover {
+  color: whitesmoke;
+}
+
+/* Buttons */
+body.light #taskBtn:hover,
+body.light #noteBtn:hover,
+body.light #enterDashboard:hover,
+body.light #greeting:hover,
+body.light #weather:hover,
+body.light #notes:hover,
+body.light #tasks:hover,
+body.light #weatherBtn:hover,
+body.light #localBtn:hover,
+body.light #formBtn:hover,
+body.light #feedback:hover {
+  background-color: hwb(0 91% 9% / 0.8);
+  border-radius: 7px;
+}
+
+body.light #toggleModeBtn,
+body.light #saveBtn {
+  color: rgb(59, 59, 59);
+  border-radius: 7px;
+  z-index: 1000;
+  background-color: white;
+  transition: color 0.3 ease;
+}
+
+body.light #toggleModeBtn:hover,
+body.light #saveBtn:hover {
+  background-color: hwb(0 91% 9% / 0.8);
+  border-radius: 7px;
+  color: white;
+}
+
+/* Input Fields */
+body.light #taskInput,
+body.light #contactName,
+body.light #contactEmail,
+body.light #userFeedback {
+  color: black;
+}
+
+/* Responsive Design: Tablet */
+@media (max-width: 880px) {
+  /* add font-size (max-width: 768px)*/
+  body,
   header,
   nav,
   nav a,
@@ -537,11 +612,11 @@ body.light .noteDiv  {
     font-size: 16px;
     grid-template-columns: 2fr;
     align-items: center;
- }
+  }
 
   header {
     height: 280px;
- }
+  }
 
   footer {
     margin: 0px;
@@ -549,8 +624,7 @@ body.light .noteDiv  {
     padding: 20px;
     bottom: 0px;
     left: 0px;
-
- }
+  }
 
   .nav {
     margin: 0px;
@@ -566,7 +640,7 @@ body.light .noteDiv  {
   #cityInput,
   #contactEmail,
   #contactName,
-  #userFeedback, 
+  #userFeedback,
   #taskBtn,
   #noteBtn,
   #enterDashboard,
@@ -584,12 +658,10 @@ body.light .noteDiv  {
     font-size: 14px;
     flex-direction: column;
     align-items: center;
-
   }
 }
 
-
-/* Mobile */
+/* Responsive Design Mobile */
 @media (max-width: 480px) {
   body,
   header,
@@ -601,7 +673,7 @@ body.light .noteDiv  {
     font-size: 14px;
     grid-template-columns: 2fr;
     align-items: center;
-    }
+  }
 
   header {
     height: 270px;
@@ -623,7 +695,7 @@ body.light .noteDiv  {
   #cityInput,
   #contactEmail,
   #contactName,
-  #userFeedback, 
+  #userFeedback,
   #taskBtn,
   #noteBtn,
   #enterDashboard,
@@ -641,11 +713,22 @@ body.light .noteDiv  {
     font-size: 12px;
     flex-direction: column;
     align-items: center;
+  }
 
+  textarea {
+    font-size: small;
+  }
+
+  .note:hover {
+    font-size: smaller;
+  }
+
+  .notes {
+    height: 220vh;
   }
 }
 
-/* iPhone SE size */
+/* Responsive Design: iPhone SE size */
 @media (max-width: 380px) {
   body,
   header,
@@ -657,7 +740,7 @@ body.light .noteDiv  {
     font-size: 12px;
     grid-template-columns: 2fr;
     align-items: center;
-    }
+  }
 
   header {
     height: 250px;
@@ -672,7 +755,7 @@ body.light .noteDiv  {
   #cityInput,
   #contactEmail,
   #contactName,
-  #userFeedback, 
+  #userFeedback,
   #taskBtn,
   #noteBtn,
   #enterDashboard,
@@ -690,7 +773,6 @@ body.light .noteDiv  {
     font-size: 10px;
     flex-direction: column;
     align-items: center;
-
   }
 
   .notes {
@@ -700,6 +782,13 @@ body.light .noteDiv  {
   body.light .notes,
   body.light .about {
     height: 220vh;
-    /* font-size: 12px; */
+  }
+
+  textarea {
+    font-size: smaller;
+  }
+
+  .note:hover {
+    font-size: small;
   }
 }
