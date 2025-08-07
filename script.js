@@ -8,6 +8,7 @@ const currentTime = document.getElementById("current-time");
 
 function greeting() {
   if (!currentHour) return; // only runs if element exists
+  
   if (hour < 12) {
     currentHour.textContent = "Good Morning!";
   } else if (hour >= 12 && hour <= 18) {
@@ -16,10 +17,17 @@ function greeting() {
     currentHour.textContent = "Good Evening!";
   }
   currentDay.textContent = currentDate.toDateString();
-  // currentTime.textContent = currentDate.toTimeString();
+  currentTime.textContent = currentDate.toLocaleTimeString();
 }
 
 greeting(hour);
+
+  if (currentDay) {
+    currentDay.textContent = currentDate.toDateString();
+  }
+  if (currentTime) {
+    currentTime.textContent = currentDate.toLocaleTimeString();
+  }
 
 //User name displayed after inputting
 const input = document.getElementById("nameInput");

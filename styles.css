@@ -254,6 +254,7 @@ textarea {
 .delete-note:hover {
   font-size: 100%;
 }
+
 .toggle-note:hover {
   font-size: 100%;
 }
@@ -300,7 +301,14 @@ textarea {
 }
 
 #footer a:hover {
-  color: blue;
+  color: lightblue;
+}
+
+#footer p,
+#footer span {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-size: smaller;
 }
 
 /* Buttons */
@@ -558,7 +566,7 @@ body.light #footer a {
 }
 
 body.light #footer a:hover {
-  color: whitesmoke;
+  color: blue;
 }
 
 /* Buttons */
