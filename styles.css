@@ -477,7 +477,8 @@ body.light .widget {
 
 body.light #enterDashboardDiv:hover,
 body.light .formDiv:hover,
-body.light .notesDiv:hover {
+body.light .notesDiv:hover,
+body.light .taskDiv:hover {
   box-shadow: 2px 2px 10px rgba(2, 2, 2, 0.8);
 }
 
@@ -490,6 +491,7 @@ body.light #aboutContainer {
   text-align: center;
   margin: 10px;
   font-size: medium;
+  box-shadow: none;
 }
 
 body.light #greetFeature,
