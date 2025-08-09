@@ -43,6 +43,10 @@ if (savedName && usersname) {
 if (saveBtn && input && usersname) {
   saveBtn.addEventListener("click", () => {
     const getValue = input.value;
+    if (getValue === "") {
+      alert("Please enter your name to personalize the greeting message.");
+      return;
+    }
     localStorage.setItem("username", getValue);
     usersname.textContent = `Greetings ${getValue}`;
     input.value = "";
@@ -101,8 +105,7 @@ const addNote = document.getElementById("addNote");
 let noteCards = JSON.parse(localStorage.getItem("noteCards")) || [];
 
 //Renders notes on page load
-if (addNote && noteBtn) {
-  // add this to keep from getting an error when loading
+if (addNote && noteBtn) {  // add to prevent error when loading
   renderNoteCards();
 
   noteBtn.addEventListener("click", () => {
@@ -191,29 +194,24 @@ function fetchWeather(city) {
       if (!response.ok) {
         throw new Error("City not found");
       }
-      //console.log(response.json());
+      // console.log(response.json());
       return response.json();
+
     })
     .then((data) => displayWeather(data))
     .catch((error) => displayError(error.message));
 }
 
+
+
 function displayWeather(data) {
   console.log("displayWeather called with:", data);
   document.getElementById("error-message").textContent = "";
   document.getElementById("city-name").textContent = `Weather in ${data.name}`;
-  document.getElementById(
-    "temperature"
-  ).textContent = `Current Temperature: ${Math.floor(data.main.temp)}°F`;
-  document.getElementById("feels-like").textContent = `Feels like: ${Math.floor(
-    data.main.feels_like
-  )}°F`;
-  document.getElementById(
-    "description"
-  ).textContent = `Condition: ${data.weather[0].description}`;
-  document.getElementById(
-    "humidity"
-  ).textContent = `Humidity: ${data.main.humidity}%`;
+  document.getElementById("temperature").textContent = `Current Temperature: ${Math.floor(data.main.temp)}°F`;
+  document.getElementById("feels-like").textContent = `Feels like: ${Math.floor(data.main.feels_like)}°F`;
+  document.getElementById("description").textContent = `Condition: ${data.weather[0].description}`;
+  document.getElementById("humidity").textContent = `Humidity: ${data.main.humidity}%`;
   // Save to localStorage, opting to not use
   // localStorage.setItem("lastWeatherData", JSON.stringify(data));
 }
@@ -314,11 +312,11 @@ document.addEventListener("DOMContentLoaded", function () {
     feedbackForm.addEventListener("submit", (event) => {
       event.preventDefault(); //Prevent default form submission on page reload
 
-      formBtn.addEventListener("click", () => {
-        alert(
-          "Another tab will open automatically to show the submission was successful. Please return to this tab and reload the page to clear the form. Thank you!"
-        );
-      });
+      // formBtn.addEventListener("click", () => {
+      //   alert(
+      //     "Another tab will open automatically to show the submission was successful. Please return to this tab and reload the page to clear the form. Thank you!"
+      //   );
+      // });
     });
   }
 });

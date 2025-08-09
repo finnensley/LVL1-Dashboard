@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NotesTest</title>
+    <title>TasksTest</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -20,19 +20,20 @@
       </div>
     </header>
     <div id="myDash">My Dashboard</div>
-    <section class="notes">
-      <div id="notesContainer">
-        <h1>Take Notes</h1>
-        <div class="notesDiv">
-          <button id="noteBtn">Create Note</button>
-          <br />
-          <div id="addNote"></div>
-          <br />
+    <section class="tasks">
+      <div class="tasklist">
+        <h1>Todo List</h1>
+        <div class="taskDiv">
+          <input type="text" id="taskInput" placeholder="Enter a task" />
+          <button id="taskBtn">add Task</button>
+          <ul id="taskList"></ul>
         </div>
       </div>
     </section>
     <button id="toggleModeBtn">Light Mode</button>
     <footer id="footer">
+      <span id="current-date"></span>
+      <span id="current-time"></span>
       <p>
         Contact Info:
         <a href="mailto:finniganensley@gmail.com">finniganensley@gmail.com</a>

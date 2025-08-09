@@ -90,7 +90,7 @@ nav a:hover {
 
 /* About Page */
 .about {
-  height: 150vh;
+  height: 200vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -594,12 +594,13 @@ body.light #saveBtn {
   z-index: 1000;
   background-color: white;
   transition: color 0.3 ease;
+  border-color: rgb(59, 59, 59);
 }
 
 body.light #toggleModeBtn:hover,
 body.light #saveBtn:hover {
   background-color: hwb(0 91% 9% / 0.8);
-  border-radius: 7px;
+  border-radius: 5px;
   color: white;
 }
 

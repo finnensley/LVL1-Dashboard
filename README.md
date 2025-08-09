@@ -16,16 +16,11 @@
 
 ## Explore using flex or grid for header
 
-## Put a catch and alert for an empty string in nameInput: "Please enter a name, if you would like"
-
-## link appscript to html, where a url link back to the dashboard can be added in the success statement
-
-## Add dynamic time/date to greetings screen
+## fix appscript to reload form page and clear form after clicking submit
 
 ## For Weather it allows you to add Countries, not just city. Could change Enter city or make an if to only allow cities 
 
-## Don't like Dark Mode button shape/shadow something? 
-
+## Feedback Form - create server and store and/or fix appscript, add automatic clearing of all fields when submit is clicked
 
 
 
@@ -59,6 +54,15 @@
 ## Add @media for different devices
 
 ## Fix Notecards: trashcan/light is infront of text. Use CSS positioning? 
+
+## link appscript to html, where a url link back to the dashboard can be added in the success statement
+
+## Add dynamic time/date to greetings screen
+
+## Don't like Dark Mode button shape/shadow something? 
+
+## Put a catch and alert for an empty string in nameInput: "Please enter a name, if you would like"
+
 
 
 
