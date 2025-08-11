@@ -289,7 +289,6 @@ textarea {
   left: 0px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
-  font-size: smaller;
   text-shadow: 4px 4px 7px rgba(0, 0, 0, 0.5);
   z-index: 1000;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
@@ -318,19 +317,11 @@ textarea {
 #urlInputNotes,
 #urlInputFeedback {
   position: fixed;
-  bottom: 0px;
-  right: 80px;
+  bottom: 30px;
+  right: 0px;
   margin: 22px;
   font-size: medium;
   border-radius: 5px;
-}
-
-#backgroundLabel {
-  position: fixed;
-  bottom: 0px;
-  right: 290px;
-  margin: 23px;
-  font-size: medium;
 }
 
 #bkgBtnGreet,
@@ -680,6 +671,10 @@ body.light #userFeedback {
     left: 0px;
   }
 
+  nav a {
+    padding: 5px;
+  }
+
   .nav {
     margin: 0px;
   }
@@ -708,12 +703,39 @@ body.light #userFeedback {
   #feedback,
   #saveBtn,
   #toggleModeBtn,
-  #nameInput {
+  #nameInput  {
     font-size: 14px;
     flex-direction: column;
     align-items: center;
+}
+
+  #urlInputGreet,
+  #urlInputAbout,
+  #urlInputWeather,
+  #urlInputTasks,
+  #urlInputNotes,
+  #urlInputFeedback {
+    font-size: 14px;
+    flex-direction: column;
+    align-items: center;
+    right: 0px;
+    bottom: 20px;
+  }
+
+  #bkgBtnGreet,
+  #bkgBtnAbout,
+  #bkgBtnWeather,
+  #bkgBtnTasks,
+  #bkgBtnNotes,
+  #bkgBtnFeedback {
+    font-size: 10px;
+    flex-direction: column;
+    align-items: center;
+    right: 7px;
+    bottom: 5px;
   }
 }
+
 
 /* Responsive Design Mobile */
 @media (max-width: 480px) {
@@ -730,7 +752,11 @@ body.light #userFeedback {
   }
 
   header {
-    height: 270px;
+    height: 200px;
+  }
+
+  nav a {
+    padding: 5px;
   }
 
   .nav {
@@ -769,6 +795,14 @@ body.light #userFeedback {
     align-items: center;
   }
 
+  #saveBtn {
+    top: 25px;
+  }
+
+   #toggleModeBtn {
+    top: 55px;
+   }
+
   textarea {
     font-size: small;
   }
@@ -780,6 +814,35 @@ body.light #userFeedback {
   .notes {
     height: 220vh;
   }
+
+  
+  #urlInputGreet,
+  #urlInputAbout,
+  #urlInputWeather,
+  #urlInputTasks,
+  #urlInputNotes,
+  #urlInputFeedback {
+    font-size: 12px;
+    flex-direction: column;
+    align-items: center;
+    right: 10px;
+    bottom: 42px;
+    margin: 0px;
+  } 
+
+
+  #bkgBtnGreet,
+  #bkgBtnAbout,
+  #bkgBtnWeather,
+  #bkgBtnTasks,
+  #bkgBtnNotes,
+  #bkgBtnFeedback {
+    font-size: 12px;
+    flex-direction: column;
+    align-items: center;
+    right: 0px;
+  }
+
 }
 
 /* Responsive Design: iPhone SE size */
@@ -797,13 +860,18 @@ body.light #userFeedback {
   }
 
   header {
-    height: 250px;
+    height: 180px;
+  }
+
+  nav a {
+    padding: 5px;
   }
 
   .nav {
     margin-top: 30px;
     top: 0;
   }
+
 
   #taskInput,
   #cityInput,
@@ -829,6 +897,14 @@ body.light #userFeedback {
     align-items: center;
   }
 
+  #saveBtn {
+    top: 20px;
+  }
+
+  #toggleModeBtn {
+    top: 45px;
+}
+
   .notes {
     height: 220vh;
   }
@@ -844,5 +920,31 @@ body.light #userFeedback {
 
   .note:hover {
     font-size: small;
+  }
+
+  #urlInputGreet,
+  #urlInputAbout,
+  #urlInputWeather,
+  #urlInputTasks,
+  #urlInputNotes,
+  #urlInputFeedback {
+    font-size: 10px;
+    flex-direction: column;
+    align-items: center;
+    right: 15px;
+    bottom: 40px;
+    margin: 0px;
+  } 
+
+  #bkgBtnGreet,
+  #bkgBtnAbout,
+  #bkgBtnWeather,
+  #bkgBtnTasks,
+  #bkgBtnNotes,
+  #bkgBtnFeedback {
+    font-size: 10px;
+    flex-direction: column;
+    align-items: center;
+    right: 0px;
   }
 }

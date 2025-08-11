@@ -1,5 +1,5 @@
+document.addEventListener("DOMContentLoaded", function () {
 //Greeting based on time of day
-
 const currentDate = new Date();
 const hour = currentDate.getHours();
 const currentHour = document.getElementById("current-hour");
@@ -294,16 +294,42 @@ function toggleLightMode() {
   localStorage.setItem("theme", theme);
 
  //Reset background to default in light mode
-  if(theme === "light") {
+  if (theme === "light") {
     if (greetingPage) greetingPage.style.backgroundImage = "";
     if (aboutPage) aboutPage.style.backgroundImage = "";
     if (weatherPage) weatherPage.style.backgroundImage = "";
     if (tasksPage) tasksPage.style.backgroundImage = "";
     if (notesPage) notesPage.style.backgroundImage = "";
     if (feedbackPage) feedbackPage.style.backgroundImage = "";
+  } else {
+    //Restore background images from localStorage when toggle back to dark mode
+    if (greetingPage) {
+      const savedBkgImg = localStorage.getItem("bkgImgGreet");
+      if (savedBkgImg) greetingPage.style.backgroundImage = savedBkgImg ? `url(${savedBkgImg})` : "";
+    }
+    if (aboutPage) {
+      const savedBkgImg = localStorage.getItem("bkgImgAbout");
+      if (savedBkgImg) aboutPage.style.backgroundImage = savedBkgImg ? `url(${savedBkgImg})` : "";
+    }
+    if (weatherPage) {
+      const savedBkgImg = localStorage.getItem("bkgImgWeather");
+      if (savedBkgImg) weatherPage.style.backgroundImage = savedBkgImg ? `url(${savedBkgImg})` : "";
+  }
+    if (tasksPage) {
+      const savedBkgImg = localStorage.getItem("bkgImgTasks");
+      if (savedBkgImg) tasksPage.style.backgroundImage = savedBkgImg ?  `url(${savedBkgImg})` : "";
+  }
+    if (notesPage) {
+      const savedBkgImg = localStorage.getItem("bkgImgNotes");
+      if (savedBkgImg) notesPage.style.backgroundImage = savedBkgImg ?  `url(${savedBkgImg})` : "";
+  }
+    if (feedbackPage) {
+      const savedBkgImg = localStorage.getItem("bkgImgFeedback");
+      if (savedBkgImg) feedbackPage.style.backgroundImage = savedBkgImg ? `url(${savedBkgImg})` : "";
   }
 }
-  
+
+} 
 
 function loadTheme() {
   const savedTheme = localStorage.getItem("theme");
@@ -313,34 +339,40 @@ function loadTheme() {
   }
 }
 loadTheme();
+
+if (lightModeBtn) {
 lightModeBtn.addEventListener("click", toggleLightMode);
+}
 
 //Submit Feedback Form - url submits without the need of anything here, but glitching, some tie in with the dark mode button or needs the eventListener
-document.addEventListener("DOMContentLoaded", function () {
   const feedbackForm = document.getElementById("feedbackForm");
 
   if (feedbackForm) {
     feedbackForm.addEventListener("submit", (event) => {
       event.preventDefault(); //Prevent default form submission on page reload
-      // const formBtn = document.getElementById("formBtn");
-
-      // const contactName = document.getElementById("contactName").value;
-      // const contactEmail = document.getElementById("contactEmail").value;
-      // const userFeedback = document.getElementById("userFeedback").value;
-      // const category = document.getElementById("categoryDropdown").value;
     });
-  }
-});
+  };
+
 
 //User can change background on each page to personalize
 //Greeting Page
 const urlInputGreet = document.getElementById("urlInputGreet");
 const bkgBtnGreet = document.getElementById("bkgBtnGreet");
 const greetingPage = document.querySelector(".greeting");
+const savedBkgImgGreet = localStorage.getItem("bkgImgGreet");
 
+//loads the background image on page load and excludes loading localStorage to light mode page
+if (savedBkgImgGreet && greetingPage && !body.classList.contains("light")) {
+  greetingPage.style.backgroundImage = `url(${savedBkgImgGreet})`;
+  updatePlaceholder(urlInputGreet, "bkgImgGreet")
+} else if (urlInputGreet) {
+  updatePlaceholder(urlInputGreet, "bkgImgGreet");
+}
+
+//added "bkgImgGreet" to changeBackground()
 if (bkgBtnGreet && urlInputGreet && greetingPage) {
   bkgBtnGreet.addEventListener("click", () => {
-    changeBackground(greetingPage, urlInputGreet);
+    changeBackground(greetingPage, urlInputGreet, "bkgImgGreet");
   });
 }
 
@@ -348,10 +380,18 @@ if (bkgBtnGreet && urlInputGreet && greetingPage) {
 const urlInputAbout = document.getElementById("urlInputAbout");
 const bkgBtnAbout = document.getElementById("bkgBtnAbout");
 const aboutPage = document.querySelector(".about");
+const savedBkgImgAbout = localStorage.getItem("bkgImgAbout");
+
+if (savedBkgImgAbout && aboutPage && !body.classList.contains("light")) {
+  aboutPage.style.backgroundImage = `url(${savedBkgImgAbout})`;
+  updatePlaceholder(urlInputAbout, "bkgImgAbout")
+} else if (urlInputAbout) {
+  updatePlaceholder(urlInputAbout, "bkgImgAbout");
+}
 
 if (bkgBtnAbout && urlInputAbout && aboutPage) {
   bkgBtnAbout.addEventListener("click", () => {
-    changeBackground(aboutPage, urlInputAbout);
+    changeBackground(aboutPage, urlInputAbout, "bkgImgAbout");
   });
 }
 
@@ -359,10 +399,18 @@ if (bkgBtnAbout && urlInputAbout && aboutPage) {
 const urlInputWeather = document.getElementById("urlInputWeather");
 const bkgBtnWeather = document.getElementById("bkgBtnWeather");
 const weatherPage = document.querySelector(".weather");
+const savedBkgImgWeather = localStorage.getItem("bkgImgWeather");
+
+if (savedBkgImgWeather && weatherPage && !body.classList.contains("light")) {
+  weatherPage.style.backgroundImage = `url(${savedBkgImgWeather})`;
+  updatePlaceholder(urlInputWeather, "bkgImgWeather");
+} else if (urlInputWeather) {
+  updatePlaceholder(urlInputWeather, "bkgImgWeather");
+}
 
 if (bkgBtnWeather && urlInputWeather && weatherPage) {
   bkgBtnWeather.addEventListener("click", () => {
-    changeBackground(weatherPage, urlInputWeather);
+    changeBackground(weatherPage, urlInputWeather, "bkgImgWeather");
   });
 }
 
@@ -370,10 +418,18 @@ if (bkgBtnWeather && urlInputWeather && weatherPage) {
 const urlInputTasks = document.getElementById("urlInputTasks");
 const bkgBtnTasks = document.getElementById("bkgBtnTasks");
 const tasksPage = document.querySelector(".tasks");
+const savedBkgImgTasks = localStorage.getItem("bkgImgTasks");
+
+if (savedBkgImgTasks && tasksPage && !body.classList.contains("light")) {
+  tasksPage.style.backgroundImage = `url(${savedBkgImgTasks})`;
+  updatePlaceholder(urlInputTasks, "bkgImgTasks");
+} else if (urlInputTasks) {
+  updatePlaceholder(urlInputTasks, "bkgImgTasks");
+}
 
 if (bkgBtnTasks && urlInputTasks && tasksPage) {
   bkgBtnTasks.addEventListener("click", () => {
-    changeBackground(tasksPage, urlInputTasks);
+    changeBackground(tasksPage, urlInputTasks, "bkgImgTasks");
   });
 }
 
@@ -381,10 +437,18 @@ if (bkgBtnTasks && urlInputTasks && tasksPage) {
 const urlInputNotes = document.getElementById("urlInputNotes");
 const bkgBtnNotes = document.getElementById("bkgBtnNotes");
 const notesPage = document.querySelector(".notes");
+const savedBkgImgNotes = localStorage.getItem("bkgImgNotes");
+
+if (savedBkgImgNotes && notesPage && !body.classList.contains("light")) {
+  notesPage.style.backgroundImage = `url(${savedBkgImgNotes})`;
+  updatePlaceholder(urlInputNotes, "bkgImgNotes");
+}else if (urlInputNotes) {
+  updatePlaceholder(urlInputNotes, "bkgImgNotes");
+}
 
 if (bkgBtnNotes && urlInputNotes && notesPage) {
   bkgBtnNotes.addEventListener("click", () => {
-    changeBackground(notesPage, urlInputNotes);
+    changeBackground(notesPage, urlInputNotes, "bkgImgNotes");
   });
 }
 
@@ -392,30 +456,51 @@ if (bkgBtnNotes && urlInputNotes && notesPage) {
 const urlInputFeedback = document.getElementById("urlInputFeedback");
 const bkgBtnFeedback = document.getElementById("bkgBtnFeedback");
 const feedbackPage = document.querySelector(".feedback");
+const savedBkgImgFeedback = localStorage.getItem("bkgImgFeedback");
+
+if (savedBkgImgFeedback && feedbackPage && !body.classList.contains("light")) {
+  feedbackPage.style.backgroundImage = `url(${savedBkgImgFeedback})`;
+  updatePlaceholder(urlInputFeedback, "bkgImgFeedback");
+} else if (urlInputFeedback) {
+  updatePlaceholder(urlInputFeedback, "bkgImgFeedback");
+}
 
 if (bkgBtnFeedback && urlInputFeedback && feedbackPage) {
   bkgBtnFeedback.addEventListener("click", () => {
-    changeBackground(feedbackPage, urlInputFeedback);
+    changeBackground(feedbackPage, urlInputFeedback, "bkgImgFeedback");
   });
 }
 
 //Generic function
-function changeBackground(page, input) {
+function changeBackground(page, input, bkgImg) {
   const url = input.value.trim();
   if (url && page) {
     page.style.backgroundImage = `url(${url})`;
+    localStorage.setItem(bkgImg, url); // Save to localStorage
     input.value = "";
-    input.placeholder = "Click change for default";
+    input.placeholder = "Click for default image";
   } else if (page) {
     page.style.backgroundImage = "";
+    localStorage.removeItem(bkgImg); //Remove from localStorage
     input.placeholder = "Image URL";
   }
+  updatePlaceholder(input, bkgImg);
 };
+
+//bkgImgKey is same as storageKey (which is commonly used for the key used for localStorage)
+function updatePlaceholder(input, bkgImgStorageKey) {
+  const savedBkgImg = localStorage.getItem(bkgImgStorageKey);
+  if(savedBkgImg) {
+    input.placeholder = "Click for default image";
+  } else {
+    input.placeholder = "Image URL";
+  }
+}
 
 //Hide background change option in light mode
 const backgroundControls = document.getElementById("backgroundControls");
 
-function updateBackgroundControlsVisibility(){
+function updateVisibility() {
   if (!backgroundControls) return;
   if (body.classList.contains("light")) {
     backgroundControls.classList.add("hide");
@@ -424,9 +509,10 @@ function updateBackgroundControlsVisibility(){
     backgroundControls.classList.remove("hide");
   }
 }
-updateBackgroundControlsVisibility();
-lightModeBtn.addEventListener("click",updateBackgroundControlsVisibility);
- 
+updateVisibility();
+lightModeBtn.addEventListener("click",updateVisibility);
+
+});
 
 
 
