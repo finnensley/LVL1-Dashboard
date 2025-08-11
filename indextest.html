@@ -3,11 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TasksTest</title>
+    <title>Personal Dashboard Test</title>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      #backgroundImgInput {
+        position: fixed;
+         bottom: 0px;
+         right: 90px;
+         margin: 10px;
+         font-size: medium;
+         border-radius: 5px;
+      }
+
+      #backgroundLabel {
+         position: fixed;
+         bottom: 0px;
+         right: 300px;
+         margin: 10px;
+         font-size: medium;
+      }
+
+      #changeBackgroundBtn {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        margin: 0px;
+        font-size: medium;
+        color: white;
+        background: none;
+        border-radius: 5px;
+      }
+    </style>
   </head>
   <body>
     <header>
+      <div id="myDash">My Dashboard</div>
       <div class="nav">
         <nav>
           <a href="index.html">Greeting</a>
@@ -19,27 +49,38 @@
         </nav>
       </div>
     </header>
-    <div id="myDash">My Dashboard</div>
-    <section class="tasks">
-      <div class="tasklist">
-        <h1>Todo List</h1>
-        <div class="taskDiv">
-          <input type="text" id="taskInput" placeholder="Enter a task" />
-          <button id="taskBtn">add Task</button>
-          <ul id="taskList"></ul>
+    <div id="mainDivLight">
+      <section class="greeting">
+        <div id="enterDashboardDiv">
+          <h2 id="userDisplay"></h2>
+          <p id="current-hour"></p>
+          <button
+            id="enterDashboard"
+            onclick="window.location.href='about.html'"
+          >
+            Enter Dashboard
+          </button>
+          <br />
         </div>
-      </div>
-    </section>
-    <button id="toggleModeBtn">Light Mode</button>
-    <footer id="footer">
-      <span id="current-date"></span>
-      <span id="current-time"></span>
-      <p>
-        Contact Info:
-        <a href="mailto:finniganensley@gmail.com">finniganensley@gmail.com</a>
-      </p>
-      <p>&copy; Created by Finnigan Ensley - 2025</p>
-    </footer>
+        <input type="text" id="nameInput" placeholder="Type your name" />
+        <button id="saveBtn">Save Name</button>
+        <button id="toggleModeBtn">Light Mode</button>
+        <footer id="footer">
+          <span id="current-date"></span>
+          <span id="current-time"></span>
+          <p>
+            Contact Info:
+            <a href="mailto:finniganensley@gmail.com"
+              >finniganensley@gmail.com</a
+            >
+          </p>
+          <p>&copy; Created by Finnigan Ensley - 2025</p>
+          <label for="backgroundImg" id="backgroundLabel">Change Background: </label>
+          <input type="text" id="urlInputGreet" data-target=".greeting" placeholder="URL Image"/>
+          <button type="button" id="changeBackgroundBtn" class="bkgBtn" data-input="urlInputGreet">Change</button>
+        </footer>
+      </section>
+    </div>
     <script src="scripttest.js"></script>
   </body>
 </html>

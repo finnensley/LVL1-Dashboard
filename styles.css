@@ -311,6 +311,44 @@ textarea {
   font-size: smaller;
 }
 
+#urlInputGreet,
+#urlInputAbout,
+#urlInputWeather,
+#urlInputTasks,
+#urlInputNotes,
+#urlInputFeedback {
+  position: fixed;
+  bottom: 0px;
+  right: 80px;
+  margin: 22px;
+  font-size: medium;
+  border-radius: 5px;
+}
+
+#backgroundLabel {
+  position: fixed;
+  bottom: 0px;
+  right: 290px;
+  margin: 23px;
+  font-size: medium;
+}
+
+#bkgBtnGreet,
+#bkgBtnAbout,
+#bkgBtnWeather,
+#bkgBtnTasks,
+#bkgBtnNotes,
+#bkgBtnFeedback {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  margin: 12px;
+  font-size: medium;
+  color: white;
+  background: none;
+  border-radius: 5px;
+}
+
 /* Buttons */
 button {
   cursor: pointer;
@@ -401,6 +439,9 @@ button {
   color: whitesmoke;
 }
 
+.hide {
+  display: none !important;
+}
 /*  Light MODE: Styles applied when body has class "light" */
 body.light header {
   background-color: rgb(228, 227, 227);

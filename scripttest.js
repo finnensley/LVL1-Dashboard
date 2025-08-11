@@ -1,46 +1,46 @@
-const taskInput = document.getElementById("taskInput");
-const taskBtn = document.getElementById("taskBtn");
-const taskList = document.getElementById("taskList");
+const urlInput = document.getElementById("backgroundImgInput");
+const changeBackgroundBtn = document.getElementById("changeBackgroundBtn");
+const greetingPage = document.querySelector(".greeting");
 
-// Create Element li to display tasks to user
-// Remove tasks displayed to user
-//Remover tasks from localStorage
-// Need to push new tasks into an array
-//localStorage to display on page load
-//localStorage update when new tasks are added
+// changeBackgroundBtn.addEventListener("click", () => {
+//     changeBackground(greetingPage);
+//   });
 
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-//render tasks on page load
-if (taskBtn && taskInput && taskList) {
-  renderTasks();
 
-  // eventListener to Btn inside if statement
-  taskBtn.addEventListener("click", () => {
-    const taskText = taskInput.value.trim();
-    //prevent blank tasks
-    if (taskText === "") return;
-    tasks.push(taskText);
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-    renderTasks();
-    taskInput.value = "";
+
+//.greeting, background-image: url(images/....jpg)
+
+// function changeBackground(page){
+//     const url = urlInput.value.trim();
+//   if (url && greetingPage) {
+//     page.style.backgroundImage = `url(${url})`;
+//   };
+// };
+
+// one handler for all pages including light mode:
+document.querySelectorAll(".bkgBtn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const inputId = btn.getAttribute("data-input");
+    const input = document.getElementById(inputId);
+    const targetSelector = input.getAttribute("data-target");
+    const page = document.querySelector(targetSelector);
+
+    if (!input || !page) return;
+
+    if (body.classList.contains("light")) {
+      input.type = "color";
+      const color = input.value;
+      page.style.backgroundColor = color;
+      page.style.backgroundImage = "";
+    } else {
+      input.type = "text";
+      const url = input.value.trim();
+      page.style.backgroundImage = url ? `url(${url})` : "";
+      page.style.backgroundColor = "";
+    }
   });
-}
+});
 
-function renderTasks() {
-  if (!taskList) return;
-  taskList.innerHTML = "";
-  tasks.forEach((task, index) => {
-    if (task.trim() === "") return;
-    const taskItem = document.createElement("li");
-    taskItem.textContent = task;
-    taskItem.classList.add("list");
-
-    taskItem.addEventListener("click", function () {
-      tasks.splice(index, 1);
-      localStorage.setItem("tasks", JSON.stringify(tasks));
-      renderTasks();
-    });
-    taskList.appendChild(taskItem);
-  });
-}
+//tested using https://www.lifeinthefingerlakes.com/wp-content/uploads/2019/10/finger-lakes-sunset.jpg
+//Find an image, open it in a new tab, copy url

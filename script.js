@@ -8,7 +8,7 @@ const currentTime = document.getElementById("current-time");
 
 function greeting() {
   if (!currentHour) return; // only runs if element exists
-  
+
   if (hour < 12) {
     currentHour.textContent = "Good Morning!";
   } else if (hour >= 12 && hour <= 18) {
@@ -22,12 +22,12 @@ function greeting() {
 
 greeting(hour);
 
-  if (currentDay) {
-    currentDay.textContent = currentDate.toDateString();
-  }
-  if (currentTime) {
-    currentTime.textContent = currentDate.toLocaleTimeString();
-  }
+if (currentDay) {
+  currentDay.textContent = currentDate.toDateString();
+}
+if (currentTime) {
+  currentTime.textContent = currentDate.toLocaleTimeString();
+}
 
 //User name displayed after inputting
 const input = document.getElementById("nameInput");
@@ -105,7 +105,8 @@ const addNote = document.getElementById("addNote");
 let noteCards = JSON.parse(localStorage.getItem("noteCards")) || [];
 
 //Renders notes on page load
-if (addNote && noteBtn) {  // add to prevent error when loading
+if (addNote && noteBtn) {
+  // add to prevent error when loading
   renderNoteCards();
 
   noteBtn.addEventListener("click", () => {
@@ -196,22 +197,27 @@ function fetchWeather(city) {
       }
       // console.log(response.json());
       return response.json();
-
     })
     .then((data) => displayWeather(data))
     .catch((error) => displayError(error.message));
 }
 
-
-
 function displayWeather(data) {
   console.log("displayWeather called with:", data);
   document.getElementById("error-message").textContent = "";
   document.getElementById("city-name").textContent = `Weather in ${data.name}`;
-  document.getElementById("temperature").textContent = `Current Temperature: ${Math.floor(data.main.temp)}°F`;
-  document.getElementById("feels-like").textContent = `Feels like: ${Math.floor(data.main.feels_like)}°F`;
-  document.getElementById("description").textContent = `Condition: ${data.weather[0].description}`;
-  document.getElementById("humidity").textContent = `Humidity: ${data.main.humidity}%`;
+  document.getElementById(
+    "temperature"
+  ).textContent = `Current Temperature: ${Math.floor(data.main.temp)}°F`;
+  document.getElementById("feels-like").textContent = `Feels like: ${Math.floor(
+    data.main.feels_like
+  )}°F`;
+  document.getElementById(
+    "description"
+  ).textContent = `Condition: ${data.weather[0].description}`;
+  document.getElementById(
+    "humidity"
+  ).textContent = `Humidity: ${data.main.humidity}%`;
   // Save to localStorage, opting to not use
   // localStorage.setItem("lastWeatherData", JSON.stringify(data));
 }
@@ -286,7 +292,18 @@ function toggleLightMode() {
   const theme = body.classList.contains("light") ? "light" : "dark";
   lightModeBtn.innerText = theme === "light" ? "Dark Mode" : "Light Mode";
   localStorage.setItem("theme", theme);
+
+ //Reset background to default in light mode
+  if(theme === "light") {
+    if (greetingPage) greetingPage.style.backgroundImage = "";
+    if (aboutPage) aboutPage.style.backgroundImage = "";
+    if (weatherPage) weatherPage.style.backgroundImage = "";
+    if (tasksPage) tasksPage.style.backgroundImage = "";
+    if (notesPage) notesPage.style.backgroundImage = "";
+    if (feedbackPage) feedbackPage.style.backgroundImage = "";
+  }
 }
+  
 
 function loadTheme() {
   const savedTheme = localStorage.getItem("theme");
@@ -299,24 +316,117 @@ loadTheme();
 lightModeBtn.addEventListener("click", toggleLightMode);
 
 //Submit Feedback Form - url submits without the need of anything here, but glitching, some tie in with the dark mode button or needs the eventListener
-const formBtn = document.getElementById("formBtn");
-const contactName = document.getElementById("contactName").value;
-const contactEmail = document.getElementById("contactEmail").value;
-const userFeedback = document.getElementById("userFeedback").value;
-const category = document.getElementById("categoryDropdown").value;
-
 document.addEventListener("DOMContentLoaded", function () {
   const feedbackForm = document.getElementById("feedbackForm");
 
   if (feedbackForm) {
     feedbackForm.addEventListener("submit", (event) => {
       event.preventDefault(); //Prevent default form submission on page reload
+      // const formBtn = document.getElementById("formBtn");
 
-      // formBtn.addEventListener("click", () => {
-      //   alert(
-      //     "Another tab will open automatically to show the submission was successful. Please return to this tab and reload the page to clear the form. Thank you!"
-      //   );
-      // });
+      // const contactName = document.getElementById("contactName").value;
+      // const contactEmail = document.getElementById("contactEmail").value;
+      // const userFeedback = document.getElementById("userFeedback").value;
+      // const category = document.getElementById("categoryDropdown").value;
     });
   }
 });
+
+//User can change background on each page to personalize
+//Greeting Page
+const urlInputGreet = document.getElementById("urlInputGreet");
+const bkgBtnGreet = document.getElementById("bkgBtnGreet");
+const greetingPage = document.querySelector(".greeting");
+
+if (bkgBtnGreet && urlInputGreet && greetingPage) {
+  bkgBtnGreet.addEventListener("click", () => {
+    changeBackground(greetingPage, urlInputGreet);
+  });
+}
+
+//About Page
+const urlInputAbout = document.getElementById("urlInputAbout");
+const bkgBtnAbout = document.getElementById("bkgBtnAbout");
+const aboutPage = document.querySelector(".about");
+
+if (bkgBtnAbout && urlInputAbout && aboutPage) {
+  bkgBtnAbout.addEventListener("click", () => {
+    changeBackground(aboutPage, urlInputAbout);
+  });
+}
+
+//Weather Page
+const urlInputWeather = document.getElementById("urlInputWeather");
+const bkgBtnWeather = document.getElementById("bkgBtnWeather");
+const weatherPage = document.querySelector(".weather");
+
+if (bkgBtnWeather && urlInputWeather && weatherPage) {
+  bkgBtnWeather.addEventListener("click", () => {
+    changeBackground(weatherPage, urlInputWeather);
+  });
+}
+
+//Tasks Page
+const urlInputTasks = document.getElementById("urlInputTasks");
+const bkgBtnTasks = document.getElementById("bkgBtnTasks");
+const tasksPage = document.querySelector(".tasks");
+
+if (bkgBtnTasks && urlInputTasks && tasksPage) {
+  bkgBtnTasks.addEventListener("click", () => {
+    changeBackground(tasksPage, urlInputTasks);
+  });
+}
+
+//Notes Page
+const urlInputNotes = document.getElementById("urlInputNotes");
+const bkgBtnNotes = document.getElementById("bkgBtnNotes");
+const notesPage = document.querySelector(".notes");
+
+if (bkgBtnNotes && urlInputNotes && notesPage) {
+  bkgBtnNotes.addEventListener("click", () => {
+    changeBackground(notesPage, urlInputNotes);
+  });
+}
+
+//Feedback Page
+const urlInputFeedback = document.getElementById("urlInputFeedback");
+const bkgBtnFeedback = document.getElementById("bkgBtnFeedback");
+const feedbackPage = document.querySelector(".feedback");
+
+if (bkgBtnFeedback && urlInputFeedback && feedbackPage) {
+  bkgBtnFeedback.addEventListener("click", () => {
+    changeBackground(feedbackPage, urlInputFeedback);
+  });
+}
+
+//Generic function
+function changeBackground(page, input) {
+  const url = input.value.trim();
+  if (url && page) {
+    page.style.backgroundImage = `url(${url})`;
+    input.value = "";
+    input.placeholder = "Click change for default";
+  } else if (page) {
+    page.style.backgroundImage = "";
+    input.placeholder = "Image URL";
+  }
+};
+
+//Hide background change option in light mode
+const backgroundControls = document.getElementById("backgroundControls");
+
+function updateBackgroundControlsVisibility(){
+  if (!backgroundControls) return;
+  if (body.classList.contains("light")) {
+    backgroundControls.classList.add("hide");
+
+  } else {
+    backgroundControls.classList.remove("hide");
+  }
+}
+updateBackgroundControlsVisibility();
+lightModeBtn.addEventListener("click",updateBackgroundControlsVisibility);
+ 
+
+
+
