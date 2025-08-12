@@ -44,3 +44,12 @@ document.querySelectorAll(".bkgBtn").forEach((btn) => {
 
 //tested using https://www.lifeinthefingerlakes.com/wp-content/uploads/2019/10/finger-lakes-sunset.jpg
 //Find an image, open it in a new tab, copy url
+
+if (urlInputGreet) {
+ url.includes(".jpg")
+}
+
+if (urlInput) {
+  url.endsWith(".jpg")
+  page.styles
+}

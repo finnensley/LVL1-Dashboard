@@ -22,8 +22,11 @@
 
 ## Feedback Form - create server and store and/or fix appscript, add automatic clearing of all fields when submit is clicked
 
-## add media to change background label, input, and button
-## add localStorage to background image change
+## Image URL add an alert to only use url that end in .jpg or .png and return if anything else (tried google.com and page went white and blank)
+
+## Notes - localStorage for notecard sizing and/or when toggle light or dark sizing changes to default. See if I can keep the size the same just toggle light/dark.
+
+## Refactor code - use forEach and build an array of objects
 
 
 
@@ -65,6 +68,10 @@
 ## Don't like Dark Mode button shape/shadow something? 
 
 ## Put a catch and alert for an empty string in nameInput: "Please enter a name, if you would like"
+
+## add media to change background label, input, and button
+
+## add localStorage to background image change
 
 
 

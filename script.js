@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-//Greeting based on time of day
+
+  //Greeting based on time of day
 const currentDate = new Date();
 const hour = currentDate.getHours();
 const currentHour = document.getElementById("current-hour");
@@ -474,7 +475,13 @@ if (bkgBtnFeedback && urlInputFeedback && feedbackPage) {
 //Generic function
 function changeBackground(page, input, bkgImg) {
   const url = input.value.trim();
-  if (url && page) {
+  if (url && !(url.endsWith("jpg") || url.endsWith(".jpeg") || url.endsWith(".png"))) {
+    input.value = "";
+    alert("Please enter a valid image URL (.jpg, .jpeg, .png).")
+    return;
+  }
+  if (url.endsWith(".jpg") && page || url.endsWith(".jpeg") && page || url.endsWith(".png") && page) {
+  // if (url && page) {
     page.style.backgroundImage = `url(${url})`;
     localStorage.setItem(bkgImg, url); // Save to localStorage
     input.value = "";
@@ -483,9 +490,11 @@ function changeBackground(page, input, bkgImg) {
     page.style.backgroundImage = "";
     localStorage.removeItem(bkgImg); //Remove from localStorage
     input.placeholder = "Image URL";
-  }
+  } 
   updatePlaceholder(input, bkgImg);
 };
+
+
 
 //bkgImgKey is same as storageKey (which is commonly used for the key used for localStorage)
 function updatePlaceholder(input, bkgImgStorageKey) {
