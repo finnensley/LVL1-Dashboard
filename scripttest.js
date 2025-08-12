@@ -44,6 +44,8 @@ document.querySelectorAll(".bkgBtn").forEach((btn) => {
 
 //tested using https://www.lifeinthefingerlakes.com/wp-content/uploads/2019/10/finger-lakes-sunset.jpg
 //Find an image, open it in a new tab, copy url
+//seeing a light background img for testing: https://images.pexels.com/photos/13133637/pexels-photo-13133637.jpeg
+//right click on image to copy image link from pexels
 
 if (urlInputGreet) {
  url.includes(".jpg")

@@ -159,8 +159,14 @@ function renderNoteCards() {
     toggleBtn.addEventListener("click", () => {
       //toggle theme in object and DOM
       noteCards[index].theme = noteObj.theme === "dark" ? "light" : "dark";
+      //save the size only in browser when toggling theme
+      if (noteCards[index].theme === "light") {
+        noteDiv.classList.add("light");
+      } else {
+        noteDiv.classList.remove("light");
+      }
       localStorage.setItem("noteCards", JSON.stringify(noteCards));
-      renderNoteCards();
+      // renderNoteCards();
     });
 
     noteDiv.appendChild(textarea);
@@ -299,8 +305,14 @@ function toggleLightMode() {
     if (greetingPage) greetingPage.style.backgroundImage = "";
     if (aboutPage) aboutPage.style.backgroundImage = "";
     if (weatherPage) weatherPage.style.backgroundImage = "";
-    if (tasksPage) tasksPage.style.backgroundImage = "";
-    if (notesPage) notesPage.style.backgroundImage = "";
+    if (tasksPage) {
+        tasksPage.style.backgroundImage = "";
+        tasksPage.classList.remove("listBkgChange"); // removes class if bkg img is changed in dark mode, then toggled to light mode. style stays the same for light mode
+    } 
+    if (notesPage) { 
+      notesPage.style.backgroundImage = "";
+      notesPage.classList.remove("notesBkgChange");
+    }
     if (feedbackPage) feedbackPage.style.backgroundImage = "";
   } else {
     //Restore background images from localStorage when toggle back to dark mode
@@ -318,11 +330,23 @@ function toggleLightMode() {
   }
     if (tasksPage) {
       const savedBkgImg = localStorage.getItem("bkgImgTasks");
-      if (savedBkgImg) tasksPage.style.backgroundImage = savedBkgImg ?  `url(${savedBkgImg})` : "";
+      if (savedBkgImg) {
+      // tasksPage.style.backgroundImage = savedBkgImg ?  `url(${savedBkgImg})` : ""; // use this if decide to not customize list
+        tasksPage.style.backgroundImage = `url(${savedBkgImg})`;
+        tasksPage.classList.add("listBkgChange");
+      } else {
+        tasksPage.classList.remove("listBkgChange");
+      }
   }
     if (notesPage) {
       const savedBkgImg = localStorage.getItem("bkgImgNotes");
-      if (savedBkgImg) notesPage.style.backgroundImage = savedBkgImg ?  `url(${savedBkgImg})` : "";
+      if (savedBkgImg) {
+      // notesPage.style.backgroundImage = savedBkgImg ?  `url(${savedBkgImg})` : "";
+      notesPage.style.backgroundImage = `url(${savedBkgImg})`;
+      notesPage.classList.add("notesBkgChange");
+      } else {
+        notesPage.classList.remove("notesBkgChange");
+      }
   }
     if (feedbackPage) {
       const savedBkgImg = localStorage.getItem("bkgImgFeedback");
@@ -423,8 +447,12 @@ const savedBkgImgTasks = localStorage.getItem("bkgImgTasks");
 
 if (savedBkgImgTasks && tasksPage && !body.classList.contains("light")) {
   tasksPage.style.backgroundImage = `url(${savedBkgImgTasks})`;
+  tasksPage.classList.add("listBkgChange");
   updatePlaceholder(urlInputTasks, "bkgImgTasks");
-} else if (urlInputTasks) {
+
+// } else if (urlInputTasks) { // add back if decide not to customize list when bkgImg is changed
+}else if (tasksPage) {
+  tasksPage.classList.remove("listBkgChange");
   updatePlaceholder(urlInputTasks, "bkgImgTasks");
 }
 
@@ -442,8 +470,11 @@ const savedBkgImgNotes = localStorage.getItem("bkgImgNotes");
 
 if (savedBkgImgNotes && notesPage && !body.classList.contains("light")) {
   notesPage.style.backgroundImage = `url(${savedBkgImgNotes})`;
+  notesPage.classList.add("notesBkgChange");
   updatePlaceholder(urlInputNotes, "bkgImgNotes");
-}else if (urlInputNotes) {
+// }else if (urlInputNotes) { // add back if decide not to customize list when bkgImg is changed
+} else if (notesPage) {
+  notesPage.classList.remove("notesBkgChange");
   updatePlaceholder(urlInputNotes, "bkgImgNotes");
 }
 
@@ -481,16 +512,32 @@ function changeBackground(page, input, bkgImg) {
     return;
   }
   if (url.endsWith(".jpg") && page || url.endsWith(".jpeg") && page || url.endsWith(".png") && page) {
-  // if (url && page) {
     page.style.backgroundImage = `url(${url})`;
     localStorage.setItem(bkgImg, url); // Save to localStorage
+
+    if (page.classList.contains("tasks")) {
+     page.classList.add("listBkgChange");// Change taskList background and hover colors
+    }
+
+    if (page.classList.contains("notes")) {
+      page.classList.add("notesBkgChange"); // Change taskList background and hover colors
+    }
+
     input.value = "";
     input.placeholder = "Click for default image";
   } else if (page) {
     page.style.backgroundImage = "";
     localStorage.removeItem(bkgImg); //Remove from localStorage
+
+    if (page.classList.contains("tasks")) {//Removes class from tasks page
+      page.classList.remove("listBkgChange");
+    }
+
+    if (page.classList.contains("notes")) {//Removes class from notes page
+      page.classList.remove("notesBkgChange");
+    }
     input.placeholder = "Image URL";
-  } 
+  }
   updatePlaceholder(input, bkgImg);
 };
 

@@ -162,10 +162,10 @@ nav a:hover {
 }
 
 .list {
-  color: darkolivegreen;
+  color: rgba(85, 107, 47, 0.613);
   cursor: pointer;
   padding: 2px;
-  background: lightgoldenrodyellow;
+  background: rgb(250, 250, 210);
   margin: 5px 0;
   border-radius: 5px;
 }
@@ -173,6 +173,30 @@ nav a:hover {
 .list:hover {
   background: darkolivegreen;
   color: burlywood;
+}
+
+/* When bkg img is changed on tasks page */
+
+.tasks.listBkgChange li.list {
+  background-color: rgba(245, 245, 245, 0.633);
+  color: rgb(59, 59, 59);
+  border: solid rgba(59, 59, 59, 0.243);
+}
+
+.tasks.listBkgChange li.list:hover {
+  background-color: rgba(59, 59, 59, 0.613);
+  color: whitesmoke;
+}
+
+/* When bkg img is changed on notes page */
+.notes.notesBkgChange .noteDiv.light {
+  background-color: rgba(59, 59, 59, 0.613);
+  color: whitesmoke;
+  } 
+
+.notes.notesBkgChange .noteDiv {
+  background-color: rgba(245, 245, 245, 0.633);
+  color: rgb(59, 59, 59);
 }
 
 /* Notes Page */
@@ -192,7 +216,7 @@ nav a:hover {
 }
 
 textarea {
-  height: auto;
+  height: auto; 
   width: auto;
   border-radius: 10px;
   background-color: darkolivegreen;
@@ -215,7 +239,7 @@ textarea {
 
 /* Darker background note in page dark mode, script uses "light" for turning notecard darkolive and transparent for "dark"  */
 .noteDiv.light {
-  background: darkolivegreen;
+  background: rgba(85, 107, 47, 0.613);
   color: lightgoldenrodyellow;
 }
 
