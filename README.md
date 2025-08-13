@@ -16,17 +16,13 @@
 
 ## Explore using flex or grid for header
 
-## fix appscript to reload form page and clear form after clicking submit
-
 ## For Weather it allows you to add Countries, not just city. Could change Enter city or make an if to only allow cities 
 
-## Feedback Form - create server and store and/or fix appscript, add automatic clearing of all fields when submit is clicked
-
-## Image URL add an alert to only use url that end in .jpg or .png and return if anything else (tried google.com and page went white and blank)
-
-## Notes - localStorage for notecard sizing and/or when toggle light or dark sizing changes to default. See if I can keep the size the same just toggle light/dark.
+## Feedback Form - create server and store and/or fix appscript, add automatic clearing of all fields when submit is clicked or window reload. Add a date entry or do it automatically
 
 ## Refactor code - use forEach and build an array of objects
+
+## Feedback Form - add the date to the spreadsheet automatically. Need to create a label and input, insert date using same as new Date(). Either do it once submit is hit (hidden from the user) or have the Date populate on page load.
 
 
 
@@ -72,6 +68,10 @@
 ## add media to change background label, input, and button
 
 ## add localStorage to background image change
+
+## Image URL add an alert to only use url that end in .jpg or .png and return if anything else (tried google.com and page went white and blank)
+
+## Notes - localStorage for notecard sizing and/or when toggle light or dark sizing changes to default. See if I can keep the size the same just toggle light/dark.
 
 
 

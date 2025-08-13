@@ -17,8 +17,6 @@ function greeting() {
   } else if (hour > 18) {
     currentHour.textContent = "Good Evening!";
   }
-  currentDay.textContent = currentDate.toDateString();
-  currentTime.textContent = currentDate.toLocaleTimeString();
 }
 
 greeting(hour);
@@ -369,15 +367,19 @@ if (lightModeBtn) {
 lightModeBtn.addEventListener("click", toggleLightMode);
 }
 
-//Submit Feedback Form - url submits without the need of anything here, but glitching, some tie in with the dark mode button or needs the eventListener
+//Submit Feedback Form - form submits without anything in script because action is set in HTML, added hidden date/time input
+
   const feedbackForm = document.getElementById("feedbackForm");
+  const hiddenDateInput =  document.getElementById("dateInput");
+  
 
-  if (feedbackForm) {
-    feedbackForm.addEventListener("submit", (event) => {
-      event.preventDefault(); //Prevent default form submission on page reload
-    });
-  };
-
+  if (feedbackForm && hiddenDateInput) {
+    feedbackForm.addEventListener("input", () => { 
+     const now = new Date();
+     hiddenDateInput.value = `${now.toLocaleString()}`;
+    //  hiddenDateInput.type = "text"; // use for debugging 
+  });
+};
 
 //User can change background on each page to personalize
 //Greeting Page
@@ -516,11 +518,11 @@ function changeBackground(page, input, bkgImg) {
     localStorage.setItem(bkgImg, url); // Save to localStorage
 
     if (page.classList.contains("tasks")) {
-     page.classList.add("listBkgChange");// Change taskList background and hover colors
+     page.classList.add("listBkgChange");// Change taskList background and hover colors when bkgimg changed
     }
 
     if (page.classList.contains("notes")) {
-      page.classList.add("notesBkgChange"); // Change taskList background and hover colors
+      page.classList.add("notesBkgChange"); // Change taskList background and hover colors when bkgimg changed
     }
 
     input.value = "";
@@ -529,11 +531,11 @@ function changeBackground(page, input, bkgImg) {
     page.style.backgroundImage = "";
     localStorage.removeItem(bkgImg); //Remove from localStorage
 
-    if (page.classList.contains("tasks")) {//Removes class from tasks page
+    if (page.classList.contains("tasks")) {//Removes listBkgChange class from tasks page 
       page.classList.remove("listBkgChange");
     }
 
-    if (page.classList.contains("notes")) {//Removes class from notes page
+    if (page.classList.contains("notes")) {//Removes notesBkgChange class from notes page
       page.classList.remove("notesBkgChange");
     }
     input.placeholder = "Image URL";

@@ -24,6 +24,7 @@
       <h1>Feedback Form</h1>
       <form
         class="feedbackForm"
+        id="feedbackForm"
         action="https://script.google.com/macros/s/AKfycbx7fILE5Yl5HCMITC5_HhUOrSH42xlX5MwsVYFPNMyon1GgHz6wcH63Rdeu_Hv4D-9idw/exec"
         method="POST"
         target="_blank"
@@ -44,6 +45,8 @@
             name="contactEmail"
             placeholder="Please enter your email"
           />
+          <br />
+          <input type="hidden" id="dateInput" name="dateInput"/>
           <br />
           <label>Feedback Category</label>
           <select id="categoryDropdown" name="categoryDropdown">
@@ -75,7 +78,7 @@
         <span id="current-date"></span>
         <span id="current-time"></span>
         <p>
-          Contact Info:
+          Contact:
           <a href="mailto:finniganensley@gmail.com">finniganensley@gmail.com</a>
         </p>
         <p>&copy; Created by Finnigan Ensley - 2025</p>
