@@ -95,6 +95,13 @@ window.addEventListener("DOMContentLoaded", () => {
 }
 });
 
+action="https://script.google.com/macros/s/AKfycbx7fILE5Yl5HCMITC5_HhUOrSH42xlX5MwsVYFPNMyon1GgHz6wcH63Rdeu_Hv4D-9idw/exec"
+action="https://script.google.com/macros/s/AKfycbwo4LFS6bO1nqRrv3_WGNZBN6AS6PsPBy0lWCABl5pntq9UBYx11Ky0Pmc9ftCLhR32fw/exec"
+action="https://script.google.com/macros/s/AKfycbymyc57lh4Nd5rIxFmfc9hKiP38JxQKljdNpIHu0eMG44On1D7ce2NHIxjt-QuCwpGb/exec"
+
+
+
+
 
 
 
