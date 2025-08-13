@@ -164,8 +164,8 @@ function renderNoteCards() {
         noteDiv.classList.remove("light");
       }
       localStorage.setItem("noteCards", JSON.stringify(noteCards));
-      // renderNoteCards();
     });
+
 
     noteDiv.appendChild(textarea);
     noteDiv.appendChild(deleteBtn);

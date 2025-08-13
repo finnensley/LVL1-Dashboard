@@ -237,6 +237,7 @@ textarea {
   text-shadow: 10px;
 }
 
+
 /* Darker background note in page dark mode, script uses "light" for turning notecard darkolive and transparent for "dark"  */
 .noteDiv.light {
   background: rgba(85, 107, 47, 0.613);
@@ -249,11 +250,14 @@ textarea {
   background: inherit;
   color: inherit;
   border-radius: 10px;
-  padding: 10px;
+  padding: 15px;
+  /* padding-bottom: 35px; */
 }
 
+
+
 .note:hover {
-  font-size: large;
+  /* font-size: large; */
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
 }
 
@@ -454,6 +458,7 @@ button {
   color: whitesmoke;
 }
 
+/* Hide background change option in light mode */
 .hide {
   display: none !important;
 }

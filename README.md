@@ -18,11 +18,10 @@
 
 ## For Weather it allows you to add Countries, not just city. Could change Enter city or make an if to only allow cities 
 
-## Feedback Form - create server and store and/or fix appscript, add automatic clearing of all fields when submit is clicked or window reload. Add a date entry or do it automatically
+## Figure out how to not have text run into toggle and trash on noteCards -- already tried, putting below or beside and note background color extends past border looking bad, worked with contentEditable for div but not much better.
 
 ## Refactor code - use forEach and build an array of objects
 
-## Feedback Form - add the date to the spreadsheet automatically. Need to create a label and input, insert date using same as new Date(). Either do it once submit is hit (hidden from the user) or have the Date populate on page load.
 
 
 
@@ -72,6 +71,12 @@
 ## Image URL add an alert to only use url that end in .jpg or .png and return if anything else (tried google.com and page went white and blank)
 
 ## Notes - localStorage for notecard sizing and/or when toggle light or dark sizing changes to default. See if I can keep the size the same just toggle light/dark.
+
+## Feedback Form - create server and store and/or fix appscript, add automatic clearing of all fields when submit is clicked or window reload. Add a date entry or do it automatically
+
+## Feedback Form - add the date to the spreadsheet automatically. Need to create a label and input, insert date using same as new Date(). Either do it once submit is hit (hidden from the user) or have the Date populate on page load.
+
+## add an email validator on feedback form
 
 
 
