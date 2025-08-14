@@ -22,6 +22,16 @@
 
 ## Refactor code - use forEach and build an array of objects
 
+## Could create a Title: Header with light bulb and trash in header and only allow text for title to start below
+
+## Title:           bulb trashcan
+## My Note Title
+## Note: 
+
+## Div with a border ht/wd/margin and then a textarea inside for note text ?? 
+
+## What if lightbulb and trashcan are hidden unless you hover on or are typing in note; then appear above or below ?
+
 
 
 

@@ -120,6 +120,8 @@ if (addNote && noteBtn) {
 function renderNoteCards() {
   addNote.innerHTML = "";
   noteCards.forEach((noteObj, index) => {
+    const themeAndTrashDiv = document.createElement("div");
+    themeAndTrashDiv.classList.add("themeAndTrashDiv");
     const noteDiv = document.createElement("div");
     noteDiv.classList.add("noteDiv");
     if (noteObj.theme === "light") {
@@ -131,13 +133,22 @@ function renderNoteCards() {
     const textarea = document.createElement("textarea");
     textarea.classList.add("note");
     textarea.value = noteObj.text;
-    textarea.placeholder = "Notes: ";
+    textarea.placeholder = "Notes: ";    
 
     //Save changes to localStorage when user edits notes
     textarea.addEventListener("input", () => {
       noteCards[index].text = textarea.value;
       localStorage.setItem("noteCards", JSON.stringify(noteCards));
     });
+
+    //Attempting to create note size to fit content
+//     const textareas = document.querySelectorAll('textarea');
+//     textareas.forEach(textarea => {
+//       textarea.addEventListener('input', function() {
+//        this.style.height = 'auto';
+//        this.style.height = this.scrollHeight + 'px';
+//   });
+// });
 
     //Delete button for each note
     const deleteBtn = document.createElement("button");
@@ -168,8 +179,9 @@ function renderNoteCards() {
 
 
     noteDiv.appendChild(textarea);
-    noteDiv.appendChild(deleteBtn);
-    noteDiv.appendChild(toggleBtn);
+    noteDiv.appendChild(themeAndTrashDiv);
+    themeAndTrashDiv.appendChild(deleteBtn);
+    themeAndTrashDiv.appendChild(toggleBtn);
     addNote.appendChild(noteDiv);
   });
 }

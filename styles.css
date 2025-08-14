@@ -201,7 +201,9 @@ nav a:hover {
 
 /* Notes Page */
 .notes {
-  height: 150vh;
+  /* height: 150vh; */
+  min-height: 150vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -216,70 +218,73 @@ nav a:hover {
 }
 
 textarea {
-  height: auto; 
-  width: auto;
+  min-height: 100px;
+  width: 100%;
   border-radius: 10px;
-  background-color: darkolivegreen;
-  padding: 60px;
-  color: lightgoldenrodyellow;
-  background-blend-mode: luminosity;
   font-size: medium;
+  resize: vertical;
 }
 
 /* Transparent note in page dark mode */
 .noteDiv {
   position: relative;
+  width: 232px;
+  height: 132px;
   display: inline-block;
-  margin: 10px;
+  margin: 10px 10px 24px 10px;
   border-radius: 10px;
   background: transparent;
   color: whitesmoke;
   text-shadow: 10px;
+  
 }
-
 
 /* Darker background note in page dark mode, script uses "light" for turning notecard darkolive and transparent for "dark"  */
 .noteDiv.light {
-  background: rgba(85, 107, 47, 0.613);
+  background-color: darkolivegreen;
   color: lightgoldenrodyellow;
 }
 
+/* textarea class="note" */
 .note {
-  width: 200px;
-  height: 100px;
-  background: inherit;
+  min-width: 200px;
+  min-height: 100px;
+  width: auto;
+  height: auto;
+  background-color: inherit;
   color: inherit;
   border-radius: 10px;
   padding: 15px;
-  /* padding-bottom: 35px; */
 }
 
-
-
 .note:hover {
-  /* font-size: large; */
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
 }
 
-.delete-note {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  z-index: 2;
-  background-color: transparent;
-  border: none;
+/* appending this to the NoteDiv may be the problem with resizing */
+.themeAndTrashDiv {
+  display: flex;
+  align-items: right;
+  background-color: none;
 }
 
+.delete-note,
 .toggle-note {
-  position: absolute;
-  bottom: 15px;
-  right: 40px;
   z-index: 2;
   background-color: transparent;
   border: none;
 }
 
-.delete-note:hover {
+/* .toggle-note { */
+  /* position: absolute; */
+  /* position: relative;
+  left: 90px;
+  z-index: 2;
+  background-color: transparent;
+  border: none;
+} */
+
+.delete-note:hover { 
   font-size: 100%;
 }
 
@@ -689,7 +694,7 @@ body.light #userFeedback {
   }
 
   header {
-    height: 280px;
+    height: 240px;
   }
 
   footer {
@@ -763,6 +768,11 @@ body.light #userFeedback {
     right: 7px;
     bottom: 5px;
   }
+
+   .noteDiv {
+    width: 232px;
+    /* height: 132px; */
+  }
 }
 
 
@@ -832,16 +842,23 @@ body.light #userFeedback {
     top: 55px;
    }
 
+  .noteDiv {
+    width: 230px;
+    height: 132px;
+  }
+
   textarea {
     font-size: small;
   }
 
   .note:hover {
-    font-size: smaller;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
   }
 
   .notes {
     height: 220vh;
+    /* min-height: 300vh;
+    height: auto; */
   }
 
   
@@ -936,6 +953,8 @@ body.light #userFeedback {
 
   .notes {
     height: 220vh;
+    /* min-height: 300vh;
+    height: auto; */
   }
 
   body.light .notes,
@@ -943,13 +962,24 @@ body.light #userFeedback {
     height: 220vh;
   }
 
+  .noteDiv {
+    width: 230px;
+    height: 132px;
+    /* min-width: 230px;
+    width: auto;
+    min-height: 132px;
+    height: auto; */
+  }
+
   textarea {
-    font-size: smaller;
+    font-size: small;
   }
 
   .note:hover {
-    font-size: small;
+   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
   }
+
+
 
   #urlInputGreet,
   #urlInputAbout,
