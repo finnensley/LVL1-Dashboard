@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notes Test</title>
     <link rel="stylesheet" href="styles.css" />
+  <style>
+    .hidden {
+      display: none;
+    }
+
+    .screen {
+        min-height: 150vh;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        background-image: url(images/pexels-tsvetoslav-hristov-1306654-2499862.jpg);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        max-width: 100%;
+    }
+  </style>
   </head>
   <body>
     <header>
@@ -20,7 +41,7 @@
       </div>
     </header>
     <div id="myDash">My Dashboard</div>
-    <section class="notes">
+    <section id="originalPage" class="notes">
       <div id="notesContainer">
         <h1>Take Notes</h1>
         <button id="noteBtn">Create Note</button>
@@ -29,6 +50,12 @@
           <br />
         </div>
       </div>
+    </section>
+    <section id="noteScreen" class="noteDiv hidden">
+      <button id="returnBtn"></button>
+      <!-- if input, swap screen to show noteObj[index] -->
+       <!-- then use swap screen again to return to class .notes -->
+        <!-- what if just hide all other notes and make textarea {resize:both}  -->
     </section>
     <button id="toggleModeBtn">Light Mode</button>
     <footer id="footer">

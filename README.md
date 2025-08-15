@@ -32,7 +32,11 @@
 
 ## What if lightbulb and trashcan are hidden unless you hover on or are typing in note; then appear above or below ?
 
+## If you click into note it pops up on a screen by itself, use href and a hidden window, maybe a text editor with more features, and with the ability to save/download note to folder on computer. Use download icon. 1 note that can resize vertically and horizontally.
 
+## rework height vh for each page in responsiveness (got messed up working on notes resizing)
+
+## add the ability to place a picture from your local computer and save as the background using the Image URL input ? or create an error if not https: at the beginning.
 
 
 

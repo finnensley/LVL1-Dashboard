@@ -222,46 +222,46 @@ textarea {
   width: 100%;
   border-radius: 10px;
   font-size: medium;
-  resize: vertical;
 }
 
 /* Transparent note in page dark mode */
+/* This width/height is keeping from diagnol resizing, textarea can only go the size of the parent, which is the noteDiv*/
 .noteDiv {
   position: relative;
-  width: 232px;
-  height: 132px;
   display: inline-block;
   margin: 10px 10px 24px 10px;
   border-radius: 10px;
   background: transparent;
   color: whitesmoke;
   text-shadow: 10px;
-  
 }
 
 /* Darker background note in page dark mode, script uses "light" for turning notecard darkolive and transparent for "dark"  */
 .noteDiv.light {
-  background-color: darkolivegreen;
+  /* background-color: darkolivegreen; */
   color: lightgoldenrodyellow;
 }
 
 /* textarea class="note" */
 .note {
-  min-width: 200px;
-  min-height: 100px;
-  width: auto;
-  height: auto;
+  width: 100%;
+  min-height: 150px;
+  box-sizing: border-box;
   background-color: inherit;
   color: inherit;
   border-radius: 10px;
   padding: 15px;
 }
 
+.note.light {
+   background-color: darkolivegreen;
+   color: lightgoldenrodyellow;
+}
+
 .note:hover {
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
 }
 
-/* appending this to the NoteDiv may be the problem with resizing */
 .themeAndTrashDiv {
   display: flex;
   align-items: right;
@@ -274,15 +274,6 @@ textarea {
   background-color: transparent;
   border: none;
 }
-
-/* .toggle-note { */
-  /* position: absolute; */
-  /* position: relative;
-  left: 90px;
-  z-index: 2;
-  background-color: transparent;
-  border: none;
-} */
 
 .delete-note:hover { 
   font-size: 100%;
@@ -769,10 +760,6 @@ body.light #userFeedback {
     bottom: 5px;
   }
 
-   .noteDiv {
-    width: 232px;
-    /* height: 132px; */
-  }
 }
 
 
@@ -842,10 +829,6 @@ body.light #userFeedback {
     top: 55px;
    }
 
-  .noteDiv {
-    width: 230px;
-    height: 132px;
-  }
 
   textarea {
     font-size: small;
@@ -960,15 +943,6 @@ body.light #userFeedback {
   body.light .notes,
   body.light .about {
     height: 220vh;
-  }
-
-  .noteDiv {
-    width: 230px;
-    height: 132px;
-    /* min-width: 230px;
-    width: auto;
-    min-height: 132px;
-    height: auto; */
   }
 
   textarea {
