@@ -597,7 +597,8 @@ body.light .noteDiv {
   text-shadow: 10px;
 }
 
-body.light .noteDiv.light {
+
+body.light textarea.light {
   background: rgb(59, 59, 59);
   color: whitesmoke;
 }

@@ -18,23 +18,7 @@
 
 ## For Weather it allows you to add Countries, not just city. Could change Enter city or make an if to only allow cities 
 
-## Figure out how to not have text run into toggle and trash on noteCards -- already tried, putting below or beside and note background color extends past border looking bad, worked with contentEditable for div but not much better.
-
 ## Refactor code - use forEach and build an array of objects
-
-## Could create a Title: Header with light bulb and trash in header and only allow text for title to start below
-
-## Title:           bulb trashcan
-## My Note Title
-## Note: 
-
-## Div with a border ht/wd/margin and then a textarea inside for note text ?? 
-
-## What if lightbulb and trashcan are hidden unless you hover on or are typing in note; then appear above or below ?
-
-## If you click into note it pops up on a screen by itself, use href and a hidden window, maybe a text editor with more features, and with the ability to save/download note to folder on computer. Use download icon. 1 note that can resize vertically and horizontally.
-
-## rework height vh for each page in responsiveness (got messed up working on notes resizing)
 
 ## add the ability to place a picture from your local computer and save as the background using the Image URL input ? or create an error if not https: at the beginning.
 
@@ -91,6 +75,16 @@
 ## Feedback Form - add the date to the spreadsheet automatically. Need to create a label and input, insert date using same as new Date(). Either do it once submit is hit (hidden from the user) or have the Date populate on page load.
 
 ## add an email validator on feedback form
+
+## Figure out how to not have text run into toggle and trash on noteCards -- already tried, putting below or beside and note background color extends past border looking bad, worked with contentEditable for div but not much better.
+
+## Div with a border ht/wd/margin and then a textarea inside for note text ?? 
+
+## rework height vh for each page in responsiveness (got messed up working on notes resizing)
+
+
+
+
 
 
 
