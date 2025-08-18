@@ -924,6 +924,18 @@ body.light #userFeedback {
     right: 10px;
    }
 
+   .notes {
+    padding-top: 200px;
+    padding-bottom: 50px;
+    min-height: 100vh;
+  }
+
+  .about {
+   padding-top: 200px;
+   padding-bottom: 50px;
+   min-height: 150vh;
+  }
+
   #urlInputGreet,
   #urlInputAbout,
   #urlInputWeather,
@@ -1045,11 +1057,16 @@ body.light #userFeedback {
   }
 
   .notes {
-    /* min-height: 220vh; */
     padding-top: 200px;
     padding-bottom: 50px;
     min-height: 100vh;
   }
+
+ .about {
+  padding-top: 200px;
+  padding-bottom: 50px;
+  min-height: 150vh;
+ }
 
   
   #urlInputGreet,
@@ -1156,7 +1173,6 @@ body.light #userFeedback {
 }
 
   .notes {
-    /* min-height: 220vh; */
     padding-top: 200px;
     padding-bottom: 50px;
     min-height: 100vh;
