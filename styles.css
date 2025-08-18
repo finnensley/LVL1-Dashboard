@@ -925,13 +925,13 @@ body.light #userFeedback {
    }
 
    .notes {
-    padding-top: 200px;
+    padding-top: 255px;
     padding-bottom: 50px;
     min-height: 100vh;
   }
 
   .about {
-   padding-top: 200px;
+   padding-top: 255px;
    padding-bottom: 50px;
    min-height: 150vh;
   }
@@ -1057,13 +1057,13 @@ body.light #userFeedback {
   }
 
   .notes {
-    padding-top: 200px;
+    padding-top: 210px;
     padding-bottom: 50px;
     min-height: 100vh;
   }
 
  .about {
-  padding-top: 200px;
+  padding-top: 210px;
   padding-bottom: 50px;
   min-height: 150vh;
  }
