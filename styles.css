@@ -18,6 +18,7 @@ header {
   z-index: 1000;
 }
 
+
 /* "My Dashboard" text inside header */
 #myDash {
   text-align: left;
@@ -56,9 +57,10 @@ nav a:hover {
 .nav {
   position: fixed;
   top: 55px;
-  right: 100px;
+  right: 120px;
   margin: 30px;
 }
+
 
 /* Greeting Page */
 /* Fixed for background-attachment on iOS/mobile */
@@ -516,7 +518,7 @@ body.light .themeAndTrashDiv
   font-size: medium;
   color: white;
   background: none;
-  border-radius: 5px;
+  border-radius: 7px;
 }
 
 /* Buttons */
@@ -540,7 +542,7 @@ button {
 #toggleModeBtn {
   background: none;
   color: white;
-  border-radius: 5px;
+  border-radius: 7px;
   font-size: large;
 }
 
@@ -821,7 +823,7 @@ body.light #saveBtn {
 body.light #toggleModeBtn:hover,
 body.light #saveBtn:hover {
   background-color: hwb(0 91% 9% / 0.8);
-  border-radius: 5px;
+  border-radius: 7px;
   color: white;
 }
 
@@ -872,6 +874,7 @@ body.light #userFeedback {
     font-size: 20px;
     grid-template-columns: 1fr;
     align-items: center;
+    margin-top: 170px;
   }
 
   #taskInput,
@@ -897,6 +900,18 @@ body.light #userFeedback {
     flex-direction: column;
     align-items: center;
 }
+
+  #nameInput {
+    top: 20px;
+  }
+
+  #saveBtn {
+    top: 45px;
+  }
+
+   #toggleModeBtn {
+    top: 70px;
+   }
 
   #urlInputGreet,
   #urlInputAbout,
@@ -942,7 +957,7 @@ body.light #userFeedback {
   }
 
   header {
-    height: 200px;
+    height: 190px;
   }
 
   nav a {
@@ -950,15 +965,17 @@ body.light #userFeedback {
   }
 
   .nav {
-    margin-top: 40px;
-    top: 0;
+    margin: 0px;
+    top: 35px;
+    right: 110px;
   }
 
-  #myDash {
+  #myDash,
+  body.light #myDash {
     font-size: 16px;
     flex-direction: column;
     align-items: center;
-    margin-top: 5px;
+    margin-top: 150px;
   }
 
   #taskInput,
@@ -985,12 +1002,17 @@ body.light #userFeedback {
     align-items: center;
   }
 
+  #nameInput {
+    margin-top: 0px;
+    top: 10px;
+  }
+
   #saveBtn {
     top: 25px;
   }
 
    #toggleModeBtn {
-    top: 55px;
+    top: 50px;
    }
 
 
@@ -1054,7 +1076,7 @@ body.light #userFeedback {
   }
 
   header {
-    height: 180px;
+    height: 175px;
   }
 
   nav a {
@@ -1062,8 +1084,9 @@ body.light #userFeedback {
   }
 
   .nav {
-    margin-top: 30px;
-    top: 0;
+    /* margin-top: 40px; */
+    top: 30px;
+    right: 95px;
   }
 
 
@@ -1091,12 +1114,21 @@ body.light #userFeedback {
     align-items: center;
   }
 
+  #nameInput {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+
+  #myDash {
+    margin-top: 130px;
+  }
+
   #saveBtn {
     top: 20px;
   }
 
   #toggleModeBtn {
-    top: 45px;
+    top: 40px;
 }
 
   .notes {
