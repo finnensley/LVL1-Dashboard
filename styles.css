@@ -1026,7 +1026,7 @@ body.light #userFeedback {
     top: 50px;
    }
 
-    .about #toggleModeBtn,
+   .about #toggleModeBtn,
    .weather #toggleModeBtn,
    .tasks #toggleModeBtn,
    .notes #toggleModeBtn,
@@ -1099,6 +1099,7 @@ body.light #userFeedback {
     height: 175px;
   }
 
+
   nav a {
     padding: 5px;
   }
@@ -1108,6 +1109,9 @@ body.light #userFeedback {
     right: 95px;
   }
 
+  .weather h2 {
+    font-size: large;
+  }
 
   #taskInput,
   #cityInput,
