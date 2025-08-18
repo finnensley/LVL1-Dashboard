@@ -572,7 +572,7 @@ button {
 
 #toggleModeBtn {
   position: fixed;
-  top: 70px;
+  top: 65px;
   right: 10px;
   margin: 10px;
   z-index: 1000;
@@ -585,7 +585,7 @@ button {
 /* Input fields */
 #nameInput {
   position: fixed;
-  top: 0px;
+  top: 5px;
   right: 10px;
   margin: 10px;
   font-size: large;
@@ -870,11 +870,12 @@ body.light #userFeedback {
     margin: 0px;
   }
 
-  #myDash {
+  #myDash,
+  body.light #myDash {
     font-size: 20px;
     grid-template-columns: 1fr;
     align-items: center;
-    margin-top: 170px;
+    margin-top: 180px;
   }
 
   #taskInput,
@@ -957,7 +958,7 @@ body.light #userFeedback {
   }
 
   header {
-    height: 190px;
+    height: 195px;
   }
 
   nav a {
@@ -1119,7 +1120,8 @@ body.light #userFeedback {
     padding-top: 0px;
   }
 
-  #myDash {
+  #myDash,
+  body.light #myDash {
     margin-top: 130px;
   }
 
