@@ -870,6 +870,7 @@ body.light #userFeedback {
     margin: 0px;
   }
 
+
   #myDash,
   body.light #myDash {
     font-size: 20px;
@@ -912,6 +913,15 @@ body.light #userFeedback {
 
    #toggleModeBtn {
     top: 70px;
+   }
+
+   .about #toggleModeBtn,
+   .weather #toggleModeBtn,
+   .tasks #toggleModeBtn,
+   .notes #toggleModeBtn,
+   .feedback #toggleModeBtn {
+    top: 20px;
+    right: 10px;
    }
 
   #urlInputGreet,
@@ -1016,6 +1026,15 @@ body.light #userFeedback {
     top: 50px;
    }
 
+    .about #toggleModeBtn,
+   .weather #toggleModeBtn,
+   .tasks #toggleModeBtn,
+   .notes #toggleModeBtn,
+   .feedback #toggleModeBtn {
+    top: 10px;
+    right: 10px;
+   }
+
 
   textarea {
     font-size: small;
@@ -1085,7 +1104,6 @@ body.light #userFeedback {
   }
 
   .nav {
-    /* margin-top: 40px; */
     top: 30px;
     right: 95px;
   }
