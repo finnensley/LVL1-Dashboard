@@ -14,8 +14,6 @@
 
 # Challenges:
 
-## Explore using flex or grid for header
-
 ## For Weather it allows you to add Countries, not just city. Could change Enter city or make an if to only allow cities 
 
 ## Refactor code - use forEach and build an array of objects
@@ -24,6 +22,7 @@
 
 ## Add linear gradient to bkgImg when urlInput is used to customize it
 
+## Remove or adjust text shadow on footer and see how it looks
 
 
 
@@ -39,7 +38,7 @@
 
 ## Add light/dark theme to the top of each page to take the background out to white with black text ??
 
-## Add a contact me form on greetings page ? - created a feedback page
+## Add a contact me form on greetings page ? - created a feedback page instead
 
 ## nav bar doesn't align perfectly with the image mode, change "image" to "dark" 
 

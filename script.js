@@ -302,60 +302,109 @@ function toggleLightMode() {
   localStorage.setItem("theme", theme);
 
  //Reset background to default in light mode
-  if (theme === "light") {
-    if (greetingPage) greetingPage.style.backgroundImage = "";
-    if (aboutPage) aboutPage.style.backgroundImage = "";
-    if (weatherPage) weatherPage.style.backgroundImage = "";
-    if (tasksPage) {
-        tasksPage.style.backgroundImage = "";
-        tasksPage.classList.remove("listBkgChange"); // removes class if bkg img is changed in dark mode, then toggled to light mode. style stays the same for light mode
-    } 
-    if (notesPage) { 
-      notesPage.style.backgroundImage = "";
-      notesPage.classList.remove("notesBkgChange");
-    }
-    if (feedbackPage) feedbackPage.style.backgroundImage = "";
-  } else {
-    //Restore background images from localStorage when toggle back to dark mode
-    if (greetingPage) {
-      const savedBkgImg = localStorage.getItem("bkgImgGreet");
-      if (savedBkgImg) greetingPage.style.backgroundImage = savedBkgImg ? `url(${savedBkgImg})` : "";
-    }
-    if (aboutPage) {
-      const savedBkgImg = localStorage.getItem("bkgImgAbout");
-      if (savedBkgImg) aboutPage.style.backgroundImage = savedBkgImg ? `url(${savedBkgImg})` : "";
-    }
-    if (weatherPage) {
-      const savedBkgImg = localStorage.getItem("bkgImgWeather");
-      if (savedBkgImg) weatherPage.style.backgroundImage = savedBkgImg ? `url(${savedBkgImg})` : "";
-  }
-    if (tasksPage) {
-      const savedBkgImg = localStorage.getItem("bkgImgTasks");
-      if (savedBkgImg) {
-      // tasksPage.style.backgroundImage = savedBkgImg ?  `url(${savedBkgImg})` : ""; // use this if decide to not customize list
-        tasksPage.style.backgroundImage = `url(${savedBkgImg})`;
-        tasksPage.classList.add("listBkgChange");
-      } else {
-        tasksPage.classList.remove("listBkgChange");
-      }
-  }
-    if (notesPage) {
-      const savedBkgImg = localStorage.getItem("bkgImgNotes");
-      if (savedBkgImg) {
-      // notesPage.style.backgroundImage = savedBkgImg ?  `url(${savedBkgImg})` : "";
-      notesPage.style.backgroundImage = `url(${savedBkgImg})`;
-      notesPage.classList.add("notesBkgChange");
-      } else {
-        notesPage.classList.remove("notesBkgChange");
-      }
-  }
-    if (feedbackPage) {
-      const savedBkgImg = localStorage.getItem("bkgImgFeedback");
-      if (savedBkgImg) feedbackPage.style.backgroundImage = savedBkgImg ? `url(${savedBkgImg})` : "";
-  }
+//   if (theme === "light") {
+//     if (greetingPage) greetingPage.style.backgroundImage = "";
+//     if (aboutPage) aboutPage.style.backgroundImage = "";
+//     if (weatherPage) weatherPage.style.backgroundImage = "";
+//     if (tasksPage) {
+//         tasksPage.style.backgroundImage = "";
+//         tasksPage.classList.remove("listBkgChange"); // removes class if bkg img is changed in dark mode, then toggled to light mode. style stays the same for light mode
+//     } 
+//     if (notesPage) { 
+//       notesPage.style.backgroundImage = "";
+//       notesPage.classList.remove("notesBkgChange");
+//     }
+//     if (feedbackPage) feedbackPage.style.backgroundImage = "";
+//   } else {
+//     //Restore background images from localStorage when toggle back to dark mode
+//     if (greetingPage) {
+//       const savedBkgImg = localStorage.getItem("bkgImgGreet");
+//       if (savedBkgImg) greetingPage.style.backgroundImage = savedBkgImg ? `url(${savedBkgImg})` : "";
+//     }
+//     if (aboutPage) {
+//       const savedBkgImg = localStorage.getItem("bkgImgAbout");
+//       if (savedBkgImg) aboutPage.style.backgroundImage = savedBkgImg ? `url(${savedBkgImg})` : "";
+//     }
+//     if (weatherPage) {
+//       const savedBkgImg = localStorage.getItem("bkgImgWeather");
+//       if (savedBkgImg) weatherPage.style.backgroundImage = savedBkgImg ? `url(${savedBkgImg})` : "";
+//   }
+//     if (tasksPage) {
+//       const savedBkgImg = localStorage.getItem("bkgImgTasks");
+//       if (savedBkgImg) {
+//       // tasksPage.style.backgroundImage = savedBkgImg ?  `url(${savedBkgImg})` : ""; // use this if decide to not customize list
+//         tasksPage.style.backgroundImage = `url(${savedBkgImg})`;
+//         tasksPage.classList.add("listBkgChange");
+//       } else {
+//         tasksPage.classList.remove("listBkgChange");
+//       }
+//   }
+//     if (notesPage) {
+//       const savedBkgImg = localStorage.getItem("bkgImgNotes");
+//       if (savedBkgImg) {
+//       // notesPage.style.backgroundImage = savedBkgImg ?  `url(${savedBkgImg})` : "";
+//       notesPage.style.backgroundImage = `url(${savedBkgImg})`;
+//       notesPage.classList.add("notesBkgChange");
+//       } else {
+//         notesPage.classList.remove("notesBkgChange");
+//       }
+//   }
+//     if (feedbackPage) {
+//       const savedBkgImg = localStorage.getItem("bkgImgFeedback");
+//       if (savedBkgImg) feedbackPage.style.backgroundImage = savedBkgImg ? `url(${savedBkgImg})` : "";
+//   }
+// }
+// } 
+
+//Refactored code: Reset background to default in light mode
+ handleBackgroundOnThemeChange({
+    pageSelector: ".greeting",
+    storageKey: "bkgImgGreet"
+  });
+  handleBackgroundOnThemeChange({
+    pageSelector: ".about",
+    storageKey: "bkgImgAbout"
+  });
+  handleBackgroundOnThemeChange({
+    pageSelector: ".weather",
+    storageKey: "bkgImgWeather"
+  });
+  handleBackgroundOnThemeChange({
+    pageSelector: ".tasks",
+    storageKey: "bkgImgTasks",
+    bkgChangeClass: "listBkgChange"
+  });
+  handleBackgroundOnThemeChange({
+    pageSelector: ".notes",
+    storageKey: "bkgImgNotes",
+    bkgChangeClass: "notesBkgChange"
+  });
+  handleBackgroundOnThemeChange({
+    pageSelector: ".feedback",
+    storageKey: "bkgImgFeedback"
+  });
 }
 
-} 
+function handleBackgroundOnThemeChange ({
+  pageSelector,
+  storageKey,
+  bkgChangeClass
+}) {
+  const page = document.querySelector(pageSelector);
+  const savedBkgImg = localStorage.getItem(storageKey);
+
+  if (!page) return;
+
+  if (body.classList.contains("light")) {
+    page.style.backgroundImage = "";
+    if (bkgChangeClass) page.classList.remove(bkgChangeClass);
+   } else {
+      if (savedBkgImg) {
+        page.style.backgroundImage = `url(${savedBkgImg})`;
+        if (bkgChangeClass) page.classList.add(bkgChangeClass);
+      } else if (bkgChangeClass) page.classList.remove(bkgChangeClass);
+    }
+  }
 
 function loadTheme() {
   const savedTheme = localStorage.getItem("theme");
@@ -364,6 +413,7 @@ function loadTheme() {
     lightModeBtn.innerText = "Dark Mode";
   }
 }
+
 loadTheme();
 
 if (lightModeBtn) {
@@ -384,132 +434,201 @@ lightModeBtn.addEventListener("click", toggleLightMode);
   });
 };
 
+// //User can change background on each page to personalize
+// //Greeting Page
+// const urlInputGreet = document.getElementById("urlInputGreet");
+// const bkgBtnGreet = document.getElementById("bkgBtnGreet");
+// const greetingPage = document.querySelector(".greeting");
+// const savedBkgImgGreet = localStorage.getItem("bkgImgGreet");
+
+// //loads the background image on page load and excludes loading localStorage to light mode page
+// if (savedBkgImgGreet && greetingPage && !body.classList.contains("light")) {
+//   greetingPage.style.backgroundImage = `url(${savedBkgImgGreet})`;
+//   updatePlaceholder(urlInputGreet, "bkgImgGreet")
+// } else if (urlInputGreet) {
+//   updatePlaceholder(urlInputGreet, "bkgImgGreet");
+// }
+
+// //added "bkgImgGreet" to changeBackground()
+// if (bkgBtnGreet && urlInputGreet && greetingPage) {
+//   bkgBtnGreet.addEventListener("click", () => {
+//     changeBackground(greetingPage, urlInputGreet, "bkgImgGreet");
+//   });
+// }
+
+// //About Page
+// const urlInputAbout = document.getElementById("urlInputAbout");
+// const bkgBtnAbout = document.getElementById("bkgBtnAbout");
+// const aboutPage = document.querySelector(".about");
+// const savedBkgImgAbout = localStorage.getItem("bkgImgAbout");
+
+// if (savedBkgImgAbout && aboutPage && !body.classList.contains("light")) {
+//   aboutPage.style.backgroundImage = `url(${savedBkgImgAbout})`;
+//   updatePlaceholder(urlInputAbout, "bkgImgAbout")
+// } else if (urlInputAbout) {
+//   updatePlaceholder(urlInputAbout, "bkgImgAbout");
+// }
+
+// if (bkgBtnAbout && urlInputAbout && aboutPage) {
+//   bkgBtnAbout.addEventListener("click", () => {
+//     changeBackground(aboutPage, urlInputAbout, "bkgImgAbout");
+//   });
+// }
+
+// //Weather Page
+// const urlInputWeather = document.getElementById("urlInputWeather");
+// const bkgBtnWeather = document.getElementById("bkgBtnWeather");
+// const weatherPage = document.querySelector(".weather");
+// const savedBkgImgWeather = localStorage.getItem("bkgImgWeather");
+
+// if (savedBkgImgWeather && weatherPage && !body.classList.contains("light")) {
+//   weatherPage.style.backgroundImage = `url(${savedBkgImgWeather})`;
+//   updatePlaceholder(urlInputWeather, "bkgImgWeather");
+// } else if (urlInputWeather) {
+//   updatePlaceholder(urlInputWeather, "bkgImgWeather");
+// }
+
+// if (bkgBtnWeather && urlInputWeather && weatherPage) {
+//   bkgBtnWeather.addEventListener("click", () => {
+//     changeBackground(weatherPage, urlInputWeather, "bkgImgWeather");
+//   });
+// }
+
+// //Tasks Page
+// const urlInputTasks = document.getElementById("urlInputTasks");
+// const bkgBtnTasks = document.getElementById("bkgBtnTasks");
+// const tasksPage = document.querySelector(".tasks");
+// const savedBkgImgTasks = localStorage.getItem("bkgImgTasks");
+
+// if (savedBkgImgTasks && tasksPage && !body.classList.contains("light")) {
+//   tasksPage.style.backgroundImage = `url(${savedBkgImgTasks})`;
+//   tasksPage.classList.add("listBkgChange");
+//   updatePlaceholder(urlInputTasks, "bkgImgTasks");
+
+// // } else if (urlInputTasks) { // add back if decide not to customize list when bkgImg is changed
+// }else if (tasksPage) {
+//   tasksPage.classList.remove("listBkgChange");
+//   updatePlaceholder(urlInputTasks, "bkgImgTasks");
+// }
+
+// if (bkgBtnTasks && urlInputTasks && tasksPage) {
+//   bkgBtnTasks.addEventListener("click", () => {
+//     changeBackground(tasksPage, urlInputTasks, "bkgImgTasks");
+//   });
+// }
+
+// //Notes Page
+// const urlInputNotes = document.getElementById("urlInputNotes");
+// const bkgBtnNotes = document.getElementById("bkgBtnNotes");
+// const notesPage = document.querySelector(".notes");
+// const savedBkgImgNotes = localStorage.getItem("bkgImgNotes");
+
+// if (savedBkgImgNotes && notesPage && !body.classList.contains("light")) {
+//   notesPage.style.backgroundImage = `url(${savedBkgImgNotes})`;
+//   notesPage.classList.add("notesBkgChange");
+//   updatePlaceholder(urlInputNotes, "bkgImgNotes");
+// // }else if (urlInputNotes) { // add back if decide not to customize list when bkgImg is changed
+// } else if (notesPage) {
+//   notesPage.classList.remove("notesBkgChange");
+//   updatePlaceholder(urlInputNotes, "bkgImgNotes");
+// }
+
+// if (bkgBtnNotes && urlInputNotes && notesPage) {
+//   bkgBtnNotes.addEventListener("click", () => {
+//     changeBackground(notesPage, urlInputNotes, "bkgImgNotes");
+//   });
+// }
+
+// //Feedback Page
+// const urlInputFeedback = document.getElementById("urlInputFeedback");
+// const bkgBtnFeedback = document.getElementById("bkgBtnFeedback");
+// const feedbackPage = document.querySelector(".feedback");
+// const savedBkgImgFeedback = localStorage.getItem("bkgImgFeedback");
+
+// if (savedBkgImgFeedback && feedbackPage && !body.classList.contains("light")) {
+//   feedbackPage.style.backgroundImage = `url(${savedBkgImgFeedback})`;
+//   updatePlaceholder(urlInputFeedback, "bkgImgFeedback");
+// } else if (urlInputFeedback) {
+//   updatePlaceholder(urlInputFeedback, "bkgImgFeedback");
+// }
+
+// if (bkgBtnFeedback && urlInputFeedback && feedbackPage) {
+//   bkgBtnFeedback.addEventListener("click", () => {
+//     changeBackground(feedbackPage, urlInputFeedback, "bkgImgFeedback");
+//   });
+// }
+
 //User can change background on each page to personalize
-//Greeting Page
-const urlInputGreet = document.getElementById("urlInputGreet");
-const bkgBtnGreet = document.getElementById("bkgBtnGreet");
-const greetingPage = document.querySelector(".greeting");
-const savedBkgImgGreet = localStorage.getItem("bkgImgGreet");
+//Refactored code using function parameters and calling the arguments
+setupBackgroundControls({
+  pageSelector: ".greeting",
+  inputId: "urlInputGreet",
+  btnId: "bkgBtnGreet",
+  storageKey: "bkgImgGreet"
+});
+setupBackgroundControls({
+  pageSelector: ".about",
+  inputId: "urlInputAbout",
+  btnId: "bkgBtnAbout",
+  storageKey: "bkgImgAbout"
+});
+setupBackgroundControls({
+  pageSelector: ".weather",
+  inputId: "urlInputWeather",
+  btnId: "bkgBtnWeather",
+  storageKey: "bkgImgWeather"
+});
+setupBackgroundControls({
+  pageSelector: ".tasks",
+  inputId: "urlInputTasks",
+  btnId: "bkgBtnTasks",
+  storageKey: "bkgImgTasks",
+  bkgChangeClass: "listBkgChange"
+});
+setupBackgroundControls({
+  pageSelector: ".notes",
+  inputId: "urlInputNotes",
+  btnId: "bkgBtnNotes",
+  storageKey: "bkgImgNotes",
+  bkgChangeClass: "notesBkgChange"
+});
+setupBackgroundControls({
+  pageSelector: ".feedback",
+  inputId: "urlInputFeedback",
+  btnId: "bkgBtnFeedback",
+  storageKey: "bkgImgFeedback"
+});
 
-//loads the background image on page load and excludes loading localStorage to light mode page
-if (savedBkgImgGreet && greetingPage && !body.classList.contains("light")) {
-  greetingPage.style.backgroundImage = `url(${savedBkgImgGreet})`;
-  updatePlaceholder(urlInputGreet, "bkgImgGreet")
-} else if (urlInputGreet) {
-  updatePlaceholder(urlInputGreet, "bkgImgGreet");
+function setupBackgroundControls({
+  pageSelector,
+  inputId,
+  btnId,
+  storageKey,
+  bkgChangeClass
+}) {
+  const page = document.querySelector(pageSelector);
+  const input = document.getElementById(inputId);
+  const btn = document.getElementById(btnId);
+  const savedBkgImg = localStorage.getItem(storageKey);
+
+  if (savedBkgImg && page && !body.classList.contains("light")) {
+     page.style.backgroundImage = `url(${savedBkgImg})`;
+     if(bkgChangeClass) page.classList.add(bkgChangeClass);
+     updatePlaceholder(input, storageKey);
+  } else if (page) {
+    if(bkgChangeClass) page.classList.remove(bkgChangeClass);
+    updatePlaceholder(input, storageKey);
+  }
+  if (btn && input && page) {
+    btn.addEventListener("click", () => {
+      changeBackground(page, input, storageKey);
+    });
+  }
 }
 
-//added "bkgImgGreet" to changeBackground()
-if (bkgBtnGreet && urlInputGreet && greetingPage) {
-  bkgBtnGreet.addEventListener("click", () => {
-    changeBackground(greetingPage, urlInputGreet, "bkgImgGreet");
-  });
-}
 
-//About Page
-const urlInputAbout = document.getElementById("urlInputAbout");
-const bkgBtnAbout = document.getElementById("bkgBtnAbout");
-const aboutPage = document.querySelector(".about");
-const savedBkgImgAbout = localStorage.getItem("bkgImgAbout");
-
-if (savedBkgImgAbout && aboutPage && !body.classList.contains("light")) {
-  aboutPage.style.backgroundImage = `url(${savedBkgImgAbout})`;
-  updatePlaceholder(urlInputAbout, "bkgImgAbout")
-} else if (urlInputAbout) {
-  updatePlaceholder(urlInputAbout, "bkgImgAbout");
-}
-
-if (bkgBtnAbout && urlInputAbout && aboutPage) {
-  bkgBtnAbout.addEventListener("click", () => {
-    changeBackground(aboutPage, urlInputAbout, "bkgImgAbout");
-  });
-}
-
-//Weather Page
-const urlInputWeather = document.getElementById("urlInputWeather");
-const bkgBtnWeather = document.getElementById("bkgBtnWeather");
-const weatherPage = document.querySelector(".weather");
-const savedBkgImgWeather = localStorage.getItem("bkgImgWeather");
-
-if (savedBkgImgWeather && weatherPage && !body.classList.contains("light")) {
-  weatherPage.style.backgroundImage = `url(${savedBkgImgWeather})`;
-  updatePlaceholder(urlInputWeather, "bkgImgWeather");
-} else if (urlInputWeather) {
-  updatePlaceholder(urlInputWeather, "bkgImgWeather");
-}
-
-if (bkgBtnWeather && urlInputWeather && weatherPage) {
-  bkgBtnWeather.addEventListener("click", () => {
-    changeBackground(weatherPage, urlInputWeather, "bkgImgWeather");
-  });
-}
-
-//Tasks Page
-const urlInputTasks = document.getElementById("urlInputTasks");
-const bkgBtnTasks = document.getElementById("bkgBtnTasks");
-const tasksPage = document.querySelector(".tasks");
-const savedBkgImgTasks = localStorage.getItem("bkgImgTasks");
-
-if (savedBkgImgTasks && tasksPage && !body.classList.contains("light")) {
-  tasksPage.style.backgroundImage = `url(${savedBkgImgTasks})`;
-  tasksPage.classList.add("listBkgChange");
-  updatePlaceholder(urlInputTasks, "bkgImgTasks");
-
-// } else if (urlInputTasks) { // add back if decide not to customize list when bkgImg is changed
-}else if (tasksPage) {
-  tasksPage.classList.remove("listBkgChange");
-  updatePlaceholder(urlInputTasks, "bkgImgTasks");
-}
-
-if (bkgBtnTasks && urlInputTasks && tasksPage) {
-  bkgBtnTasks.addEventListener("click", () => {
-    changeBackground(tasksPage, urlInputTasks, "bkgImgTasks");
-  });
-}
-
-//Notes Page
-const urlInputNotes = document.getElementById("urlInputNotes");
-const bkgBtnNotes = document.getElementById("bkgBtnNotes");
-const notesPage = document.querySelector(".notes");
-const savedBkgImgNotes = localStorage.getItem("bkgImgNotes");
-
-if (savedBkgImgNotes && notesPage && !body.classList.contains("light")) {
-  notesPage.style.backgroundImage = `url(${savedBkgImgNotes})`;
-  notesPage.classList.add("notesBkgChange");
-  updatePlaceholder(urlInputNotes, "bkgImgNotes");
-// }else if (urlInputNotes) { // add back if decide not to customize list when bkgImg is changed
-} else if (notesPage) {
-  notesPage.classList.remove("notesBkgChange");
-  updatePlaceholder(urlInputNotes, "bkgImgNotes");
-}
-
-if (bkgBtnNotes && urlInputNotes && notesPage) {
-  bkgBtnNotes.addEventListener("click", () => {
-    changeBackground(notesPage, urlInputNotes, "bkgImgNotes");
-  });
-}
-
-//Feedback Page
-const urlInputFeedback = document.getElementById("urlInputFeedback");
-const bkgBtnFeedback = document.getElementById("bkgBtnFeedback");
-const feedbackPage = document.querySelector(".feedback");
-const savedBkgImgFeedback = localStorage.getItem("bkgImgFeedback");
-
-if (savedBkgImgFeedback && feedbackPage && !body.classList.contains("light")) {
-  feedbackPage.style.backgroundImage = `url(${savedBkgImgFeedback})`;
-  updatePlaceholder(urlInputFeedback, "bkgImgFeedback");
-} else if (urlInputFeedback) {
-  updatePlaceholder(urlInputFeedback, "bkgImgFeedback");
-}
-
-if (bkgBtnFeedback && urlInputFeedback && feedbackPage) {
-  bkgBtnFeedback.addEventListener("click", () => {
-    changeBackground(feedbackPage, urlInputFeedback, "bkgImgFeedback");
-  });
-}
-
-//Generic function
-function changeBackground(page, input, bkgImg) {
+//Generic function - changed bkgImg to storageKey to use refactored code
+function changeBackground(page, input, storageKey) {
   const url = input.value.trim();
   if (url && !(url.endsWith("jpg") || url.endsWith(".jpeg") || url.endsWith(".png"))) {
     input.value = "";
@@ -518,7 +637,7 @@ function changeBackground(page, input, bkgImg) {
   }
   if (url.endsWith(".jpg") && page || url.endsWith(".jpeg") && page || url.endsWith(".png") && page) {
     page.style.backgroundImage = `url(${url})`;
-    localStorage.setItem(bkgImg, url); // Save to localStorage
+    localStorage.setItem(storageKey, url); // Save to localStorage
 
     if (page.classList.contains("tasks")) {
      page.classList.add("listBkgChange");// Change taskList background and hover colors when bkgimg changed
@@ -532,7 +651,7 @@ function changeBackground(page, input, bkgImg) {
     input.placeholder = "Click for default image";
   } else if (page) {
     page.style.backgroundImage = "";
-    localStorage.removeItem(bkgImg); //Remove from localStorage
+    localStorage.removeItem(storageKey); //Remove from localStorage
 
     if (page.classList.contains("tasks")) {//Removes listBkgChange class from tasks page 
       page.classList.remove("listBkgChange");
@@ -543,19 +662,22 @@ function changeBackground(page, input, bkgImg) {
     }
     input.placeholder = "Image URL";
   }
-  updatePlaceholder(input, bkgImg);
+  updatePlaceholder(input, storageKey);
 };
 
 
 
 //bkgImgKey is same as storageKey (which is commonly used for the key used for localStorage)
 function updatePlaceholder(input, bkgImgStorageKey) {
+  if (!input) return;
   const savedBkgImg = localStorage.getItem(bkgImgStorageKey);
-  if(savedBkgImg) {
-    input.placeholder = "Click for default image";
-  } else {
-    input.placeholder = "Image URL";
-  }
+  input.placeholder = savedBkgImg ? "Click for default image" : "Image URL";
+  //Refactored with a ternary statement:
+  // if(savedBkgImg) {
+  //   input.placeholder = "Click for default image";
+  // } else {
+  //   input.placeholder = "Image URL";
+  // }
 }
 
 //Hide background change option in light mode
