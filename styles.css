@@ -63,7 +63,7 @@ nav a:hover {
 
 
 /* Greeting Page */
-/* Fixed for background-attachment on iOS/mobile */
+/* Used ::before, for work-around to achieve background-attachment: fixed on iOS/mobile and desktop */
 .greeting::before {
   content: "";
   position: fixed;
@@ -71,7 +71,9 @@ nav a:hover {
   left: 0; 
   right: 0; 
   bottom: 0;
-  background-image: url(images/pexels-quang-nguyen-vinh-222549-6877707.jpg);
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+  url(images/pexels-quang-nguyen-vinh-222549-6877707.jpg); 
+  /* background-image: url(images/pexels-quang-nguyen-vinh-222549-6877707.jpg); */
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -81,7 +83,6 @@ nav a:hover {
 .greeting {
   min-height: 150vh;
   position: relative;
-  background: none !important;
   color: white;
   height: 150vh;
   display: flex;
@@ -89,22 +90,11 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-/* .greeting{
-  height: 150vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  background-image: url(images/pexels-quang-nguyen-vinh-222549-6877707.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  max-width: 100%;
-} */
+}
 
 .greeting h2 {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
@@ -126,7 +116,9 @@ nav a:hover {
   left: 0; 
   right: 0; 
   bottom: 0;
-  background-image: url(images/pexels-mauroignaciotorres-14111847.jpg);
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+  url(images/pexels-mauroignaciotorres-14111847.jpg);
+  /* background-image: url(images/pexels-mauroignaciotorres-14111847.jpg); */
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -135,29 +127,18 @@ nav a:hover {
 
 .about {
   min-height: 200vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: white;
-  /* max-width: 100% */
-}
-
-/* .about {
-  height: 200vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  background-image: url(images/pexels-mauroignaciotorres-14111847.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  max-width: 100%;
-} */
+}
 
 #aboutContainer {
   box-shadow: 5px 5px 10px 10px rgba(2, 2, 2, 0.8);
@@ -174,7 +155,9 @@ nav a:hover {
   left: 0; 
   right: 0; 
   bottom: 0;
-  background-image: url(images/pexels-annaelle-quionquion-2652658-17703493.jpg);
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+  url(images/pexels-annaelle-quionquion-2652658-17703493.jpg);
+  /* background-image: url(images/pexels-annaelle-quionquion-2652658-17703493.jpg); */
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -183,28 +166,18 @@ nav a:hover {
 
 .weather {
   min-height: 150vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: white;
-}
-
-/* .weather {
-  height: 150vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  background-image: url(images/pexels-annaelle-quionquion-2652658-17703493.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  max-width: 100%;
-} */
+}
 
 .widget {
   /* background-color: hwb(97 34% 28% / 0.5); */
@@ -227,7 +200,9 @@ nav a:hover {
   left: 0; 
   right: 0; 
   bottom: 0;
-  background-image: url(images/pexels-quang-nguyen-vinh-222549-6870970.jpg);
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+  url(images/pexels-quang-nguyen-vinh-222549-6870970.jpg);
+  /* background-image: url(images/pexels-quang-nguyen-vinh-222549-6870970.jpg); */
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -236,28 +211,18 @@ nav a:hover {
 
 .tasks {
   min-height: 150vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: white;
-}
-
-/* .tasks {
-  height: 150vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  background-image: url(images/pexels-quang-nguyen-vinh-222549-6870970.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  max-width: 100%;
-} */
+}
 
 #taskList {
   list-style: none;
@@ -278,7 +243,7 @@ nav a:hover {
   color: burlywood;
 }
 
-/* When bkg img is changed on tasks page */
+/* When bkg img is changed on tasks page, change to a more neutral color scheme */
 
 .tasks.listBkgChange li.list {
   background-color: rgba(245, 245, 245, 0.633);
@@ -291,13 +256,13 @@ nav a:hover {
   color: whitesmoke;
 }
 
-/* When bkg img is changed on notes page */
-.notes.notesBkgChange .noteDiv.light {
+/* When bkg img is changed on notes page, change to a more neutral color scheme */
+.notes.notesBkgChange .note.light {
   background-color: rgba(59, 59, 59, 0.613);
   color: whitesmoke;
   } 
 
-.notes.notesBkgChange .noteDiv {
+.notes.notesBkgChange .note {
   background-color: rgba(245, 245, 245, 0.633);
   color: rgb(59, 59, 59);
 }
@@ -310,7 +275,9 @@ nav a:hover {
   left: 0; 
   right: 0; 
   bottom: 0;
-  background-image: url(images/pexels-tsvetoslav-hristov-1306654-2499862.jpg);
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+  url(images/pexels-tsvetoslav-hristov-1306654-2499862.jpg);
+  /* background-image: url(images/pexels-tsvetoslav-hristov-1306654-2499862.jpg); */
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -319,30 +286,18 @@ nav a:hover {
 
 .notes {
   min-height: 150vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: white;
-}
-
-/* .notes { */
-  /* height: 150vh; */
-  /* min-height: 150vh;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  background-image: url(images/pexels-tsvetoslav-hristov-1306654-2499862.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  max-width: 100%;
-}  */
+}
 
 textarea {
   min-height: 100px;
@@ -352,7 +307,6 @@ textarea {
 }
 
 /* Transparent note in page dark mode */
-/* This width/height is keeping from diagnol resizing, textarea can only go the size of the parent, which is the noteDiv*/
 .noteDiv {
   position: relative;
   display: inline-block;
@@ -363,9 +317,8 @@ textarea {
   text-shadow: 10px;
 }
 
-/* Darker background note in page dark mode, script uses "light" for turning notecard darkolive and transparent for "dark"  */
+/* Not sure if I need this anymore */
 .noteDiv.light {
-  /* background-color: darkolivegreen; */
   color: lightgoldenrodyellow;
 }
 
@@ -380,6 +333,7 @@ textarea {
   padding: 15px;
 }
 
+/* Dark green background note in dark mode, script uses "light" for turning notecard darkolive and transparent for "dark"  */
 .note.light {
    background-color: darkolivegreen;
    color: lightgoldenrodyellow;
@@ -394,12 +348,6 @@ textarea {
   align-items: right;
   background-color: none;
 }
-
-body.light .themeAndTrashDiv
-{
-  background-color: whitesmoke;
-}
-
 
 .delete-note,
 .toggle-note {
@@ -424,7 +372,9 @@ body.light .themeAndTrashDiv
   left: 0; 
   right: 0; 
   bottom: 0;
-  background-image: url(images/pexels-walter-alejandro-228509595-16653748.jpg);
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+  url(images/pexels-walter-alejandro-228509595-16653748.jpg);
+  /* background-image: url(images/pexels-walter-alejandro-228509595-16653748.jpg); */
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -433,28 +383,19 @@ body.light .themeAndTrashDiv
 
 .feedback {
   min-height: 150vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: white;
-}
-
-/* .feedback {
-  height: 150vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  background-image: url(images/pexels-walter-alejandro-228509595-16653748.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  max-width: 100%;
-} */
+}
+
 
 /* Footer */
 #footer {
@@ -611,12 +552,12 @@ button {
   color: whitesmoke;
 }
 
-/* Hide background change option in light mode */
+/* Hide background change url option in light mode */
 .hide {
   display: none !important;
 }
 
-/*  Light MODE: Styles applied when body has class "light" */
+/*  Light Mode: Styles applied when body has class "light" */
 body.light header {
   background-color: rgb(228, 227, 227);
   margin-bottom: 20px;
@@ -766,6 +707,10 @@ body.light .noteDiv {
 body.light textarea.light {
   background: rgb(59, 59, 59);
   color: whitesmoke;
+}
+
+body.light .themeAndTrashDiv {
+  background-color: whitesmoke;
 }
 
 body.light #footer {
@@ -1191,8 +1136,6 @@ body.light #userFeedback {
   .note:hover {
    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
   }
-
-
 
   #urlInputGreet,
   #urlInputAbout,

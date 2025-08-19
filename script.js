@@ -137,12 +137,10 @@ function renderNoteCards() {
     }
 
     //Save changes to localStorage when user edits notes
-  
     textarea.addEventListener("input", () => {
       noteCards[index].text = textarea.value;
       localStorage.setItem("noteCards", JSON.stringify(noteCards));
     });
-
 
     //Delete button for each note
     const deleteBtn = document.createElement("button");

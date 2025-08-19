@@ -22,6 +22,9 @@
 
 ## add the ability to place a picture from your local computer and save as the background using the Image URL input ? or create an error if not https: at the beginning.
 
+## Add linear gradient to bkgImg when urlInput is used to customize it
+
+
 
 
 ## Done:
