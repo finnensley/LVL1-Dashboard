@@ -13,7 +13,9 @@
 
 
 # Challenges List:
-# empty - finished project
+
+# add linear gradient to changed bkg-img, that way no matter what the background color is the user can still see the content. 
+
 
 ## Challenges Completed:
 
