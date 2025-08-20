@@ -14,13 +14,11 @@
 
 # Challenges:
 
-## For Weather it allows you to add Countries, not just city. Could change Enter city or make an if to only allow cities 
-
-## add the ability to place a picture from your local computer and save as the background using the Image URL input ? or create an error if not https: at the beginning.
 
 ## Add linear gradient to bkgImg when urlInput is used to customize it
 
-## Remove or adjust text shadow on footer and see how it looks
+## Add media query for 13" iPad, or max-width: 1040px, saveBtn and toggleModeBtn need a space from the input and each other.
+
 
 
 
@@ -83,6 +81,14 @@
 ## rework height vh for each page in responsiveness (got messed up working on notes resizing)
 
 ## Refactor code - use forEach and build an array of objects
+
+## add the ability to place a picture from your local computer and save as the background using the Image URL input -not able to figure out, instead created an error if not https: at the beginning.
+
+## Remove or adjust text shadow on footer and see how it looks
+
+## For Weather it allows you to add Countries, not just city. Could change Enter city or make an if to only allow cities - not a clear way to only allow cities without adding autoComplete with GoogleMaps or upgrading openWeather API; 
+
+
 
 
 

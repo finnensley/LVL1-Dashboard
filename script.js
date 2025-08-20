@@ -213,20 +213,12 @@ function fetchWeather(city) {
 function displayWeather(data) {
   console.log("displayWeather called with:", data);
   document.getElementById("error-message").textContent = "";
-  document.getElementById("city-name").textContent = `Weather in ${data.name}`;
-  document.getElementById(
-    "temperature"
-  ).textContent = `Current Temperature: ${Math.floor(data.main.temp)}°F`;
-  document.getElementById("feels-like").textContent = `Feels like: ${Math.floor(
-    data.main.feels_like
-  )}°F`;
-  document.getElementById(
-    "description"
-  ).textContent = `Condition: ${data.weather[0].description}`;
-  document.getElementById(
-    "humidity"
-  ).textContent = `Humidity: ${data.main.humidity}%`;
-  // Save to localStorage, opting to not use
+  document.getElementById("city-name").textContent = data.name;
+  document.getElementById("temperature").textContent = `Current Temperature: ${Math.floor(data.main.temp)}°F`;
+  document.getElementById("feels-like").textContent = `Feels like: ${Math.floor(data.main.feels_like)}°F`;
+  document.getElementById("description").textContent = `Condition: ${data.weather[0].description.toUpperCase()}`;
+  document.getElementById("humidity").textContent = `Humidity: ${data.main.humidity}%`;
+  // Save to localStorage, opting to not use 
   // localStorage.setItem("lastWeatherData", JSON.stringify(data));
 }
 

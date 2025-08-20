@@ -432,6 +432,8 @@ textarea {
   font-size: smaller;
 }
 
+
+/* Change background input */
 #urlInputGreet,
 #urlInputAbout,
 #urlInputWeather,
@@ -446,6 +448,13 @@ textarea {
   border-radius: 5px;
 }
 
+/* Buttons */
+button {
+  cursor: pointer;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.421);
+}
+
+/* Change background buttons */
 #bkgBtnGreet,
 #bkgBtnAbout,
 #bkgBtnWeather,
@@ -460,12 +469,6 @@ textarea {
   color: white;
   background: none;
   border-radius: 7px;
-}
-
-/* Buttons */
-button {
-  cursor: pointer;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.421);
 }
 
 #taskBtn,
@@ -507,7 +510,7 @@ button {
   position: fixed;
   top: 35px;
   right: 10px;
-  margin: 10px;
+  margin: 15px;
   z-index: 1000;
 }
 
@@ -515,7 +518,7 @@ button {
   position: fixed;
   top: 65px;
   right: 10px;
-  margin: 10px;
+  margin: 15px;
   z-index: 1000;
 }
 
