@@ -413,7 +413,6 @@ function loadTheme() {
     lightModeBtn.innerText = "Dark Mode";
   }
 }
-
 loadTheme();
 
 if (lightModeBtn) {
@@ -434,7 +433,7 @@ lightModeBtn.addEventListener("click", toggleLightMode);
   });
 };
 
-// //User can change background on each page to personalize
+// //User can change background on each page to personalize, see refactored version of code used below
 // //Greeting Page
 // const urlInputGreet = document.getElementById("urlInputGreet");
 // const bkgBtnGreet = document.getElementById("bkgBtnGreet");
@@ -559,7 +558,7 @@ lightModeBtn.addEventListener("click", toggleLightMode);
 // }
 
 //User can change background on each page to personalize
-//Refactored code using function parameters and calling the arguments
+//Refactored code using an additional function 
 setupBackgroundControls({
   pageSelector: ".greeting",
   inputId: "urlInputGreet",
@@ -599,6 +598,7 @@ setupBackgroundControls({
   storageKey: "bkgImgFeedback"
 });
 
+//Used destructuring to make cleaner
 function setupBackgroundControls({
   pageSelector,
   inputId,
@@ -627,12 +627,17 @@ function setupBackgroundControls({
 }
 
 
-//Generic function - changed bkgImg to storageKey to use refactored code
+//Generic function - storageKey is the bkgImg 
 function changeBackground(page, input, storageKey) {
   const url = input.value.trim();
+  if (url && !url.startsWith("https:")) {
+    input.value = "";
+    alert ("Please enter a URL beginning with https:// that ends with .jpg, .jpeg, or .png.");
+    return
+  }
   if (url && !(url.endsWith("jpg") || url.endsWith(".jpeg") || url.endsWith(".png"))) {
     input.value = "";
-    alert("Please enter a valid image URL (.jpg, .jpeg, .png).")
+    alert("Please enter a valid image URL (.jpg, .jpeg, .png).");
     return;
   }
   if (url.endsWith(".jpg") && page || url.endsWith(".jpeg") && page || url.endsWith(".png") && page) {
@@ -667,7 +672,7 @@ function changeBackground(page, input, storageKey) {
 
 
 
-//bkgImgKey is same as storageKey (which is commonly used for the key used for localStorage)
+//bkgImgKey is same as storageKey (which is a commonly used variable for the key used in localStorage)
 function updatePlaceholder(input, bkgImgStorageKey) {
   if (!input) return;
   const savedBkgImg = localStorage.getItem(bkgImgStorageKey);

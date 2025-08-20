@@ -16,8 +16,6 @@
 
 ## For Weather it allows you to add Countries, not just city. Could change Enter city or make an if to only allow cities 
 
-## Refactor code - use forEach and build an array of objects
-
 ## add the ability to place a picture from your local computer and save as the background using the Image URL input ? or create an error if not https: at the beginning.
 
 ## Add linear gradient to bkgImg when urlInput is used to customize it
@@ -83,6 +81,8 @@
 ## Div with a border ht/wd/margin and then a textarea inside for note text ?? 
 
 ## rework height vh for each page in responsiveness (got messed up working on notes resizing)
+
+## Refactor code - use forEach and build an array of objects
 
 
 
