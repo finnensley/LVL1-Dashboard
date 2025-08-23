@@ -96,8 +96,30 @@ nav a:hover {
   background-attachment: fixed;
 }
 
-.greeting h2 {
+.greeting h2,
+.tasks h1,
+#current-hour,
+.about h1,
+.about p,
+.weather h1,
+.notes h1,
+.feedback h1,
+#weatherResults,
+.feedback label {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+body.light .greeting h2,
+body.light .tasks h1,
+body.light #current-hour,
+body.light .about h1,
+body.light .about p,
+body.light .weather h1,
+body.light .notes h1,
+body.light .feedback h1,
+body.light #weatherResults,
+body.light .feedback label  {
+  text-shadow: none;
 }
 
 #current-hour,
@@ -593,6 +615,7 @@ body.light nav a {
 
 body.light nav a:hover {
   color: whitesmoke;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Setting background and color */
