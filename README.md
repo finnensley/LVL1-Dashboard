@@ -12,11 +12,6 @@
 
 
 
-# Challenges List:
-
-# add linear gradient to changed bkg-img, that way no matter what the background color is the user can still see the content. - workaround added text shadow to content 
-
-
 ## Challenges Completed:
 
 ## Add an ease to the font being larger as scroll over nav buttons
@@ -85,6 +80,7 @@
 
 ## Add media query for 13" iPad, or max-width: 1040px, saveBtn and toggleModeBtn need a space from the input and each other. - just adjusted buttons to margin = 15px from 10px; solved the issue without adding another @media for that size.
 
+# add linear gradient to changed bkg-img, that way no matter what the background color is the user can still see the content. - workaround added text shadow to content - instead, added text shadow to content in dark mode and the white color became visible on any background. 
 
 
 
