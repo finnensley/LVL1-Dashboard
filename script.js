@@ -293,6 +293,8 @@ function toggleLightMode() {
   lightModeBtn.innerText = theme === "light" ? "Dark Mode" : "Light Mode";
   localStorage.setItem("theme", theme);
 
+//Refactored this section below
+
  //Reset background to default in light mode
 //   if (theme === "light") {
 //     if (greetingPage) greetingPage.style.backgroundImage = "";
@@ -641,7 +643,7 @@ function changeBackground(page, input, storageKey) {
     }
 
     if (page.classList.contains("notes")) {
-      page.classList.add("notesBkgChange"); // Change taskList background and hover colors when bkgimg changed
+      page.classList.add("notesBkgChange"); // Change noteCard background and text colors when bkgimg changed
     }
 
     input.value = "";
@@ -668,13 +670,14 @@ function changeBackground(page, input, storageKey) {
 function updatePlaceholder(input, bkgImgStorageKey) {
   if (!input) return;
   const savedBkgImg = localStorage.getItem(bkgImgStorageKey);
-  input.placeholder = savedBkgImg ? "Click for default image" : "Image URL";
   //Refactored with a ternary statement:
   // if(savedBkgImg) {
   //   input.placeholder = "Click for default image";
   // } else {
   //   input.placeholder = "Image URL";
   // }
+  input.placeholder = savedBkgImg ? "Click for default image" : "Image URL";
+
 }
 
 //Hide background change option in light mode

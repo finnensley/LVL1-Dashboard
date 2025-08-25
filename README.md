@@ -14,7 +14,7 @@
 
 # Challenges List:
 
-# add linear gradient to changed bkg-img, that way no matter what the background color is the user can still see the content. 
+# add linear gradient to changed bkg-img, that way no matter what the background color is the user can still see the content. - workaround added text shadow to content 
 
 
 ## Challenges Completed:
