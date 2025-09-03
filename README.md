@@ -82,6 +82,8 @@
 
 # add linear gradient to changed bkg-img, that way no matter what the background color is the user can still see the content. - workaround added text shadow to content - instead, added text shadow to content in dark mode and the white color became visible on any background. 
 
+# URLs to test background change: white:  https://images.pexels.com/photos/1571442/pexels-photo-1571442.jpeg
+# sunset https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg
 
 
 
